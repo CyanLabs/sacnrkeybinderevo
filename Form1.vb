@@ -89,6 +89,7 @@ Public Class Form1
                     Exit Function
                 End If
             Next
+            'If 
         End If
         Return GetCaption()
     End Function
@@ -225,6 +226,16 @@ Public Class Form1
     End Sub
     'Sub that is called when a keyboard key is pressed and then released
     Private Sub kHook_KeyUp(ByVal sender As Object, ByVal e As WindowsHookLib.KeyboardEventArgs) Handles kHook.KeyUp
+        If chkKeyUp.Checked = True Then
+            DoKeybinds(sender, e)
+        End If
+    End Sub
+    Private Sub kHook_KeyDown(ByVal sender As Object, ByVal e As WindowsHookLib.KeyboardEventArgs) Handles kHook.KeyDown
+        If chkKeyUp.Checked = False Then
+            DoKeybinds(sender, e)
+        End If
+    End Sub
+    Private Sub DoKeybinds(ByVal semder As Object, ByVal e As WindowsHookLib.KeyboardEventArgs)
         If DebugCheck() = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
                 param_obj(0) = e.KeyData.ToString.ToUpper
@@ -520,6 +531,7 @@ Public Class Form1
         chkEnableLogs.Checked = inisettings.GetString("Settings", "EnableLogManager", False)
         chkEnable360.Checked = inisettings.GetString("360", "MasterToggle", False)
         chkSkipChangelog.Checked = inisettings.GetString("Settings", "ShowChangelog", True)
+        chkKeyUp.Checked = inisettings.GetString("Advanced Settings", "UseKeyUp", False)
         If chkEnable360.Checked = True Then
             Timer2.Start()
         Else
@@ -692,5 +704,9 @@ Public Class Form1
         If e.Button = Windows.Forms.MouseButtons.Right Then
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub chkKeyUp_CheckedChanged(sender As Object) Handles chkKeyUp.CheckedChanged
+        inisettings.WriteString("Advanced Settings", "UseKeyUp", sender.checked.ToString)
     End Sub
 End Class

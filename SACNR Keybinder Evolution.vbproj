@@ -85,7 +85,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsHookLib, Version=1.1.1.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WindowsHookLib.dll</HintPath>
+      <HintPath>..\..\..\Downloads\WindowsHookLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
