@@ -40,20 +40,34 @@ Public Class Form1
         GetWindowText(hWnd, Caption, Caption.Capacity)
         Return Caption.ToString()
     End Function
+    Function SendEnter()
+        If chkEnter.Checked Then
+            Return "{Enter}"
+        Else
+            Return ""
+        End If
+    End Function
+    Function SendT()
+        If chkT.Checked Then
+            Return "t"
+        Else
+            Return ""
+        End If
+    End Function
     'Sub that handles all the splitting and toggling of the commands
     Sub macro(ByVal param_obj() As Object)
         Dim substr As String = param_obj(1)
         Dim pressed As String = param_obj(0)
-        If substr.Contains("#") Then
+        If substr.Contains(txtToggle.Text) Then
             If Not CMDNumber.ContainsKey(pressed) Then
                 CMDNumber(pressed) = 1
             End If
-            Dim splitstring() As String = Split(substr, "#")
+            Dim splitstring() As String = Split(substr, txtToggle.Text)
             Dim x As Integer = 0
             For Each item In splitstring
                 x = x + 1
                 If x >= CMDNumber(pressed) Then
-                    SendKeys.SendWait("t" + item + "{Enter}")
+                    SendKeys.SendWait(SendT() + item + SendEnter())
                     CMDNumber(pressed) = CMDNumber(pressed) + 1
                     If splitstring.GetLength(0) = x Then
                         CMDNumber(pressed) = 1
@@ -62,22 +76,24 @@ Public Class Form1
                 End If
             Next
         Else
-            Dim splitstring() As String = Split(substr, "*")
+            Dim splitstring() As String = Split(substr, txtMacro.Text)
             For Each item In splitstring
-                If item(0) = "¬" Then
+                If item(0) = txtDelay.Text Then
                     Thread.Sleep(item.Substring(1, 4))
                     item = item.Remove(0, 5)
                 End If
-                SendKeys.SendWait("t" + item + "{Enter}")
+                SendKeys.SendWait(SendT() + item + SendEnter())
             Next
         End If
+        keybinderdisabled = False
     End Sub
     'Sub to check key matches pressed key
-    Public Sub KeyCheck(checkbox As ReactorCheckBox, pressedkey As String, chosenkey As String, cmd As ReactorTextBox)
+    Public Sub KeyCheck(checkbox As ReactorCheckBox, pressedkey As String, chosenkey As String, cmd As ReactorTextBox, ByVal e As WindowsHookLib.KeyboardEventArgs)
         trd2 = New Thread(AddressOf macro)
         trd2.IsBackground = True
         If checkbox.Checked = True Then
             If pressedkey = chosenkey Then
+                e.Handled = True
                 param_obj(1) = cmd.Text
                 trd2.Start(param_obj)
             End If
@@ -242,26 +258,26 @@ Public Class Form1
         If DebugCheck() = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
                 param_obj(0) = e.KeyData.ToString.ToUpper
-                KeyCheck(ReactorCheckBox1, param_obj(0), TextBox1.Text.ToUpper, ReactorTextBox1)
-                KeyCheck(ReactorCheckBox2, param_obj(0), TextBox2.Text.ToUpper, ReactorTextBox2)
-                KeyCheck(ReactorCheckBox3, param_obj(0), TextBox3.Text.ToUpper, ReactorTextBox3)
-                KeyCheck(ReactorCheckBox4, param_obj(0), TextBox4.Text.ToUpper, ReactorTextBox4)
-                KeyCheck(ReactorCheckBox5, param_obj(0), TextBox5.Text.ToUpper, ReactorTextBox5)
-                KeyCheck(ReactorCheckBox6, param_obj(0), TextBox6.Text.ToUpper, ReactorTextBox6)
-                KeyCheck(ReactorCheckBox7, param_obj(0), TextBox7.Text.ToUpper, ReactorTextBox7)
-                KeyCheck(ReactorCheckBox8, param_obj(0), TextBox8.Text.ToUpper, ReactorTextBox8)
-                KeyCheck(ReactorCheckBox9, param_obj(0), TextBox9.Text.ToUpper, ReactorTextBox9)
-                KeyCheck(ReactorCheckBox10, param_obj(0), TextBox10.Text.ToUpper, ReactorTextBox10)
-                KeyCheck(ReactorCheckBox11, param_obj(0), TextBox11.Text.ToUpper, ReactorTextBox11)
-                KeyCheck(ReactorCheckBox12, param_obj(0), TextBox12.Text.ToUpper, ReactorTextBox12)
-                KeyCheck(ReactorCheckBox13, param_obj(0), TextBox13.Text.ToUpper, ReactorTextBox13)
-                KeyCheck(ReactorCheckBox14, param_obj(0), TextBox14.Text.ToUpper, ReactorTextBox14)
-                KeyCheck(ReactorCheckBox15, param_obj(0), TextBox15.Text.ToUpper, ReactorTextBox15)
-                KeyCheck(ReactorCheckBox16, param_obj(0), TextBox16.Text.ToUpper, ReactorTextBox16)
-                KeyCheck(ReactorCheckBox17, param_obj(0), TextBox17.Text.ToUpper, ReactorTextBox17)
-                KeyCheck(ReactorCheckBox18, param_obj(0), TextBox18.Text.ToUpper, ReactorTextBox18)
-                KeyCheck(ReactorCheckBox19, param_obj(0), TextBox19.Text.ToUpper, ReactorTextBox19)
-                KeyCheck(ReactorCheckBox10, param_obj(0), TextBox20.Text.ToUpper, ReactorTextBox20)
+                KeyCheck(ReactorCheckBox1, param_obj(0), TextBox1.Text.ToUpper, ReactorTextBox1, e)
+                KeyCheck(ReactorCheckBox2, param_obj(0), TextBox2.Text.ToUpper, ReactorTextBox2, e)
+                KeyCheck(ReactorCheckBox3, param_obj(0), TextBox3.Text.ToUpper, ReactorTextBox3, e)
+                KeyCheck(ReactorCheckBox4, param_obj(0), TextBox4.Text.ToUpper, ReactorTextBox4, e)
+                KeyCheck(ReactorCheckBox5, param_obj(0), TextBox5.Text.ToUpper, ReactorTextBox5, e)
+                KeyCheck(ReactorCheckBox6, param_obj(0), TextBox6.Text.ToUpper, ReactorTextBox6, e)
+                KeyCheck(ReactorCheckBox7, param_obj(0), TextBox7.Text.ToUpper, ReactorTextBox7, e)
+                KeyCheck(ReactorCheckBox8, param_obj(0), TextBox8.Text.ToUpper, ReactorTextBox8, e)
+                KeyCheck(ReactorCheckBox9, param_obj(0), TextBox9.Text.ToUpper, ReactorTextBox9, e)
+                KeyCheck(ReactorCheckBox10, param_obj(0), TextBox10.Text.ToUpper, ReactorTextBox10, e)
+                KeyCheck(ReactorCheckBox11, param_obj(0), TextBox11.Text.ToUpper, ReactorTextBox11, e)
+                KeyCheck(ReactorCheckBox12, param_obj(0), TextBox12.Text.ToUpper, ReactorTextBox12, e)
+                KeyCheck(ReactorCheckBox13, param_obj(0), TextBox13.Text.ToUpper, ReactorTextBox13, e)
+                KeyCheck(ReactorCheckBox14, param_obj(0), TextBox14.Text.ToUpper, ReactorTextBox14, e)
+                KeyCheck(ReactorCheckBox15, param_obj(0), TextBox15.Text.ToUpper, ReactorTextBox15, e)
+                KeyCheck(ReactorCheckBox16, param_obj(0), TextBox16.Text.ToUpper, ReactorTextBox16, e)
+                KeyCheck(ReactorCheckBox17, param_obj(0), TextBox17.Text.ToUpper, ReactorTextBox17, e)
+                KeyCheck(ReactorCheckBox18, param_obj(0), TextBox18.Text.ToUpper, ReactorTextBox18, e)
+                KeyCheck(ReactorCheckBox19, param_obj(0), TextBox19.Text.ToUpper, ReactorTextBox19, e)
+                KeyCheck(ReactorCheckBox10, param_obj(0), TextBox20.Text.ToUpper, ReactorTextBox20, e)
             End If
         End If
         If e.KeyData.ToString = "F6" Or e.KeyData.ToString = "T" Or e.KeyData.ToString = "`" Then
@@ -531,6 +547,11 @@ Public Class Form1
         chkEnable360.Checked = inisettings.GetString("360", "MasterToggle", False)
         chkSkipChangelog.Checked = inisettings.GetString("Settings", "ShowChangelog", True)
         chkKeyUp.Checked = inisettings.GetString("Advanced Settings", "UseKeyUp", False)
+        txtMacro.Text = inisettings.GetString("Advanced Settings", "MacroChar", "*")
+        txtToggle.Text = inisettings.GetString("Advanced Settings", "ToggleChar", "#")
+        txtDelay.Text = inisettings.GetString("Advanced Settings", "DelayChar", "¬")
+        chkT.Checked = inisettings.GetString("Advanced Settings", "SendT", True)
+        chkEnter.Checked = inisettings.GetString("Advanced Settings", "SendEnter", True)
         If chkEnable360.Checked = True Then
             Timer2.Start()
         Else
@@ -617,15 +638,6 @@ Public Class Form1
         End If
     End Sub
 
-    'Checks if value entered in to macro textbox is numerical and then sets ini to value of textbox
-    Private Sub txtMacroDelay_TextChanged(sender As Object, e As EventArgs)
-        If IsNumeric(sender.text) Then
-            inisettings.WriteInteger("Settings", "MacroDelay", Convert.ToInt32(sender.text))
-        Else
-            MsgBox("You did not enter a numerical value, please enter only numbers and decimals", MsgBoxStyle.Critical, "Error")
-        End If
-    End Sub
-
     'Simply opens log folder in explorer
     Private Sub btnLogs_Click(sender As Object, e As EventArgs) Handles btnLogs.Click
         Try
@@ -695,5 +707,25 @@ Public Class Form1
 
     Private Sub chkKeyUp_CheckedChanged(sender As Object) Handles chkKeyUp.CheckedChanged
         inisettings.WriteString("Advanced Settings", "UseKeyUp", sender.checked.ToString)
+    End Sub
+
+    Private Sub txtToggle_Leave(sender As Object, e As EventArgs) Handles txtToggle.Leave
+        inisettings.WriteString("Advanced Settings", "ToggleChar", sender.text)
+    End Sub
+
+    Private Sub txtMacro_Leave(sender As Object, e As EventArgs) Handles txtMacro.Leave
+        inisettings.WriteString("Advanced Settings", "MacroChar", sender.text)
+    End Sub
+
+    Private Sub txtDelay_Leave(sender As Object, e As EventArgs) Handles txtDelay.Leave
+        inisettings.WriteString("Advanced Settings", "DelayChar", sender.text)
+    End Sub
+
+    Private Sub chkT_CheckedChanged(sender As Object) Handles chkT.CheckedChanged
+        inisettings.WriteString("Advanced Settings", "SendT", sender.checked.ToString)
+    End Sub
+
+    Private Sub chkEnter_CheckedChanged(sender As Object) Handles chkEnter.CheckedChanged
+        inisettings.WriteString("Advanced Settings", "SendEnter", sender.checked.ToString)
     End Sub
 End Class

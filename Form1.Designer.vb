@@ -189,10 +189,18 @@ Partial Class Form1
         Me.chkEnableLogs = New SACNR_Keybinder_Evolution.ReactorCheckBox()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.ReactorGroupBox4 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
+        Me.txtDelay = New System.Windows.Forms.TextBox()
+        Me.txtMacro = New System.Windows.Forms.TextBox()
+        Me.txtToggle = New System.Windows.Forms.TextBox()
+        Me.Label30 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.ReactorGroupBox3 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
         Me.btnReset = New SACNR_Keybinder_Evolution.ReactorButton()
         Me.ReactorGroupBox1 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
+        Me.chkEnter = New SACNR_Keybinder_Evolution.ReactorCheckBox()
+        Me.chkT = New SACNR_Keybinder_Evolution.ReactorCheckBox()
         Me.chkDebug = New SACNR_Keybinder_Evolution.ReactorCheckBox()
         Me.chkKeyUp = New SACNR_Keybinder_Evolution.ReactorCheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -2192,7 +2200,7 @@ Partial Class Form1
         Me.ReactorGroupBox2.Name = "ReactorGroupBox2"
         Me.ReactorGroupBox2.Size = New System.Drawing.Size(269, 129)
         Me.ReactorGroupBox2.TabIndex = 54
-        Me.ReactorGroupBox2.Text = "Extra Settings"
+        Me.ReactorGroupBox2.Text = "Additional Settings"
         '
         'Label27
         '
@@ -2210,11 +2218,11 @@ Partial Class Form1
         Me.chkStartup.Checked = False
         Me.chkStartup.Cursor = System.Windows.Forms.Cursors.Hand
         Me.chkStartup.ForeColor = System.Drawing.Color.White
-        Me.chkStartup.Location = New System.Drawing.Point(10, 106)
+        Me.chkStartup.Location = New System.Drawing.Point(21, 106)
         Me.chkStartup.Name = "chkStartup"
-        Me.chkStartup.Size = New System.Drawing.Size(175, 16)
+        Me.chkStartup.Size = New System.Drawing.Size(202, 16)
         Me.chkStartup.TabIndex = 4
-        Me.chkStartup.Text = "Start minimized with windows"
+        Me.chkStartup.Text = "Start minimized with windows startup"
         '
         'chkSkipChangelog
         '
@@ -2222,7 +2230,7 @@ Partial Class Form1
         Me.chkSkipChangelog.Checked = True
         Me.chkSkipChangelog.Cursor = System.Windows.Forms.Cursors.Hand
         Me.chkSkipChangelog.ForeColor = System.Drawing.Color.White
-        Me.chkSkipChangelog.Location = New System.Drawing.Point(10, 78)
+        Me.chkSkipChangelog.Location = New System.Drawing.Point(21, 78)
         Me.chkSkipChangelog.Name = "chkSkipChangelog"
         Me.chkSkipChangelog.Size = New System.Drawing.Size(241, 16)
         Me.chkSkipChangelog.TabIndex = 3
@@ -2234,7 +2242,7 @@ Partial Class Form1
         Me.chkAutoupdates.Checked = False
         Me.chkAutoupdates.Cursor = System.Windows.Forms.Cursors.Hand
         Me.chkAutoupdates.ForeColor = System.Drawing.Color.White
-        Me.chkAutoupdates.Location = New System.Drawing.Point(10, 51)
+        Me.chkAutoupdates.Location = New System.Drawing.Point(21, 51)
         Me.chkAutoupdates.Name = "chkAutoupdates"
         Me.chkAutoupdates.Size = New System.Drawing.Size(215, 16)
         Me.chkAutoupdates.TabIndex = 2
@@ -2257,7 +2265,7 @@ Partial Class Form1
         '
         Me.Label26.AutoSize = True
         Me.Label26.ForeColor = System.Drawing.Color.White
-        Me.Label26.Location = New System.Drawing.Point(10, 27)
+        Me.Label26.Location = New System.Drawing.Point(6, 26)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(465, 12)
         Me.Label26.TabIndex = 61
@@ -2312,7 +2320,7 @@ Partial Class Form1
         '
         Me.Label28.AutoSize = True
         Me.Label28.ForeColor = System.Drawing.Color.White
-        Me.Label28.Location = New System.Drawing.Point(9, 26)
+        Me.Label28.Location = New System.Drawing.Point(10, 26)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(180, 12)
         Me.Label28.TabIndex = 63
@@ -2356,22 +2364,98 @@ Partial Class Form1
         'ReactorGroupBox4
         '
         Me.ReactorGroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.ReactorGroupBox4.Controls.Add(Me.txtDelay)
+        Me.ReactorGroupBox4.Controls.Add(Me.txtMacro)
+        Me.ReactorGroupBox4.Controls.Add(Me.txtToggle)
+        Me.ReactorGroupBox4.Controls.Add(Me.Label30)
         Me.ReactorGroupBox4.Controls.Add(Me.Label24)
-        Me.ReactorGroupBox4.Location = New System.Drawing.Point(18, 23)
+        Me.ReactorGroupBox4.Controls.Add(Me.Label29)
+        Me.ReactorGroupBox4.Controls.Add(Me.Label25)
+        Me.ReactorGroupBox4.Location = New System.Drawing.Point(16, 23)
         Me.ReactorGroupBox4.Name = "ReactorGroupBox4"
-        Me.ReactorGroupBox4.Size = New System.Drawing.Size(211, 170)
-        Me.ReactorGroupBox4.TabIndex = 67
-        Me.ReactorGroupBox4.Text = "Advanced Settings Help"
+        Me.ReactorGroupBox4.Size = New System.Drawing.Size(234, 170)
+        Me.ReactorGroupBox4.TabIndex = 66
+        Me.ReactorGroupBox4.Text = "Characters"
+        '
+        'txtDelay
+        '
+        Me.txtDelay.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.txtDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDelay.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txtDelay.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDelay.ForeColor = System.Drawing.Color.White
+        Me.txtDelay.Location = New System.Drawing.Point(140, 135)
+        Me.txtDelay.MaxLength = 1
+        Me.txtDelay.Name = "txtDelay"
+        Me.txtDelay.Size = New System.Drawing.Size(42, 20)
+        Me.txtDelay.TabIndex = 7
+        '
+        'txtMacro
+        '
+        Me.txtMacro.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.txtMacro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMacro.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txtMacro.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMacro.ForeColor = System.Drawing.Color.White
+        Me.txtMacro.Location = New System.Drawing.Point(140, 107)
+        Me.txtMacro.MaxLength = 1
+        Me.txtMacro.Name = "txtMacro"
+        Me.txtMacro.Size = New System.Drawing.Size(42, 20)
+        Me.txtMacro.TabIndex = 7
+        '
+        'txtToggle
+        '
+        Me.txtToggle.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.txtToggle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtToggle.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txtToggle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtToggle.ForeColor = System.Drawing.Color.White
+        Me.txtToggle.Location = New System.Drawing.Point(140, 79)
+        Me.txtToggle.MaxLength = 1
+        Me.txtToggle.Name = "txtToggle"
+        Me.txtToggle.Size = New System.Drawing.Size(42, 20)
+        Me.txtToggle.TabIndex = 7
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.ForeColor = System.Drawing.Color.White
+        Me.Label30.Location = New System.Drawing.Point(12, 27)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(210, 24)
+        Me.Label30.TabIndex = 6
+        Me.Label30.Text = "Change the default ""#"", ""*"" and ""¬"" keys" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "to something easier to remember or use." & _
+    ""
         '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(5, 30)
+        Me.Label24.Location = New System.Drawing.Point(40, 82)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(199, 132)
-        Me.Label24.TabIndex = 66
-        Me.Label24.Text = resources.GetString("Label24.Text")
+        Me.Label24.Size = New System.Drawing.Size(96, 12)
+        Me.Label24.TabIndex = 5
+        Me.Label24.Text = "Toggle character: "
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.ForeColor = System.Drawing.Color.White
+        Me.Label29.Location = New System.Drawing.Point(40, 138)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(92, 12)
+        Me.Label29.TabIndex = 5
+        Me.Label29.Text = "Delay character: "
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.ForeColor = System.Drawing.Color.White
+        Me.Label25.Location = New System.Drawing.Point(40, 110)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(94, 12)
+        Me.Label25.TabIndex = 5
+        Me.Label25.Text = "Macro character: "
         '
         'ReactorGroupBox3
         '
@@ -2397,20 +2481,44 @@ Partial Class Form1
         'ReactorGroupBox1
         '
         Me.ReactorGroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.ReactorGroupBox1.Controls.Add(Me.chkEnter)
+        Me.ReactorGroupBox1.Controls.Add(Me.chkT)
         Me.ReactorGroupBox1.Controls.Add(Me.chkDebug)
         Me.ReactorGroupBox1.Controls.Add(Me.chkKeyUp)
-        Me.ReactorGroupBox1.Location = New System.Drawing.Point(235, 23)
+        Me.ReactorGroupBox1.Location = New System.Drawing.Point(256, 23)
         Me.ReactorGroupBox1.Name = "ReactorGroupBox1"
-        Me.ReactorGroupBox1.Size = New System.Drawing.Size(256, 170)
+        Me.ReactorGroupBox1.Size = New System.Drawing.Size(235, 170)
         Me.ReactorGroupBox1.TabIndex = 64
-        Me.ReactorGroupBox1.Text = "Extra Advanced Settings"
+        Me.ReactorGroupBox1.Text = "Advanced Settings"
+        '
+        'chkEnter
+        '
+        Me.chkEnter.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.chkEnter.Checked = False
+        Me.chkEnter.ForeColor = System.Drawing.Color.White
+        Me.chkEnter.Location = New System.Drawing.Point(28, 136)
+        Me.chkEnter.Name = "chkEnter"
+        Me.chkEnter.Size = New System.Drawing.Size(181, 16)
+        Me.chkEnter.TabIndex = 3
+        Me.chkEnter.Text = "Send ""ENTER"" key automatically"
+        '
+        'chkT
+        '
+        Me.chkT.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.chkT.Checked = False
+        Me.chkT.ForeColor = System.Drawing.Color.White
+        Me.chkT.Location = New System.Drawing.Point(28, 105)
+        Me.chkT.Name = "chkT"
+        Me.chkT.Size = New System.Drawing.Size(181, 16)
+        Me.chkT.TabIndex = 2
+        Me.chkT.Text = "Send ""T"" key automatically"
         '
         'chkDebug
         '
         Me.chkDebug.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.chkDebug.Checked = False
         Me.chkDebug.ForeColor = System.Drawing.Color.White
-        Me.chkDebug.Location = New System.Drawing.Point(34, 108)
+        Me.chkDebug.Location = New System.Drawing.Point(28, 71)
         Me.chkDebug.Name = "chkDebug"
         Me.chkDebug.Size = New System.Drawing.Size(181, 16)
         Me.chkDebug.TabIndex = 1
@@ -2421,7 +2529,7 @@ Partial Class Form1
         Me.chkKeyUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.chkKeyUp.Checked = False
         Me.chkKeyUp.ForeColor = System.Drawing.Color.White
-        Me.chkKeyUp.Location = New System.Drawing.Point(34, 53)
+        Me.chkKeyUp.Location = New System.Drawing.Point(28, 39)
         Me.chkKeyUp.Name = "chkKeyUp"
         Me.chkKeyUp.Size = New System.Drawing.Size(181, 16)
         Me.chkKeyUp.TabIndex = 0
@@ -2502,11 +2610,10 @@ Partial Class Form1
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.WebBrowser1.Location = New System.Drawing.Point(3, 31)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(505, 254)
+        Me.WebBrowser1.Size = New System.Drawing.Size(528, 254)
         Me.WebBrowser1.TabIndex = 3
         Me.WebBrowser1.Url = New System.Uri("http://cyanlabs.co.uk/keybinder/changelog.html", System.UriKind.Absolute)
         '
@@ -2850,8 +2957,16 @@ Partial Class Form1
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents btnReset As SACNR_Keybinder_Evolution.ReactorButton
-    Friend WithEvents ReactorGroupBox4 As SACNR_Keybinder_Evolution.ReactorGroupBox
-    Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents ReactorGroupBox3 As SACNR_Keybinder_Evolution.ReactorGroupBox
+    Friend WithEvents ReactorGroupBox4 As SACNR_Keybinder_Evolution.ReactorGroupBox
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents Label25 As System.Windows.Forms.Label
+    Friend WithEvents chkEnter As SACNR_Keybinder_Evolution.ReactorCheckBox
+    Friend WithEvents chkT As SACNR_Keybinder_Evolution.ReactorCheckBox
+    Friend WithEvents txtDelay As System.Windows.Forms.TextBox
+    Friend WithEvents txtMacro As System.Windows.Forms.TextBox
+    Friend WithEvents txtToggle As System.Windows.Forms.TextBox
 
 End Class
