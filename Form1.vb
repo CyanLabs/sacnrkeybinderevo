@@ -64,8 +64,11 @@ Public Class Form1
         Else
             Dim splitstring() As String = Split(substr, "*")
             For Each item In splitstring
+                If item(0) = "¬" Then
+                    Thread.Sleep(item.Substring(1, 4))
+                    item = item.Remove(0, 5)
+                End If
                 SendKeys.SendWait("t" + item + "{Enter}")
-                Thread.Sleep(Convert.ToInt32(txtMacroDelay.Text))
             Next
         End If
     End Sub
@@ -89,7 +92,7 @@ Public Class Form1
                     Exit Function
                 End If
             Next
-            'If 
+            If chkDebug.Checked Then Return "GTA:SA:MP"
         End If
         Return GetCaption()
     End Function
@@ -524,10 +527,6 @@ Public Class Form1
         chkSB1.Checked = inisettings.GetString("Mouse", "SB1ClickActivated", False)
         chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
         chkAutoupdates.Checked = inisettings.GetString("Settings", "AutoUpdate", False)
-        TrackBar1.Value = inisettings.GetInteger("Settings", "MacroDelay", 0) / 1000
-        txtMacroDelay.Text = Convert.ToInt32(inisettings.GetInteger("Settings", "MacroDelay", 0))
-        TrackBar2.Value = inisettings.GetInteger("360", "Interval", 1)
-        Timer2.Interval = TrackBar2.Value * 100
         chkEnableLogs.Checked = inisettings.GetString("Settings", "EnableLogManager", False)
         chkEnable360.Checked = inisettings.GetString("360", "MasterToggle", False)
         chkSkipChangelog.Checked = inisettings.GetString("Settings", "ShowChangelog", True)
@@ -561,18 +560,6 @@ Public Class Form1
     'Autoupdate check change
     Private Sub chkAutoupdates_CheckedChanged(sender As Object) Handles chkAutoupdates.CheckedChanged
         inisettings.WriteString("Settings", "AutoUpdate", sender.checked.ToString)
-    End Sub
-
-    'Save trackbar value to ini and shows customizable entry as textbox
-    Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
-        If sender.value = 9 Then
-            txtMacroDelay.Visible = True
-            MsgBox("Enter your custom value in miliseconds in the textbox below", MsgBoxStyle.Information, "Information")
-        Else
-            txtMacroDelay.Visible = False
-            inisettings.WriteInteger("Settings", "MacroDelay", sender.value * 1000)
-            txtMacroDelay.Text = Convert.ToInt32(sender.value * 1000)
-        End If
     End Sub
 
     'Code to monitor whether samp is still running or not, if it isn't save log
@@ -616,7 +603,7 @@ Public Class Form1
     End Sub
 
     'save trackbar2 value to inifile
-    Private Sub TrackBar2_Scroll(sender As Object, e As EventArgs) Handles TrackBar2.Scroll
+    Private Sub TrackBar2_Scroll(sender As Object, e As EventArgs)
         inisettings.WriteInteger("360", "Interval", sender.value)
     End Sub
 
@@ -631,7 +618,7 @@ Public Class Form1
     End Sub
 
     'Checks if value entered in to macro textbox is numerical and then sets ini to value of textbox
-    Private Sub txtMacroDelay_TextChanged(sender As Object, e As EventArgs) Handles txtMacroDelay.TextChanged
+    Private Sub txtMacroDelay_TextChanged(sender As Object, e As EventArgs)
         If IsNumeric(sender.text) Then
             inisettings.WriteInteger("Settings", "MacroDelay", Convert.ToInt32(sender.text))
         Else

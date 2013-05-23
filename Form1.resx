@@ -9901,6 +9901,19 @@
         eab7L6WhHQ/BLr0qAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="Label24.Text" xml:space="preserve">
+    <value>Advanced settings are here to allow
+additional customization of the
+keybinder and it's features.
+
+If you find a issue with using KeyDown
+then here you can switch to use KeyUp
+instead.
+
+The "Skip check for GTA:SA:MP"
+option could cause unexpected side
+effects.</value>
+  </data>
   <data name="RichTextBox2.Text" xml:space="preserve">
     <value>Keyboard Binds
 1. Enter your desired command in the "Command" TextBox. E.g "/ej" without quotes
@@ -9944,7 +9957,7 @@ Please send your Feedback, Suggestions and Bug Reports via the form below
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>96</value>
+    <value>77</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
