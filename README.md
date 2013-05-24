@@ -35,9 +35,11 @@ Mouse Binds
 2. Enter your desired command in the selected TextBox. E.g "/ej" without quotes
 3. Check the enable checkbox (the one in line with the previous textbox)a
 
-Macro's
-Set "Command" TextBox to multiple commands with a * between each ("/ej*/tz*/ar") this will do each command
-with a delay between each command (delay can be changed in "Settings Tab")
+Macro's 
+Set "Command" TextBox to multiple commands with a * between each ("/ej*/tz*/ar") this will do each command autmatically with no delay
+
+Macro Delay's
+If you want to use a macro but don't want it to send the commands instantly you can use "¬" like this "/ej¬0500/tz" this will delay the second command by 500 miliseconds. Please note its needs to be 4 digits or it will not work.
 
 Toggle's
 Toggle's now work on everything, Just use '#' without quotes to seperate commands (e.g. /fpslimit 30#/fpslimit 90)
@@ -46,7 +48,13 @@ Profiles
 Allow you to have different keybinds based on SAMP Username, This is good for people who share a PC.
 
 AutoUpdate
-This will check automatically on startup for a new version and if found download it without needing user interaction
+This will check automatically on startup for a new version and if found download it.
+
+Advanced Customization
+You can customize all sorts of things including the "#", "*" and "¬" characters from the "Advanced Settings" tab
+
+Command Line
+You can use "-debug" to override the window check and you can use "-startup" to start the application minimized.
 
 Additional Information
 You can change many settings from the "Settings Tab". Check it out for yourself.
