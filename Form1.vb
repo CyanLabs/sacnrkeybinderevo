@@ -56,30 +56,33 @@ Public Class Form1
     Sub macro(ByVal param_obj() As Object)
         Dim substr As String = param_obj(1)
         Dim pressed As String = param_obj(0)
-        If substr.Contains(txtToggleChar.Text) Then
-            If Not CMDNumber.ContainsKey(pressed) Then CMDNumber(pressed) = 1
-        Dim splitstring() As String = Split(substr, txtToggleChar.Text)
-        Dim x As Integer = 0
+        'If substr.Contains(txtToggleChar.Text) Then
+        '    Debug.WriteLine("this is trhingy")
+        '    If Not CMDNumber.ContainsKey(pressed) Then CMDNumber(pressed) = 1
+        '    Dim splitstring() As String = Split(substr, txtToggleChar.Text)
+        '    Dim x As Integer = 0
+        '    For Each item In splitstring
+        '        x = x + 1
+        '        If x >= CMDNumber(pressed) Then
+        '            SendKeys.SendWait(SendT() + item + SendEnter())
+        '            CMDNumber(pressed) = CMDNumber(pressed) + 1
+        '            If splitstring.GetLength(0) = x Then CMDNumber(pressed) = 1
+        '            Exit Sub
+        '        End If
+        '    Next
+        'Else
+        substr = substr.Replace(txtDelayChar.Text, txtMacroChar.Text + txtDelayChar.Text)
+        Dim splitstring() As String = Split(substr, txtMacroChar.Text)
         For Each item In splitstring
-            x = x + 1
-            If x >= CMDNumber(pressed) Then
-                SendKeys.SendWait(SendT() + item + SendEnter())
-                CMDNumber(pressed) = CMDNumber(pressed) + 1
-                If splitstring.GetLength(0) = x Then CMDNumber(pressed) = 1
-                Exit Sub
-            End If
-        Next
-        Else
-            substr = substr.Replace(txtDelayChar.Text, txtMacroChar.Text + txtDelayChar.Text)
-            Dim splitstring() As String = Split(substr, txtMacroChar.Text)
-            For Each item In splitstring
-                If item(0) = txtDelayChar.Text And IsNumeric(item.Substring(1, 4)) Then
+            If item.Length > 4 Then
+                If item(0) = txtDelayChar.Text And IsNumeric(item.Substring(1, 4)) = True Then
                     Thread.Sleep(item.Substring(1, 4))
                     item = item.Remove(0, 5)
                 End If
-                SendKeys.SendWait(SendT() + item + SendEnter())
-            Next
-        End If
+            End If
+            SendKeys.SendWait(SendT() + item + SendEnter())
+        Next
+        'End If
         keybinderdisabled = False
     End Sub
     'Sub to check key matches pressed key
