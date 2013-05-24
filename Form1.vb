@@ -40,45 +40,40 @@ Public Class Form1
         GetWindowText(hWnd, Caption, Caption.Capacity)
         Return Caption.ToString()
     End Function
+
+    'Function to check if enter is requested
     Function SendEnter()
-        If chkEnter.Checked Then
-            Return "{Enter}"
-        Else
-            Return ""
-        End If
+        If chkSendEnter.Checked Then Return "{Enter}"
+        Return ""
     End Function
+
+    'Function to check if T is requested
     Function SendT()
-        If chkT.Checked Then
-            Return "t"
-        Else
-            Return ""
-        End If
+        If chkSendT.Checked Then Return "t"
+        Return ""
     End Function
     'Sub that handles all the splitting and toggling of the commands
     Sub macro(ByVal param_obj() As Object)
         Dim substr As String = param_obj(1)
         Dim pressed As String = param_obj(0)
-        If substr.Contains(txtToggle.Text) Then
-            If Not CMDNumber.ContainsKey(pressed) Then
-                CMDNumber(pressed) = 1
+        If substr.Contains(txtToggleChar.Text) Then
+            If Not CMDNumber.ContainsKey(pressed) Then CMDNumber(pressed) = 1
+        Dim splitstring() As String = Split(substr, txtToggleChar.Text)
+        Dim x As Integer = 0
+        For Each item In splitstring
+            x = x + 1
+            If x >= CMDNumber(pressed) Then
+                SendKeys.SendWait(SendT() + item + SendEnter())
+                CMDNumber(pressed) = CMDNumber(pressed) + 1
+                If splitstring.GetLength(0) = x Then CMDNumber(pressed) = 1
+                Exit Sub
             End If
-            Dim splitstring() As String = Split(substr, txtToggle.Text)
-            Dim x As Integer = 0
-            For Each item In splitstring
-                x = x + 1
-                If x >= CMDNumber(pressed) Then
-                    SendKeys.SendWait(SendT() + item + SendEnter())
-                    CMDNumber(pressed) = CMDNumber(pressed) + 1
-                    If splitstring.GetLength(0) = x Then
-                        CMDNumber(pressed) = 1
-                    End If
-                    Exit Sub
-                End If
-            Next
+        Next
         Else
-            Dim splitstring() As String = Split(substr, txtMacro.Text)
+            substr = substr.Replace(txtDelayChar.Text, txtMacroChar.Text + txtDelayChar.Text)
+            Dim splitstring() As String = Split(substr, txtMacroChar.Text)
             For Each item In splitstring
-                If item(0) = txtDelay.Text Then
+                If item(0) = txtDelayChar.Text And IsNumeric(item.Substring(1, 4)) Then
                     Thread.Sleep(item.Substring(1, 4))
                     item = item.Remove(0, 5)
                 End If
@@ -103,60 +98,28 @@ Public Class Form1
     Function DebugCheck()
         If Environment.GetCommandLineArgs.Length > 1 Then
             For Each x As String In Environment.GetCommandLineArgs
-                If x = "-debug" Then
-                    Return "GTA:SA:MP"
-                    Exit Function
-                End If
+                If x = "-debug" Then Return "GTA:SA:MP"
             Next
-            If chkDebug.Checked Then Return "GTA:SA:MP"
         End If
+        If chkDebug.Checked Then Return "GTA:SA:MP"
         Return GetCaption()
     End Function
     'Sub to savesettings
     Sub savesettings()
         If finishedload = True Then
             For Each ctrl In Me.ReactorTabControl2.TabPages(0).Controls
-                If TypeOf ctrl Is ReactorTextBox Then
-                    Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
-                    inisettings.WriteString("SendKey", optionname, ctrl.Text)
-                End If
-                If TypeOf ctrl Is TextBox Then
-                    Dim optionname As String = ctrl.name.replace("TextBox", "Key")
-                    If ctrl.text = Nothing Then
-                    Else
-                        inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
-                    End If
-                End If
-                If TypeOf ctrl Is ReactorCheckBox Then
-                    Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
-                    inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
-                End If
+                If TypeOf ctrl Is ReactorTextBox Then inisettings.WriteString("SendKey", ctrl.name.replace("ReactorTextBox", "Send"), ctrl.Text)
+                If TypeOf ctrl Is TextBox Then If Not ctrl.text = Nothing Then inisettings.WriteString("HotKey", ctrl.name.replace("TextBox", "Key"), ctrl.text.ToString)
+                If TypeOf ctrl Is ReactorCheckBox Then inisettings.WriteString("Activate", ctrl.name.replace("ReactorCheckBox", "act"), ctrl.checked.ToString)
             Next
             For Each ctrl In Me.ReactorTabControl2.TabPages(1).Controls
-                If TypeOf ctrl Is ReactorTextBox Then
-                    Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
-                    inisettings.WriteString("SendKey", optionname, ctrl.Text)
-                End If
-                If TypeOf ctrl Is TextBox Then
-                    Dim optionname As String = ctrl.name.replace("TextBox", "Key")
-                    If ctrl.text = Nothing Then
-                    Else
-                        inisettings.WriteString("HotKey", optionname, ctrl.text.ToString)
-                    End If
-                End If
-                If TypeOf ctrl Is ReactorCheckBox Then
-                    Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
-                    inisettings.WriteString("Activate", activation, ctrl.checked.ToString)
-                End If
+                If TypeOf ctrl Is ReactorTextBox Then inisettings.WriteString("SendKey", ctrl.name.replace("ReactorTextBox", "Send"), ctrl.Text)
+                If TypeOf ctrl Is TextBox Then If ctrl.text = Nothing Then inisettings.WriteString("HotKey", ctrl.name.replace("TextBox", "Key"), ctrl.text.ToString)
+                If TypeOf ctrl Is ReactorCheckBox Then inisettings.WriteString("Activate", ctrl.name.replace("ReactorCheckBox", "act"), ctrl.checked.ToString)
             Next
             For Each ctrl In Me.ReactorTabControl1.TabPages(2).Controls
-                If TypeOf ctrl Is ReactorTextBox Then
-                    Dim optionname As String = ctrl.name.replace("txt", "360")
-                    inisettings.WriteString("360", optionname, ctrl.text)
-                ElseIf TypeOf ctrl Is ReactorCheckBox Then
-                    Dim activation As String = ctrl.name.replace("chk", "360act")
-                    inisettings.WriteString("360", activation, ctrl.checked.ToString)
-                End If
+                If TypeOf ctrl Is ReactorTextBox Then inisettings.WriteString("360", ctrl.name.replace("txt", "360"), ctrl.text)
+                If TypeOf ctrl Is ReactorCheckBox Then inisettings.WriteString("360", ctrl.name.replace("chk", "360act"), ctrl.checked.ToString)
             Next
             inisettings.WriteString("Mouse", "LeftClick", txtlmb.Text)
             inisettings.WriteString("Mouse", "RightClick", txtRMB.Text)
@@ -178,16 +141,25 @@ Public Class Form1
     'Function to check whethera process is running or not
     Public Function IsProcessRunning(name As String) As Boolean
         For Each clsProcess As Process In Process.GetProcesses()
-            If clsProcess.ProcessName.StartsWith(name) Then
-                Return True
-            End If
+            If clsProcess.ProcessName.StartsWith(name) Then Return True
         Next
         Return False
     End Function
 #End Region
 #Region "Binds (Mouse, Scroll, Keyboard and X360)"
-    'Sub that is called when a mouse button is pressed then released
+
+    'Sub that is called when button is released
     Private Sub mHook_MouseUp(ByVal sender As Object, ByVal e As WindowsHookLib.MouseEventArgs) Handles mHook.MouseUp
+        If chkUseMouseUp.Checked = True Then DoMouseBinds(sender, e)
+    End Sub
+
+    'Sub that is called when button is pressed
+    Private Sub mHook_MouseDown(ByVal sender As Object, ByVal e As WindowsHookLib.MouseEventArgs) Handles mHook.MouseDown
+        If chkUseMouseUp.Checked = False Then DoMouseBinds(sender, e)
+    End Sub
+
+    'Sub that is called when a mouse button is pressed then released
+    Sub DoMouseBinds(ByVal sender As Object, ByVal e As WindowsHookLib.MouseEventArgs)
         param_obj(0) = e.Button
         trd2 = New Thread(AddressOf macro)
         trd2.IsBackground = True
@@ -230,30 +202,26 @@ Public Class Form1
         If DebugCheck() = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
                 If e.Delta > 0 Then
-                    If chkWheelUp.Checked = True Then
-                        param_obj(1) = txtWheelUp.Text
-                        trd2.Start(param_obj)
-                    End If
+                    If chkWheelUp.Checked = True Then param_obj(1) = txtWheelUp.Text
                 Else
-                    If chkWheelDown.Checked = True Then
-                        param_obj(1) = txtWheelDown.Text
-                        trd2.Start(param_obj)
-                    End If
+                    If chkWheelDown.Checked = True Then param_obj(1) = txtWheelDown.Text
                 End If
+                trd2.Start(param_obj)
             End If
         End If
     End Sub
-    'Sub that is called when a keyboard key is pressed and then released
+
+    'Sub that is called when key is released
     Private Sub kHook_KeyUp(ByVal sender As Object, ByVal e As WindowsHookLib.KeyboardEventArgs) Handles kHook.KeyUp
-        If chkKeyUp.Checked = True Then
-            DoKeybinds(sender, e)
-        End If
+        If chkUseKeyUp.Checked = True Then DoKeybinds(sender, e)
     End Sub
+
+    'Sub that is called when key is pressed
     Private Sub kHook_KeyDown(ByVal sender As Object, ByVal e As WindowsHookLib.KeyboardEventArgs) Handles kHook.KeyDown
-        If chkKeyUp.Checked = False Then
-            DoKeybinds(sender, e)
-        End If
+        If chkUseKeyUp.Checked = False Then DoKeybinds(sender, e)
     End Sub
+
+    'Sub that is called when a keyboard key is pressed or released
     Private Sub DoKeybinds(ByVal semder As Object, ByVal e As WindowsHookLib.KeyboardEventArgs)
         If DebugCheck() = "GTA:SA:MP" Then
             If keybinderdisabled = False Then
@@ -280,12 +248,8 @@ Public Class Form1
                 KeyCheck(ReactorCheckBox10, param_obj(0), TextBox20.Text.ToUpper, ReactorTextBox20, e)
             End If
         End If
-        If e.KeyData.ToString = "F6" Or e.KeyData.ToString = "T" Or e.KeyData.ToString = "`" Then
-            keybinderdisabled = True
-        End If
-        If e.KeyData.ToString = "Return" Or e.KeyData.ToString = "Escape" Then
-            keybinderdisabled = False
-        End If
+        If e.KeyData.ToString = "F6" Or e.KeyData.ToString = "T" Or e.KeyData.ToString = "`" Then keybinderdisabled = True
+        If e.KeyData.ToString = "Return" Or e.KeyData.ToString = "Escape" Then keybinderdisabled = False
     End Sub
     'Sub timer to control x360 binds (can't use a global hook like keyboard and mouse)
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
@@ -417,19 +381,16 @@ Public Class Form1
                     Exit Sub
                 Else
                     My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", dialog.FileName)
-                    If MsgBox("gta_sa.exe was successfully detected." & vbNewLine & vbNewLine & "Do you want to launch ""San Andreas Cops n Robbers"" now?", vbInformation + MsgBoxStyle.OkCancel, "Success") <> MsgBoxResult.Ok Then Exit Sub
+                    If MsgBox("gta_sa.exe was successfully detected." & vbNewLine & vbNewLine & "Do you want to launch ""San Andreas Cops n Robbers"" now?", vbInformation + MsgBoxStyle.YesNo, "Success") <> MsgBoxResult.Yes Then Exit Sub
                 End If
             End Using
         End If
-        gtalocation = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", Nothing).Replace("gta_sa.exe", "samp.exe")
-        Process.Start(gtalocation, "server.sacnr.com:7777")
+        Process.Start(My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "gta_sa_exe", Nothing).Replace("gta_sa.exe", "samp.exe"), "server.sacnr.com:7777")
     End Sub
 
     'Form1 Closing Code
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If skipsavesettings = False Then
-            savesettings()
-        End If
+        If skipsavesettings = False Then savesettings()
         kHook.Dispose()
         mHook.Dispose()
     End Sub
@@ -457,17 +418,12 @@ Public Class Form1
                 End If
             Next
         End If
-        IO.Directory.CreateDirectory(loglocation & "\Logs")
-
+        If Not IO.Directory.Exists(loglocation & "\Logs") Then IO.Directory.CreateDirectory(loglocation & "\Logs")
         Try
             kHook.InstallHook()
-        Catch ex As Exception
-            MessageBox.Show("Failed to install the keyboard hook!.")
-        End Try
-        Try
             mHook.InstallHook()
         Catch ex As Exception
-            MessageBox.Show("Failed to install the mouse hook!")
+            MessageBox.Show("Failed to install the hooks!")
         End Try
         txtSAMPUsername.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\SAMP", "PlayerName", "Keybinds")
         If Not IO.Directory.Exists(Application.StartupPath & "\keybinds") Then IO.Directory.CreateDirectory(Application.StartupPath & "\keybinds")
@@ -489,45 +445,21 @@ Public Class Form1
                 UpdateChecker.IsBackground = True
                 UpdateChecker.Start()
             End If
-
         End If
-
-        lblVersion.Text = CurrentVersion.ToString
         For Each ctrl In Me.ReactorTabControl2.TabPages(0).Controls
-            If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
-                ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
-            ElseIf TypeOf ctrl Is TextBox Then
-                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
-                ctrl.text = inisettings.GetString("HotKey", optionname, "")
-            ElseIf TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
-                ctrl.checked = inisettings.GetString("Activate", activation, False)
-            End If
+            If TypeOf ctrl Is ReactorTextBox Then ctrl.text = inisettings.GetString("SendKey", ctrl.name.replace("ReactorTextBox", "Send"), ctrl.text)
+            If TypeOf ctrl Is TextBox Then ctrl.text = inisettings.GetString("HotKey", ctrl.name.replace("TextBox", "Key"), "")
+            If TypeOf ctrl Is ReactorCheckBox Then ctrl.checked = inisettings.GetString("Activate", ctrl.name.replace("ReactorCheckBox", "act"), False)
         Next
         For Each ctrl In Me.ReactorTabControl2.TabPages(1).Controls
-            If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("ReactorTextBox", "Send")
-                ctrl.text = inisettings.GetString("SendKey", optionname, ctrl.text)
-            ElseIf TypeOf ctrl Is TextBox Then
-                Dim optionname As String = ctrl.name.replace("TextBox", "Key")
-                ctrl.text = inisettings.GetString("HotKey", optionname, "")
-            ElseIf TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("ReactorCheckBox", "act")
-                ctrl.checked = inisettings.GetString("Activate", activation, False)
-            End If
+            If TypeOf ctrl Is ReactorTextBox Then ctrl.text = inisettings.GetString("SendKey", ctrl.name.replace("ReactorTextBox", "Send"), ctrl.text)
+            If TypeOf ctrl Is TextBox Then ctrl.text = inisettings.GetString("HotKey", ctrl.name.replace("TextBox", "Key"), "")
+            If TypeOf ctrl Is ReactorCheckBox Then ctrl.checked = inisettings.GetString("Activate", ctrl.name.replace("ReactorCheckBox", "act"), False)
         Next
-
         For Each ctrl In Me.ReactorTabControl1.TabPages(2).Controls
-            If TypeOf ctrl Is ReactorTextBox Then
-                Dim optionname As String = ctrl.name.replace("txt", "360")
-                ctrl.text = inisettings.GetString("360", optionname, ctrl.text)
-            ElseIf TypeOf ctrl Is ReactorCheckBox Then
-                Dim activation As String = ctrl.name.replace("chk", "360act")
-                ctrl.checked = inisettings.GetString("360", activation, False)
-            End If
+            If TypeOf ctrl Is ReactorTextBox Then ctrl.text = inisettings.GetString("360", ctrl.name.replace("txt", "360"), ctrl.text)
+            If TypeOf ctrl Is ReactorCheckBox Then ctrl.checked = inisettings.GetString("360", ctrl.name.replace("chk", "360act"), False)
         Next
-
         txtlmb.Text = inisettings.GetString("Mouse", "LeftClick", Nothing)
         txtRMB.Text = inisettings.GetString("Mouse", "RightClick", Nothing)
         txtMMB.Text = inisettings.GetString("Mouse", "MiddleClick", Nothing)
@@ -546,33 +478,22 @@ Public Class Form1
         chkEnableLogs.Checked = inisettings.GetString("Settings", "EnableLogManager", False)
         chkEnable360.Checked = inisettings.GetString("360", "MasterToggle", False)
         chkSkipChangelog.Checked = inisettings.GetString("Settings", "ShowChangelog", True)
-        chkKeyUp.Checked = inisettings.GetString("Advanced Settings", "UseKeyUp", False)
-        txtMacro.Text = inisettings.GetString("Advanced Settings", "MacroChar", "*")
-        txtToggle.Text = inisettings.GetString("Advanced Settings", "ToggleChar", "#")
-        txtDelay.Text = inisettings.GetString("Advanced Settings", "DelayChar", "¬")
-        chkT.Checked = inisettings.GetString("Advanced Settings", "SendT", True)
-        chkEnter.Checked = inisettings.GetString("Advanced Settings", "SendEnter", True)
-        If chkEnable360.Checked = True Then
-            Timer2.Start()
-        Else
-            Timer2.Stop()
-        End If
-        If chkEnableLogs.Checked = True Then
-            Timer1.Start()
-        Else
-            Timer1.Stop()
-        End If
-        If My.Computer.Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", True).GetValue(Application.ProductName) Is Nothing Then
-            chkStartup.Checked = False
-        Else
-            chkStartup.Checked = True
-        End If
+        chkUseMouseUp.Checked = inisettings.GetString("Advanced Settings", "UseKeyUp", False)
+        chkUseKeyUp.Checked = inisettings.GetString("Advanced Settings", "UseMouseUp", True)
+        txtMacroChar.Text = inisettings.GetString("Advanced Settings", "MacroChar", "*")
+        txtToggleChar.Text = inisettings.GetString("Advanced Settings", "ToggleChar", "#")
+        txtDelayChar.Text = inisettings.GetString("Advanced Settings", "DelayChar", "¬")
+        chkSendT.Checked = inisettings.GetString("Advanced Settings", "SendT", True)
+        chkSendEnter.Checked = inisettings.GetString("Advanced Settings", "SendEnter", True)
+        lblVersion.Text = CurrentVersion.ToString
+        If chkEnable360.Checked = True Then Timer2.Start()
+        If chkEnableLogs.Checked = True Then Timer1.Start()
+        If My.Computer.Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", True).GetValue(Application.ProductName) Is Nothing Then chkStartup.Checked = False
         finishedload = True
     End Sub
 
     'Code to filter key presses and make sure it gets the raw value
-    Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox9.KeyDown, TextBox8.KeyDown, TextBox7.KeyDown, TextBox6.KeyDown, TextBox5.KeyDown, TextBox4.KeyDown, TextBox3.KeyDown, TextBox2.KeyDown, TextBox10.KeyDown, TextBox1.KeyDown, TextBox20.KeyDown, TextBox19.KeyDown, TextBox18.KeyDown, TextBox17.KeyDown, TextBox16.KeyDown, TextBox15.KeyDown, TextBox14.KeyDown, TextBox13.KeyDown, TextBox12.KeyDown, TextBox11.KeyDown
-        sender.text = ""
+    Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox9.KeyDown, TextBox8.KeyDown, TextBox7.KeyDown, TextBox6.KeyDown, TextBox5.KeyDown, TextBox4.KeyDown, TextBox3.KeyDown, TextBox20.KeyDown, TextBox2.KeyDown, TextBox19.KeyDown, TextBox18.KeyDown, TextBox17.KeyDown, TextBox16.KeyDown, TextBox15.KeyDown, TextBox14.KeyDown, TextBox13.KeyDown, TextBox12.KeyDown, TextBox11.KeyDown, TextBox10.KeyDown, TextBox1.KeyDown
         sender.tag = e.KeyCode
         sender.text = e.KeyCode.ToString.ToUpper
         e.SuppressKeyPress = True
@@ -585,12 +506,8 @@ Public Class Form1
 
     'Code to monitor whether samp is still running or not, if it isn't save log
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If IsProcessRunning("gta_sa") = False AndAlso running = 2 Then
-            Me.running = 0
-        End If
-        If (IsProcessRunning("gta_sa") = True) Then
-            Me.running = 2
-        End If
+        If IsProcessRunning("gta_sa") = False AndAlso running = 2 Then Me.running = 0
+        If (IsProcessRunning("gta_sa") = True) Then Me.running = 2
         If Me.running = 0 Then
             Dim str As String = (DateTime.Now.ToString("dd-MM-yy") & "_" & DateTime.Now.ToString("HH-mm"))
             If My.Computer.FileSystem.FileExists(loglocation & "\chatlog.txt") Then
@@ -600,11 +517,10 @@ Public Class Form1
                 Me.running = 1
             End If
         End If
-
     End Sub
 
     'Logmanager status
-    Private Sub chkEnableLogs_CheckedChanged(sender As Object) Handles chkEnableLogs.CheckedChanged, chkSkipChangelog.CheckedChanged
+    Private Sub chkEnableLogs_CheckedChanged(sender As Object) Handles chkEnableLogs.CheckedChanged
         inisettings.WriteString("Settings", "EnableLogManager", sender.checked.ToString)
         If sender.Checked = True Then
             Timer1.Start()
@@ -620,7 +536,6 @@ Public Class Form1
             My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\SAMP", "PlayerName", txtSAMPUsername.Text)
             Application.Restart()
         End If
-
     End Sub
 
     'save trackbar2 value to inifile
@@ -653,33 +568,28 @@ Public Class Form1
         Dim result = MsgBox("This will send the feedback below to CyanLabs (Fma965)." & vbNewLine & vbNewLine & """" & emailcontents & """" & vbNewLine & vbNewLine & "Are you sure?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
         If result = vbYes Then
             result = MsgBox("Do you want to include your SA-MP username with the email?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
-
-            If result = vbYes Then
-                emailcontents &= vbNewLine & vbNewLine & "Feedback/Suggestion was posted by """ & txtSAMPUsername.Text & """"
-            End If
-            Try
-                Dim SmtpServer As New SmtpClient()
-                Dim mail As New MailMessage()
-                SmtpServer.Port = 2525
-                SmtpServer.Host = "smtpcorp.com"
-                mail = New MailMessage()
-                mail.From = New MailAddress("sacnrkeybinder2013@cyanlabs.co.uk")
-                mail.To.Add("fma96580@gmail.com")
-                mail.Subject = "SACNR Keybinder Evolution - Feedback and Suggestions"
-                mail.Body = "New feedback or suggestion for 'SACNR Keybinder Evolution' has been recieved!" & vbNewLine & vbNewLine & emailcontents
-                SmtpServer.Send(mail)
-                MsgBox("Your feedback has been sent successfully, Thank you for helping make SACNR Keybinder Evolution better!")
-            Catch ex As Exception
-                MsgBox("The following error occured:" & vbNewLine & vbNewLine & ex.ToString, MsgBoxStyle.Critical, "Error")
-            End Try
+            If result = vbYes Then emailcontents &= vbNewLine & vbNewLine & "Feedback/Suggestion was posted by """ & txtSAMPUsername.Text & """"
+        Try
+            Dim SmtpServer As New SmtpClient()
+            Dim mail As New MailMessage()
+            SmtpServer.Port = 2525
+            SmtpServer.Host = "smtpcorp.com"
+            mail = New MailMessage()
+            mail.From = New MailAddress("sacnrkeybinder2013@cyanlabs.co.uk")
+            mail.To.Add("fma96580@gmail.com")
+            mail.Subject = "SACNR Keybinder Evolution - Feedback and Suggestions"
+            mail.Body = "New feedback or suggestion for 'SACNR Keybinder Evolution' has been recieved!" & vbNewLine & vbNewLine & emailcontents
+            SmtpServer.Send(mail)
+            MsgBox("Your feedback has been sent successfully, Thank you for helping make SACNR Keybinder Evolution better!")
+        Catch ex As Exception
+            MsgBox("The following error occured:" & vbNewLine & vbNewLine & ex.ToString, MsgBoxStyle.Critical, "Error")
+        End Try
         End If
     End Sub
 
     'Clears textbox contents when clicked if value is default
     Private Sub txtFeedback_Enter(sender As Object, e As EventArgs) Handles txtFeedback.Enter
-        If sender.text = "Leave feedback or suggest a new feature or change here." Then
-            sender.text = ""
-        End If
+        If sender.text = "Leave feedback or suggest a new feature or change here." Then sender.text = ""
     End Sub
 
     'Add/Remove registry entry to start at windows startup
@@ -700,32 +610,16 @@ Public Class Form1
 
     'Code that runs when notification icon is right clicked
     Private Sub NotifyIcon1_MouseClick(sender As Object, e As Windows.Forms.MouseEventArgs) Handles NotifyIcon1.MouseClick
-        If e.Button = Windows.Forms.MouseButtons.Right Then
-            Application.Exit()
-        End If
+        If e.Button = Windows.Forms.MouseButtons.Right Then Application.Exit()
     End Sub
 
-    Private Sub chkKeyUp_CheckedChanged(sender As Object) Handles chkKeyUp.CheckedChanged
-        inisettings.WriteString("Advanced Settings", "UseKeyUp", sender.checked.ToString)
+    'Saves all advanced checkbox settings
+    Private Sub chkAdvancedSettings_CheckedChanged(sender As Object) Handles chkUseMouseUp.CheckedChanged, chkUseKeyUp.CheckedChanged, chkSendT.CheckedChanged, chkSendEnter.CheckedChanged
+        inisettings.WriteString("Advanced Settings", sender.name.replace("chk", ""), sender.checked.ToString)
     End Sub
 
-    Private Sub txtToggle_Leave(sender As Object, e As EventArgs) Handles txtToggle.Leave
-        inisettings.WriteString("Advanced Settings", "ToggleChar", sender.text)
-    End Sub
-
-    Private Sub txtMacro_Leave(sender As Object, e As EventArgs) Handles txtMacro.Leave
-        inisettings.WriteString("Advanced Settings", "MacroChar", sender.text)
-    End Sub
-
-    Private Sub txtDelay_Leave(sender As Object, e As EventArgs) Handles txtDelay.Leave
-        inisettings.WriteString("Advanced Settings", "DelayChar", sender.text)
-    End Sub
-
-    Private Sub chkT_CheckedChanged(sender As Object) Handles chkT.CheckedChanged
-        inisettings.WriteString("Advanced Settings", "SendT", sender.checked.ToString)
-    End Sub
-
-    Private Sub chkEnter_CheckedChanged(sender As Object) Handles chkEnter.CheckedChanged
-        inisettings.WriteString("Advanced Settings", "SendEnter", sender.checked.ToString)
+    'Saves all advanced textbox settings
+    Private Sub txtChars_Leave(sender As Object, e As EventArgs) Handles txtToggleChar.Leave, txtMacroChar.Leave, txtDelayChar.Leave
+        inisettings.WriteString("Advanced Settings", sender.name.replace("txt", ""), sender.text)
     End Sub
 End Class

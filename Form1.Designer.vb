@@ -189,9 +189,9 @@ Partial Class Form1
         Me.chkEnableLogs = New SACNR_Keybinder_Evolution.ReactorCheckBox()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.ReactorGroupBox4 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
-        Me.txtDelay = New System.Windows.Forms.TextBox()
-        Me.txtMacro = New System.Windows.Forms.TextBox()
-        Me.txtToggle = New System.Windows.Forms.TextBox()
+        Me.txtDelayChar = New System.Windows.Forms.TextBox()
+        Me.txtMacroChar = New System.Windows.Forms.TextBox()
+        Me.txtToggleChar = New System.Windows.Forms.TextBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -199,10 +199,11 @@ Partial Class Form1
         Me.ReactorGroupBox3 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
         Me.btnReset = New SACNR_Keybinder_Evolution.ReactorButton()
         Me.ReactorGroupBox1 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
-        Me.chkEnter = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkT = New SACNR_Keybinder_Evolution.ReactorCheckBox()
+        Me.chkUseKeyUp = New SACNR_Keybinder_Evolution.ReactorCheckBox()
+        Me.chkSendT = New SACNR_Keybinder_Evolution.ReactorCheckBox()
         Me.chkDebug = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkKeyUp = New SACNR_Keybinder_Evolution.ReactorCheckBox()
+        Me.chkUseMouseUp = New SACNR_Keybinder_Evolution.ReactorCheckBox()
+        Me.chkSendEnter = New SACNR_Keybinder_Evolution.ReactorCheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.ReactorTabControl3 = New SACNR_Keybinder_Evolution.ReactorTabControl()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
@@ -2364,9 +2365,9 @@ Partial Class Form1
         'ReactorGroupBox4
         '
         Me.ReactorGroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox4.Controls.Add(Me.txtDelay)
-        Me.ReactorGroupBox4.Controls.Add(Me.txtMacro)
-        Me.ReactorGroupBox4.Controls.Add(Me.txtToggle)
+        Me.ReactorGroupBox4.Controls.Add(Me.txtDelayChar)
+        Me.ReactorGroupBox4.Controls.Add(Me.txtMacroChar)
+        Me.ReactorGroupBox4.Controls.Add(Me.txtToggleChar)
         Me.ReactorGroupBox4.Controls.Add(Me.Label30)
         Me.ReactorGroupBox4.Controls.Add(Me.Label24)
         Me.ReactorGroupBox4.Controls.Add(Me.Label29)
@@ -2377,44 +2378,44 @@ Partial Class Form1
         Me.ReactorGroupBox4.TabIndex = 66
         Me.ReactorGroupBox4.Text = "Characters"
         '
-        'txtDelay
+        'txtDelayChar
         '
-        Me.txtDelay.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtDelay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDelay.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txtDelay.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDelay.ForeColor = System.Drawing.Color.White
-        Me.txtDelay.Location = New System.Drawing.Point(140, 135)
-        Me.txtDelay.MaxLength = 1
-        Me.txtDelay.Name = "txtDelay"
-        Me.txtDelay.Size = New System.Drawing.Size(42, 20)
-        Me.txtDelay.TabIndex = 7
+        Me.txtDelayChar.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.txtDelayChar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDelayChar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txtDelayChar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDelayChar.ForeColor = System.Drawing.Color.White
+        Me.txtDelayChar.Location = New System.Drawing.Point(140, 135)
+        Me.txtDelayChar.MaxLength = 1
+        Me.txtDelayChar.Name = "txtDelayChar"
+        Me.txtDelayChar.Size = New System.Drawing.Size(42, 20)
+        Me.txtDelayChar.TabIndex = 7
         '
-        'txtMacro
+        'txtMacroChar
         '
-        Me.txtMacro.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtMacro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMacro.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txtMacro.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMacro.ForeColor = System.Drawing.Color.White
-        Me.txtMacro.Location = New System.Drawing.Point(140, 107)
-        Me.txtMacro.MaxLength = 1
-        Me.txtMacro.Name = "txtMacro"
-        Me.txtMacro.Size = New System.Drawing.Size(42, 20)
-        Me.txtMacro.TabIndex = 7
+        Me.txtMacroChar.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.txtMacroChar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMacroChar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txtMacroChar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMacroChar.ForeColor = System.Drawing.Color.White
+        Me.txtMacroChar.Location = New System.Drawing.Point(140, 107)
+        Me.txtMacroChar.MaxLength = 1
+        Me.txtMacroChar.Name = "txtMacroChar"
+        Me.txtMacroChar.Size = New System.Drawing.Size(42, 20)
+        Me.txtMacroChar.TabIndex = 7
         '
-        'txtToggle
+        'txtToggleChar
         '
-        Me.txtToggle.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtToggle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtToggle.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txtToggle.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtToggle.ForeColor = System.Drawing.Color.White
-        Me.txtToggle.Location = New System.Drawing.Point(140, 79)
-        Me.txtToggle.MaxLength = 1
-        Me.txtToggle.Name = "txtToggle"
-        Me.txtToggle.Size = New System.Drawing.Size(42, 20)
-        Me.txtToggle.TabIndex = 7
+        Me.txtToggleChar.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.txtToggleChar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtToggleChar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txtToggleChar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtToggleChar.ForeColor = System.Drawing.Color.White
+        Me.txtToggleChar.Location = New System.Drawing.Point(140, 79)
+        Me.txtToggleChar.MaxLength = 1
+        Me.txtToggleChar.Name = "txtToggleChar"
+        Me.txtToggleChar.Size = New System.Drawing.Size(42, 20)
+        Me.txtToggleChar.TabIndex = 7
         '
         'Label30
         '
@@ -2481,59 +2482,71 @@ Partial Class Form1
         'ReactorGroupBox1
         '
         Me.ReactorGroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox1.Controls.Add(Me.chkEnter)
-        Me.ReactorGroupBox1.Controls.Add(Me.chkT)
+        Me.ReactorGroupBox1.Controls.Add(Me.chkUseKeyUp)
+        Me.ReactorGroupBox1.Controls.Add(Me.chkSendT)
         Me.ReactorGroupBox1.Controls.Add(Me.chkDebug)
-        Me.ReactorGroupBox1.Controls.Add(Me.chkKeyUp)
+        Me.ReactorGroupBox1.Controls.Add(Me.chkUseMouseUp)
+        Me.ReactorGroupBox1.Controls.Add(Me.chkSendEnter)
         Me.ReactorGroupBox1.Location = New System.Drawing.Point(256, 23)
         Me.ReactorGroupBox1.Name = "ReactorGroupBox1"
         Me.ReactorGroupBox1.Size = New System.Drawing.Size(235, 170)
         Me.ReactorGroupBox1.TabIndex = 64
         Me.ReactorGroupBox1.Text = "Advanced Settings"
         '
-        'chkEnter
+        'chkUseKeyUp
         '
-        Me.chkEnter.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.chkEnter.Checked = False
-        Me.chkEnter.ForeColor = System.Drawing.Color.White
-        Me.chkEnter.Location = New System.Drawing.Point(28, 136)
-        Me.chkEnter.Name = "chkEnter"
-        Me.chkEnter.Size = New System.Drawing.Size(181, 16)
-        Me.chkEnter.TabIndex = 3
-        Me.chkEnter.Text = "Send ""ENTER"" key automatically"
+        Me.chkUseKeyUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.chkUseKeyUp.Checked = False
+        Me.chkUseKeyUp.ForeColor = System.Drawing.Color.White
+        Me.chkUseKeyUp.Location = New System.Drawing.Point(28, 33)
+        Me.chkUseKeyUp.Name = "chkUseKeyUp"
+        Me.chkUseKeyUp.Size = New System.Drawing.Size(181, 16)
+        Me.chkUseKeyUp.TabIndex = 4
+        Me.chkUseKeyUp.Text = "Use KeyUp instead of KeyDown"
         '
-        'chkT
+        'chkSendT
         '
-        Me.chkT.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.chkT.Checked = False
-        Me.chkT.ForeColor = System.Drawing.Color.White
-        Me.chkT.Location = New System.Drawing.Point(28, 105)
-        Me.chkT.Name = "chkT"
-        Me.chkT.Size = New System.Drawing.Size(181, 16)
-        Me.chkT.TabIndex = 2
-        Me.chkT.Text = "Send ""T"" key automatically"
+        Me.chkSendT.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.chkSendT.Checked = False
+        Me.chkSendT.ForeColor = System.Drawing.Color.White
+        Me.chkSendT.Location = New System.Drawing.Point(28, 115)
+        Me.chkSendT.Name = "chkSendT"
+        Me.chkSendT.Size = New System.Drawing.Size(181, 16)
+        Me.chkSendT.TabIndex = 2
+        Me.chkSendT.Text = "Send ""T"" key automatically"
         '
         'chkDebug
         '
         Me.chkDebug.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.chkDebug.Checked = False
         Me.chkDebug.ForeColor = System.Drawing.Color.White
-        Me.chkDebug.Location = New System.Drawing.Point(28, 71)
+        Me.chkDebug.Location = New System.Drawing.Point(28, 143)
         Me.chkDebug.Name = "chkDebug"
         Me.chkDebug.Size = New System.Drawing.Size(181, 16)
         Me.chkDebug.TabIndex = 1
         Me.chkDebug.Text = "Skip check for GTA:SA:MP"
         '
-        'chkKeyUp
+        'chkUseMouseUp
         '
-        Me.chkKeyUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.chkKeyUp.Checked = False
-        Me.chkKeyUp.ForeColor = System.Drawing.Color.White
-        Me.chkKeyUp.Location = New System.Drawing.Point(28, 39)
-        Me.chkKeyUp.Name = "chkKeyUp"
-        Me.chkKeyUp.Size = New System.Drawing.Size(181, 16)
-        Me.chkKeyUp.TabIndex = 0
-        Me.chkKeyUp.Text = "Use KeyUp instead of KeyDown"
+        Me.chkUseMouseUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.chkUseMouseUp.Checked = False
+        Me.chkUseMouseUp.ForeColor = System.Drawing.Color.White
+        Me.chkUseMouseUp.Location = New System.Drawing.Point(28, 60)
+        Me.chkUseMouseUp.Name = "chkUseMouseUp"
+        Me.chkUseMouseUp.Size = New System.Drawing.Size(204, 16)
+        Me.chkUseMouseUp.TabIndex = 0
+        Me.chkUseMouseUp.Text = "Use MouseUp instead of MouseDown"
+        '
+        'chkSendEnter
+        '
+        Me.chkSendEnter.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.chkSendEnter.Checked = False
+        Me.chkSendEnter.ForeColor = System.Drawing.Color.White
+        Me.chkSendEnter.Location = New System.Drawing.Point(28, 88)
+        Me.chkSendEnter.Name = "chkSendEnter"
+        Me.chkSendEnter.Size = New System.Drawing.Size(181, 16)
+        Me.chkSendEnter.TabIndex = 3
+        Me.chkSendEnter.Text = "Send ""ENTER"" key automatically"
         '
         'TabPage2
         '
@@ -2948,7 +2961,7 @@ Partial Class Form1
     Friend WithEvents txtSAMPUsername As System.Windows.Forms.ComboBox
     Friend WithEvents chkStartup As SACNR_Keybinder_Evolution.ReactorCheckBox
     Friend WithEvents ReactorGroupBox1 As SACNR_Keybinder_Evolution.ReactorGroupBox
-    Friend WithEvents chkKeyUp As SACNR_Keybinder_Evolution.ReactorCheckBox
+    Friend WithEvents chkUseMouseUp As SACNR_Keybinder_Evolution.ReactorCheckBox
     Friend WithEvents chkDebug As SACNR_Keybinder_Evolution.ReactorCheckBox
     Friend WithEvents ReactorTabControl4 As SACNR_Keybinder_Evolution.ReactorTabControl
     Friend WithEvents TabPage12 As System.Windows.Forms.TabPage
@@ -2963,10 +2976,11 @@ Partial Class Form1
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents chkEnter As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkT As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents txtDelay As System.Windows.Forms.TextBox
-    Friend WithEvents txtMacro As System.Windows.Forms.TextBox
-    Friend WithEvents txtToggle As System.Windows.Forms.TextBox
+    Friend WithEvents chkSendEnter As SACNR_Keybinder_Evolution.ReactorCheckBox
+    Friend WithEvents chkSendT As SACNR_Keybinder_Evolution.ReactorCheckBox
+    Friend WithEvents txtDelayChar As System.Windows.Forms.TextBox
+    Friend WithEvents txtMacroChar As System.Windows.Forms.TextBox
+    Friend WithEvents txtToggleChar As System.Windows.Forms.TextBox
+    Friend WithEvents chkUseKeyUp As SACNR_Keybinder_Evolution.ReactorCheckBox
 
 End Class
