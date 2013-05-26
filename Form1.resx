@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="Timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>308, 17</value>
+  </metadata>
+  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>397, 17</value>
+  </metadata>
   <metadata name="NotifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>486, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="NotifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -6011,12 +6017,6 @@
         AAD8HwAA/l8AAP7/AAD+/wAA
 </value>
   </data>
-  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>130, 17</value>
-  </metadata>
-  <metadata name="Timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>219, 17</value>
-  </metadata>
   <data name="imgLogo2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+gAAACeCAYAAAChMCClAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -9937,20 +9937,19 @@ Additional Information
 You can change many settings from the "Settings Tab". Check it out for yourself.</value>
   </data>
   <data name="Label11.Text" xml:space="preserve">
-    <value>SACnR Keybinder Evolution was created for SACnR by Fma965 with help from DHeppell (Killer1193).
+    <value>SACNR Keybinder Evolution is licensed under GNU GPL V3 and created for SACnR by Fma965 with 
+help from DHeppell (Killer1193).
 
 I would like to thank every one who has been supportive especially slizer.
 SACnR Keybinder Evolution could never be what it is today without you guys supporting me.
 
-Visit http://cyanlabs.co.uk/keybinder/todo.html to see what we are working on
-Source can be found at http://github.com/cyanlabs/sacnrkeybindevo
+Thanks to "Hugo2023" on SACNR forums for showing me this theme.
 
-Please send your Feedback, Suggestions and Bug Reports via the form below
+Visit http://cyanlabs.co.uk/keybinder/todo.html to see what we are working on.
+
+Source can be found at http://github.com/cyanlabs/sacnrkeybindevo.
 </value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>77</value>
-  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAAAAAAAEAIAAoIAQAVgAAAICAAAABACAAKAgBAH4gBAAwMAAAAQAgAKglAACmKAUAICAAAAEA

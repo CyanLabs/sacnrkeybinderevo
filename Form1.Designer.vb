@@ -24,23 +24,29 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.ReactorTheme1 = New SACNR_Keybinder_Evolution.ReactorTheme()
-        Me.btnLaunch = New SACNR_Keybinder_Evolution.ReactorButton()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.NsTheme1 = New SACNR_Keybinder_Evolution.NSTheme()
+        Me.btnLaunch = New SACNR_Keybinder_Evolution.NSButton()
+        Me.CBtnMin = New SACNR_Keybinder_Evolution.NSControlButton()
+        Me.CBtnClose = New SACNR_Keybinder_Evolution.NSControlButton()
         Me.imgLogo2 = New System.Windows.Forms.PictureBox()
-        Me.ReactorTabControl1 = New SACNR_Keybinder_Evolution.ReactorTabControl()
+        Me.NsTabControl1 = New SACNR_Keybinder_Evolution.NSTabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.ReactorTabControl2 = New SACNR_Keybinder_Evolution.ReactorTabControl()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.ReactorTextBox1 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.ReactorTextBox2 = New SACNR_Keybinder_Evolution.ReactorTextBox()
+        Me.NsLabel1 = New SACNR_Keybinder_Evolution.NSLabel()
+        Me.NsPaginator1 = New SACNR_Keybinder_Evolution.NSPaginator()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.NsOnOffBox10 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox9 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox8 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox7 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox6 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox5 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox4 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox3 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox2 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox1 = New SACNR_Keybinder_Evolution.NSOnOffBox()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
@@ -51,61 +57,63 @@ Partial Class Form1
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.ReactorTextBox4 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox5 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox6 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox7 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox8 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox9 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox10 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorCheckBox1 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox2 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox3 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox4 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox5 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox6 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox10 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox7 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox9 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox8 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorTextBox3 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.ReactorTextBox11 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.ReactorTextBox12 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox13 = New SACNR_Keybinder_Evolution.ReactorTextBox()
+        Me.NsTextBox10 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox9 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox8 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox7 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox6 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox5 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox4 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox3 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox2 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox1 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.NsOnOffBox20 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox19 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox18 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox17 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox16 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox15 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox14 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox13 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox12 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsOnOffBox11 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.TextBox20 = New System.Windows.Forms.TextBox()
+        Me.TextBox19 = New System.Windows.Forms.TextBox()
+        Me.TextBox18 = New System.Windows.Forms.TextBox()
+        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.ReactorTextBox14 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox15 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox16 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox17 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox18 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox19 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorTextBox20 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.ReactorCheckBox11 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox12 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox13 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox14 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox15 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox16 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox17 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox18 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox19 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorCheckBox20 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.NsTextBox20 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox19 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox18 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox17 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox16 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox15 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox14 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox13 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox12 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsTextBox11 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.NsLabel2 = New SACNR_Keybinder_Evolution.NSLabel()
+        Me.chkWheelDown = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkWheelUp = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkSB2 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkSB1 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkRMB = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkMMB = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkLMB = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.txtWheelDown = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtWheelUp = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtSB2 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtSB1 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtRMB = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtMMB = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtLMB = New SACNR_Keybinder_Evolution.NSTextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -113,25 +121,21 @@ Partial Class Form1
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.chkWheelDown = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.chkWheelUp = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkLMB = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkMMB = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkRMB = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkSB1 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.txtWheelDown = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.chkSB2 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.txtWheelUp = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtlmb = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtMMB = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtRMB = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtSB1 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtSB2 = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.TabPage10 = New System.Windows.Forms.TabPage()
-        Me.chkEnable360 = New SACNR_Keybinder_Evolution.ReactorCheckBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.chkEnable360 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsLabel3 = New SACNR_Keybinder_Evolution.NSLabel()
+        Me.chkRightStick = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkLeftStick = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkRB = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkLB = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkDpadRight = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkDpadLeft = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkDpadDown = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkDpadUp = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkButtonY = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkButtonX = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkButtonB = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkButtonA = New SACNR_Keybinder_Evolution.NSOnOffBox()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.Label43 = New System.Windows.Forms.Label()
@@ -144,108 +148,100 @@ Partial Class Form1
         Me.Label53 = New System.Windows.Forms.Label()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.chkLeftStick = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkDpadLeft = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkButtonX = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkLB = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkDpadUp = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkButtonA = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkRightStick = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkDpadRight = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkButtonY = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkRB = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkDpadDown = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkButtonB = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.txtLeftStickPress = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtDpadLeft = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtButtonX = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtRightStickPress = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtDpadRight = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtButtonY = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtLb = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtRB = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtDpadUp = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtDpadDown = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtButtonA = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.txtButtonB = New SACNR_Keybinder_Evolution.ReactorTextBox()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.ReactorTabControl4 = New SACNR_Keybinder_Evolution.ReactorTabControl()
-        Me.TabPage12 = New System.Windows.Forms.TabPage()
-        Me.ReactorGroupBox2 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.chkStartup = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkSkipChangelog = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkAutoupdates = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.ReactorGroupBox7 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.txtSAMPUsername = New System.Windows.Forms.ComboBox()
-        Me.btnSaveRestart = New SACNR_Keybinder_Evolution.ReactorButton()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.ReactorGroupBox6 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.btnLogs = New SACNR_Keybinder_Evolution.ReactorButton()
-        Me.chkEnableLogs = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.ReactorGroupBox4 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
+        Me.txtRightStickPress = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtLeftStickPress = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtRb = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtLb = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtDpadRight = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtDpadLeft = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtDpadDown = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtDpadUp = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtButtonY = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtButtonX = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtButtonB = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtButtonA = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.NsGroupBox4 = New SACNR_Keybinder_Evolution.NSGroupBox()
         Me.txtDelayChar = New System.Windows.Forms.TextBox()
         Me.txtMacroChar = New System.Windows.Forms.TextBox()
         Me.txtToggleChar = New System.Windows.Forms.TextBox()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.ReactorGroupBox3 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
-        Me.btnReset = New SACNR_Keybinder_Evolution.ReactorButton()
-        Me.ReactorGroupBox1 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
-        Me.chkUseKeyUp = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkSendT = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkDebug = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkUseMouseUp = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.chkSendEnter = New SACNR_Keybinder_Evolution.ReactorCheckBox()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.ReactorTabControl3 = New SACNR_Keybinder_Evolution.ReactorTabControl()
-        Me.TabPage8 = New System.Windows.Forms.TabPage()
-        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.NsGroupBox5 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.chkDebug = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkSendT = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkSendEnter = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkUseMouseUp = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkUseKeyUp = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.NsGroupBox6 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.btnReset = New SACNR_Keybinder_Evolution.NSButton()
+        Me.NsButton5 = New SACNR_Keybinder_Evolution.NSButton()
+        Me.NsLabel7 = New SACNR_Keybinder_Evolution.NSLabel()
+        Me.NsGroupBox3 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.chkEnableLogs = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.btnLogs = New SACNR_Keybinder_Evolution.NSButton()
+        Me.NsSeperator1 = New SACNR_Keybinder_Evolution.NSSeperator()
+        Me.NsGroupBox2 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.chkStartup = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkShowChangelog = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkAutoUpdates = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.NsGroupBox1 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnAddUser = New SACNR_Keybinder_Evolution.NSButton()
+        Me.txtSAMPUsername = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.btnSaveRestart = New SACNR_Keybinder_Evolution.NSButton()
+        Me.cmbSAMPUsername = New SACNR_Keybinder_Evolution.NSComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.NsLabel4 = New SACNR_Keybinder_Evolution.NSLabel()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.TabPage11 = New System.Windows.Forms.TabPage()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.Label62 = New System.Windows.Forms.Label()
-        Me.TabPage9 = New System.Windows.Forms.TabPage()
-        Me.ReactorGroupBox9 = New SACNR_Keybinder_Evolution.ReactorGroupBox()
-        Me.txtFeedback = New SACNR_Keybinder_Evolution.ReactorMultiLineTextBox()
-        Me.btnSendRequest = New SACNR_Keybinder_Evolution.ReactorButton()
+        Me.NsButton7 = New SACNR_Keybinder_Evolution.NSButton()
+        Me.NsGroupBox7 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.btnSendRequest = New SACNR_Keybinder_Evolution.NSButton()
+        Me.txtFeedback = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.NsLabel5 = New SACNR_Keybinder_Evolution.NSLabel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lblVersion = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ReactorTheme1.SuspendLayout()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.NsTheme1.SuspendLayout()
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ReactorTabControl1.SuspendLayout()
+        Me.NsTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.ReactorTabControl2.SuspendLayout()
-        Me.TabPage4.SuspendLayout()
-        Me.TabPage5.SuspendLayout()
-        Me.TabPage6.SuspendLayout()
-        Me.TabPage10.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        Me.ReactorTabControl4.SuspendLayout()
-        Me.TabPage12.SuspendLayout()
-        Me.ReactorGroupBox2.SuspendLayout()
-        Me.ReactorGroupBox7.SuspendLayout()
-        Me.ReactorGroupBox6.SuspendLayout()
-        Me.TabPage7.SuspendLayout()
-        Me.ReactorGroupBox4.SuspendLayout()
-        Me.ReactorGroupBox3.SuspendLayout()
-        Me.ReactorGroupBox1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.ReactorTabControl3.SuspendLayout()
-        Me.TabPage8.SuspendLayout()
-        Me.TabPage11.SuspendLayout()
-        Me.TabPage9.SuspendLayout()
-        Me.ReactorGroupBox9.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.NsGroupBox4.SuspendLayout()
+        Me.NsGroupBox5.SuspendLayout()
+        Me.NsGroupBox6.SuspendLayout()
+        Me.NsGroupBox3.SuspendLayout()
+        Me.NsGroupBox2.SuspendLayout()
+        Me.NsGroupBox1.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.NsGroupBox7.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 5000
         '
         'NotifyIcon1
         '
@@ -256,214 +252,285 @@ Partial Class Form1
         Me.NotifyIcon1.Text = "SACNR KeyBinder Evolution"
         Me.NotifyIcon1.Visible = True
         '
-        'Timer1
+        'NsTheme1
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 5000
-        '
-        'Timer2
-        '
-        Me.Timer2.Enabled = True
-        '
-        'ReactorTheme1
-        '
-        Me.ReactorTheme1.Controls.Add(Me.btnLaunch)
-        Me.ReactorTheme1.Controls.Add(Me.imgLogo2)
-        Me.ReactorTheme1.Controls.Add(Me.ReactorTabControl1)
-        Me.ReactorTheme1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReactorTheme1.Font = New System.Drawing.Font("Verdana", 6.75!)
-        Me.ReactorTheme1.Location = New System.Drawing.Point(0, 0)
-        Me.ReactorTheme1.Name = "ReactorTheme1"
-        Me.ReactorTheme1.Size = New System.Drawing.Size(533, 476)
-        Me.ReactorTheme1.TabIndex = 0
-        Me.ReactorTheme1.Text = "SACNR Keybinder Evolution!"
+        Me.NsTheme1.AccentOffset = 42
+        Me.NsTheme1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.NsTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.NsTheme1.Colors = New SACNR_Keybinder_Evolution.Bloom(-1) {}
+        Me.NsTheme1.Controls.Add(Me.btnLaunch)
+        Me.NsTheme1.Controls.Add(Me.CBtnMin)
+        Me.NsTheme1.Controls.Add(Me.CBtnClose)
+        Me.NsTheme1.Controls.Add(Me.imgLogo2)
+        Me.NsTheme1.Controls.Add(Me.NsTabControl1)
+        Me.NsTheme1.Customization = ""
+        Me.NsTheme1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.NsTheme1.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.NsTheme1.Image = Nothing
+        Me.NsTheme1.Location = New System.Drawing.Point(0, 0)
+        Me.NsTheme1.Movable = True
+        Me.NsTheme1.Name = "NsTheme1"
+        Me.NsTheme1.NoRounding = False
+        Me.NsTheme1.Sizable = False
+        Me.NsTheme1.Size = New System.Drawing.Size(650, 509)
+        Me.NsTheme1.SmartBounds = True
+        Me.NsTheme1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.NsTheme1.TabIndex = 0
+        Me.NsTheme1.Text = "SACNR Keybinder Evolution"
+        Me.NsTheme1.TransparencyKey = System.Drawing.Color.Empty
+        Me.NsTheme1.Transparent = False
         '
         'btnLaunch
         '
-        Me.btnLaunch.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.btnLaunch.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLaunch.Location = New System.Drawing.Point(5, 429)
+        Me.btnLaunch.Font = New System.Drawing.Font("Impact", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLaunch.Location = New System.Drawing.Point(3, 467)
         Me.btnLaunch.Name = "btnLaunch"
-        Me.btnLaunch.Size = New System.Drawing.Size(523, 43)
-        Me.btnLaunch.TabIndex = 50
-        Me.btnLaunch.Text = "Launch ""San Andreas Cops N Robbers"""
+        Me.btnLaunch.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnLaunch.Size = New System.Drawing.Size(644, 39)
+        Me.btnLaunch.TabIndex = 46
+        Me.btnLaunch.Text = "                             Apply keybinds and Launch San Andreas Cops N Robbers" & _
+    ""
+        '
+        'CBtnMin
+        '
+        Me.CBtnMin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CBtnMin.ControlButton = SACNR_Keybinder_Evolution.NSControlButton.Button.Minimize
+        Me.CBtnMin.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CBtnMin.Location = New System.Drawing.Point(606, 4)
+        Me.CBtnMin.Margin = New System.Windows.Forms.Padding(0)
+        Me.CBtnMin.MaximumSize = New System.Drawing.Size(18, 20)
+        Me.CBtnMin.MinimumSize = New System.Drawing.Size(18, 20)
+        Me.CBtnMin.Name = "CBtnMin"
+        Me.CBtnMin.Size = New System.Drawing.Size(18, 20)
+        Me.CBtnMin.TabIndex = 0
+        Me.CBtnMin.Text = "NsControlButton1"
+        '
+        'CBtnClose
+        '
+        Me.CBtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CBtnClose.ControlButton = SACNR_Keybinder_Evolution.NSControlButton.Button.Close
+        Me.CBtnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CBtnClose.Location = New System.Drawing.Point(627, 4)
+        Me.CBtnClose.Margin = New System.Windows.Forms.Padding(0)
+        Me.CBtnClose.MaximumSize = New System.Drawing.Size(18, 20)
+        Me.CBtnClose.MinimumSize = New System.Drawing.Size(18, 20)
+        Me.CBtnClose.Name = "CBtnClose"
+        Me.CBtnClose.Size = New System.Drawing.Size(18, 20)
+        Me.CBtnClose.TabIndex = 0
+        Me.CBtnClose.Text = "NsControlButton1"
         '
         'imgLogo2
         '
+        Me.imgLogo2.BackColor = System.Drawing.Color.White
         Me.imgLogo2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.imgLogo2.Image = CType(resources.GetObject("imgLogo2.Image"), System.Drawing.Image)
-        Me.imgLogo2.Location = New System.Drawing.Point(3, 30)
+        Me.imgLogo2.Location = New System.Drawing.Point(1, 27)
         Me.imgLogo2.Name = "imgLogo2"
-        Me.imgLogo2.Size = New System.Drawing.Size(525, 67)
+        Me.imgLogo2.Size = New System.Drawing.Size(648, 84)
         Me.imgLogo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.imgLogo2.TabIndex = 44
+        Me.imgLogo2.TabIndex = 45
         Me.imgLogo2.TabStop = False
         '
-        'ReactorTabControl1
+        'NsTabControl1
         '
-        Me.ReactorTabControl1.Controls.Add(Me.TabPage1)
-        Me.ReactorTabControl1.Controls.Add(Me.TabPage6)
-        Me.ReactorTabControl1.Controls.Add(Me.TabPage10)
-        Me.ReactorTabControl1.Controls.Add(Me.TabPage3)
-        Me.ReactorTabControl1.Controls.Add(Me.TabPage2)
-        Me.ReactorTabControl1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.ReactorTabControl1.ItemSize = New System.Drawing.Size(140, 21)
-        Me.ReactorTabControl1.Location = New System.Drawing.Point(5, 95)
-        Me.ReactorTabControl1.Name = "ReactorTabControl1"
-        Me.ReactorTabControl1.SelectedIndex = 0
-        Me.ReactorTabControl1.Size = New System.Drawing.Size(523, 336)
-        Me.ReactorTabControl1.TabBorderColor = System.Drawing.Color.White
-        Me.ReactorTabControl1.TabIndex = 2
-        Me.ReactorTabControl1.TabTextColor = System.Drawing.Color.White
+        Me.NsTabControl1.Alignment = System.Windows.Forms.TabAlignment.Left
+        Me.NsTabControl1.Controls.Add(Me.TabPage1)
+        Me.NsTabControl1.Controls.Add(Me.TabPage2)
+        Me.NsTabControl1.Controls.Add(Me.TabPage3)
+        Me.NsTabControl1.Controls.Add(Me.TabPage4)
+        Me.NsTabControl1.Controls.Add(Me.TabPage5)
+        Me.NsTabControl1.Controls.Add(Me.TabPage7)
+        Me.NsTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
+        Me.NsTabControl1.ItemSize = New System.Drawing.Size(28, 115)
+        Me.NsTabControl1.Location = New System.Drawing.Point(3, 113)
+        Me.NsTabControl1.Multiline = True
+        Me.NsTabControl1.Name = "NsTabControl1"
+        Me.NsTabControl1.SelectedIndex = 0
+        Me.NsTabControl1.Size = New System.Drawing.Size(644, 353)
+        Me.NsTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.NsTabControl1.TabIndex = 0
         '
         'TabPage1
         '
-        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage1.Controls.Add(Me.ReactorTabControl2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage1.Controls.Add(Me.NsLabel1)
+        Me.TabPage1.Controls.Add(Me.NsPaginator1)
+        Me.TabPage1.Controls.Add(Me.Panel1)
+        Me.TabPage1.Controls.Add(Me.Panel2)
+        Me.TabPage1.Location = New System.Drawing.Point(119, 4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(515, 307)
+        Me.TabPage1.Size = New System.Drawing.Size(521, 345)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Keyboard Binds"
         '
-        'ReactorTabControl2
+        'NsLabel1
         '
-        Me.ReactorTabControl2.Controls.Add(Me.TabPage4)
-        Me.ReactorTabControl2.Controls.Add(Me.TabPage5)
-        Me.ReactorTabControl2.Location = New System.Drawing.Point(0, -6)
-        Me.ReactorTabControl2.Name = "ReactorTabControl2"
-        Me.ReactorTabControl2.SelectedIndex = 0
-        Me.ReactorTabControl2.Size = New System.Drawing.Size(519, 317)
-        Me.ReactorTabControl2.TabBorderColor = System.Drawing.Color.White
-        Me.ReactorTabControl2.TabIndex = 55
-        Me.ReactorTabControl2.TabTextColor = System.Drawing.Color.White
+        Me.NsLabel1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel1.Location = New System.Drawing.Point(204, 2)
+        Me.NsLabel1.Name = "NsLabel1"
+        Me.NsLabel1.Size = New System.Drawing.Size(115, 23)
+        Me.NsLabel1.TabIndex = 2
+        Me.NsLabel1.Text = "NsLabel1"
+        Me.NsLabel1.Value1 = "Keyboard "
+        Me.NsLabel1.Value2 = " Binds"
         '
-        'TabPage4
+        'NsPaginator1
         '
-        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage4.Controls.Add(Me.Label23)
-        Me.TabPage4.Controls.Add(Me.Label4)
-        Me.TabPage4.Controls.Add(Me.Label2)
-        Me.TabPage4.Controls.Add(Me.Label7)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox1)
-        Me.TabPage4.Controls.Add(Me.Label5)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox2)
-        Me.TabPage4.Controls.Add(Me.TextBox10)
-        Me.TabPage4.Controls.Add(Me.TextBox9)
-        Me.TabPage4.Controls.Add(Me.TextBox8)
-        Me.TabPage4.Controls.Add(Me.TextBox7)
-        Me.TabPage4.Controls.Add(Me.TextBox6)
-        Me.TabPage4.Controls.Add(Me.TextBox5)
-        Me.TabPage4.Controls.Add(Me.TextBox4)
-        Me.TabPage4.Controls.Add(Me.TextBox3)
-        Me.TabPage4.Controls.Add(Me.TextBox1)
-        Me.TabPage4.Controls.Add(Me.TextBox2)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox4)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox5)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox6)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox7)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox8)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox9)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox10)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox1)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox2)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox3)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox4)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox5)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox6)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox10)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox7)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox9)
-        Me.TabPage4.Controls.Add(Me.ReactorCheckBox8)
-        Me.TabPage4.Controls.Add(Me.ReactorTextBox3)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(511, 288)
-        Me.TabPage4.TabIndex = 0
-        Me.TabPage4.Text = "Page 1"
+        Me.NsPaginator1.Location = New System.Drawing.Point(213, 316)
+        Me.NsPaginator1.Name = "NsPaginator1"
+        Me.NsPaginator1.NumberOfPages = 2
+        Me.NsPaginator1.SelectedIndex = 0
+        Me.NsPaginator1.Size = New System.Drawing.Size(80, 26)
+        Me.NsPaginator1.TabIndex = 0
+        Me.NsPaginator1.Text = "NsPaginator1"
         '
-        'Label23
+        'Panel1
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.Color.White
-        Me.Label23.Location = New System.Drawing.Point(139, 5)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(43, 17)
-        Me.Label23.TabIndex = 90
-        Me.Label23.Text = "Page 1"
+        Me.Panel1.Controls.Add(Me.NsOnOffBox10)
+        Me.Panel1.Controls.Add(Me.NsOnOffBox9)
+        Me.Panel1.Controls.Add(Me.NsOnOffBox8)
+        Me.Panel1.Controls.Add(Me.NsOnOffBox7)
+        Me.Panel1.Controls.Add(Me.NsOnOffBox6)
+        Me.Panel1.Controls.Add(Me.NsOnOffBox5)
+        Me.Panel1.Controls.Add(Me.NsOnOffBox4)
+        Me.Panel1.Controls.Add(Me.NsOnOffBox3)
+        Me.Panel1.Controls.Add(Me.NsOnOffBox2)
+        Me.Panel1.Controls.Add(Me.NsOnOffBox1)
+        Me.Panel1.Controls.Add(Me.TextBox10)
+        Me.Panel1.Controls.Add(Me.TextBox9)
+        Me.Panel1.Controls.Add(Me.TextBox8)
+        Me.Panel1.Controls.Add(Me.TextBox7)
+        Me.Panel1.Controls.Add(Me.TextBox6)
+        Me.Panel1.Controls.Add(Me.TextBox5)
+        Me.Panel1.Controls.Add(Me.TextBox4)
+        Me.Panel1.Controls.Add(Me.TextBox3)
+        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.NsTextBox10)
+        Me.Panel1.Controls.Add(Me.NsTextBox9)
+        Me.Panel1.Controls.Add(Me.NsTextBox8)
+        Me.Panel1.Controls.Add(Me.NsTextBox7)
+        Me.Panel1.Controls.Add(Me.NsTextBox6)
+        Me.Panel1.Controls.Add(Me.NsTextBox5)
+        Me.Panel1.Controls.Add(Me.NsTextBox4)
+        Me.Panel1.Controls.Add(Me.NsTextBox3)
+        Me.Panel1.Controls.Add(Me.NsTextBox2)
+        Me.Panel1.Controls.Add(Me.NsTextBox1)
+        Me.Panel1.Location = New System.Drawing.Point(3, 26)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(518, 294)
+        Me.Panel1.TabIndex = 1
         '
-        'Label4
+        'NsOnOffBox10
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(234, 6)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(128, 17)
-        Me.Label4.TabIndex = 52
-        Me.Label4.Text = "Example: /bribe 10000"
+        Me.NsOnOffBox10.Checked = False
+        Me.NsOnOffBox10.Location = New System.Drawing.Point(456, 265)
+        Me.NsOnOffBox10.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox10.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox10.Name = "NsOnOffBox10"
+        Me.NsOnOffBox10.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox10.TabIndex = 40
+        Me.NsOnOffBox10.Text = "NsOnOffBox1"
         '
-        'Label2
+        'NsOnOffBox9
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(3, 4)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 17)
-        Me.Label2.TabIndex = 52
-        Me.Label2.Text = "Enter Command"
+        Me.NsOnOffBox9.Checked = False
+        Me.NsOnOffBox9.Location = New System.Drawing.Point(456, 236)
+        Me.NsOnOffBox9.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox9.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox9.Name = "NsOnOffBox9"
+        Me.NsOnOffBox9.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox9.TabIndex = 40
+        Me.NsOnOffBox9.Text = "NsOnOffBox1"
         '
-        'Label7
+        'NsOnOffBox8
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(461, 6)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(45, 17)
-        Me.Label7.TabIndex = 54
-        Me.Label7.Text = "Enable"
+        Me.NsOnOffBox8.Checked = False
+        Me.NsOnOffBox8.Location = New System.Drawing.Point(456, 206)
+        Me.NsOnOffBox8.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox8.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox8.Name = "NsOnOffBox8"
+        Me.NsOnOffBox8.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox8.TabIndex = 40
+        Me.NsOnOffBox8.Text = "NsOnOffBox1"
         '
-        'ReactorTextBox1
+        'NsOnOffBox7
         '
-        Me.ReactorTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox1.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox1.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox1.Location = New System.Drawing.Point(3, 23)
-        Me.ReactorTextBox1.MaxCharacters = 32767
-        Me.ReactorTextBox1.Name = "ReactorTextBox1"
-        Me.ReactorTextBox1.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox1.TabIndex = 1
-        Me.ReactorTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox1.UsePasswordMask = False
+        Me.NsOnOffBox7.Checked = False
+        Me.NsOnOffBox7.Location = New System.Drawing.Point(456, 177)
+        Me.NsOnOffBox7.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox7.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox7.Name = "NsOnOffBox7"
+        Me.NsOnOffBox7.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox7.TabIndex = 40
+        Me.NsOnOffBox7.Text = "NsOnOffBox1"
         '
-        'Label5
+        'NsOnOffBox6
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(373, 5)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(69, 17)
-        Me.Label5.TabIndex = 53
-        Me.Label5.Text = "Binded Key"
+        Me.NsOnOffBox6.Checked = False
+        Me.NsOnOffBox6.Location = New System.Drawing.Point(456, 148)
+        Me.NsOnOffBox6.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox6.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox6.Name = "NsOnOffBox6"
+        Me.NsOnOffBox6.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox6.TabIndex = 40
+        Me.NsOnOffBox6.Text = "NsOnOffBox1"
         '
-        'ReactorTextBox2
+        'NsOnOffBox5
         '
-        Me.ReactorTextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox2.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox2.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox2.Location = New System.Drawing.Point(3, 49)
-        Me.ReactorTextBox2.MaxCharacters = 32767
-        Me.ReactorTextBox2.Name = "ReactorTextBox2"
-        Me.ReactorTextBox2.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox2.TabIndex = 4
-        Me.ReactorTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox2.UsePasswordMask = False
+        Me.NsOnOffBox5.Checked = False
+        Me.NsOnOffBox5.Location = New System.Drawing.Point(456, 119)
+        Me.NsOnOffBox5.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox5.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox5.Name = "NsOnOffBox5"
+        Me.NsOnOffBox5.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox5.TabIndex = 40
+        Me.NsOnOffBox5.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox4
+        '
+        Me.NsOnOffBox4.Checked = False
+        Me.NsOnOffBox4.Location = New System.Drawing.Point(456, 90)
+        Me.NsOnOffBox4.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox4.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox4.Name = "NsOnOffBox4"
+        Me.NsOnOffBox4.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox4.TabIndex = 40
+        Me.NsOnOffBox4.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox3
+        '
+        Me.NsOnOffBox3.Checked = False
+        Me.NsOnOffBox3.Location = New System.Drawing.Point(456, 61)
+        Me.NsOnOffBox3.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox3.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox3.Name = "NsOnOffBox3"
+        Me.NsOnOffBox3.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox3.TabIndex = 40
+        Me.NsOnOffBox3.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox2
+        '
+        Me.NsOnOffBox2.Checked = False
+        Me.NsOnOffBox2.Location = New System.Drawing.Point(456, 32)
+        Me.NsOnOffBox2.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox2.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox2.Name = "NsOnOffBox2"
+        Me.NsOnOffBox2.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox2.TabIndex = 40
+        Me.NsOnOffBox2.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox1
+        '
+        Me.NsOnOffBox1.Checked = False
+        Me.NsOnOffBox1.Location = New System.Drawing.Point(456, 2)
+        Me.NsOnOffBox1.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox1.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox1.Name = "NsOnOffBox1"
+        Me.NsOnOffBox1.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox1.TabIndex = 40
+        Me.NsOnOffBox1.Text = "NsOnOffBox1"
         '
         'TextBox10
         '
@@ -472,11 +539,11 @@ Partial Class Form1
         Me.TextBox10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox10.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox10.ForeColor = System.Drawing.Color.White
-        Me.TextBox10.Location = New System.Drawing.Point(379, 265)
+        Me.TextBox10.Location = New System.Drawing.Point(391, 265)
         Me.TextBox10.MaxLength = 2
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox10.TabIndex = 29
+        Me.TextBox10.TabIndex = 39
         '
         'TextBox9
         '
@@ -485,11 +552,11 @@ Partial Class Form1
         Me.TextBox9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox9.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox9.ForeColor = System.Drawing.Color.White
-        Me.TextBox9.Location = New System.Drawing.Point(379, 238)
+        Me.TextBox9.Location = New System.Drawing.Point(391, 236)
         Me.TextBox9.MaxLength = 2
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox9.TabIndex = 26
+        Me.TextBox9.TabIndex = 38
         '
         'TextBox8
         '
@@ -498,11 +565,11 @@ Partial Class Form1
         Me.TextBox8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox8.ForeColor = System.Drawing.Color.White
-        Me.TextBox8.Location = New System.Drawing.Point(379, 212)
+        Me.TextBox8.Location = New System.Drawing.Point(391, 207)
         Me.TextBox8.MaxLength = 2
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox8.TabIndex = 23
+        Me.TextBox8.TabIndex = 37
         '
         'TextBox7
         '
@@ -511,11 +578,11 @@ Partial Class Form1
         Me.TextBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox7.ForeColor = System.Drawing.Color.White
-        Me.TextBox7.Location = New System.Drawing.Point(379, 185)
+        Me.TextBox7.Location = New System.Drawing.Point(391, 178)
         Me.TextBox7.MaxLength = 2
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox7.TabIndex = 20
+        Me.TextBox7.TabIndex = 36
         '
         'TextBox6
         '
@@ -524,11 +591,11 @@ Partial Class Form1
         Me.TextBox6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox6.ForeColor = System.Drawing.Color.White
-        Me.TextBox6.Location = New System.Drawing.Point(379, 158)
+        Me.TextBox6.Location = New System.Drawing.Point(391, 149)
         Me.TextBox6.MaxLength = 2
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox6.TabIndex = 17
+        Me.TextBox6.TabIndex = 35
         '
         'TextBox5
         '
@@ -537,11 +604,11 @@ Partial Class Form1
         Me.TextBox5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.ForeColor = System.Drawing.Color.White
-        Me.TextBox5.Location = New System.Drawing.Point(379, 130)
+        Me.TextBox5.Location = New System.Drawing.Point(391, 120)
         Me.TextBox5.MaxLength = 2
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox5.TabIndex = 14
+        Me.TextBox5.TabIndex = 34
         '
         'TextBox4
         '
@@ -550,11 +617,11 @@ Partial Class Form1
         Me.TextBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.ForeColor = System.Drawing.Color.White
-        Me.TextBox4.Location = New System.Drawing.Point(379, 103)
+        Me.TextBox4.Location = New System.Drawing.Point(391, 91)
         Me.TextBox4.MaxLength = 2
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox4.TabIndex = 11
+        Me.TextBox4.TabIndex = 33
         '
         'TextBox3
         '
@@ -563,11 +630,11 @@ Partial Class Form1
         Me.TextBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.ForeColor = System.Drawing.Color.White
-        Me.TextBox3.Location = New System.Drawing.Point(379, 76)
+        Me.TextBox3.Location = New System.Drawing.Point(391, 62)
         Me.TextBox3.MaxLength = 2
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox3.TabIndex = 8
+        Me.TextBox3.TabIndex = 32
         '
         'TextBox1
         '
@@ -576,11 +643,11 @@ Partial Class Form1
         Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(379, 24)
+        Me.TextBox1.Location = New System.Drawing.Point(391, 4)
         Me.TextBox1.MaxLength = 2
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.TextBox1.TabIndex = 30
         '
         'TextBox2
         '
@@ -589,491 +656,288 @@ Partial Class Form1
         Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(379, 50)
+        Me.TextBox2.Location = New System.Drawing.Point(391, 33)
         Me.TextBox2.MaxLength = 55555555
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox2.TabIndex = 5
-        '
-        'ReactorTextBox4
-        '
-        Me.ReactorTextBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox4.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox4.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox4.Location = New System.Drawing.Point(3, 102)
-        Me.ReactorTextBox4.MaxCharacters = 32767
-        Me.ReactorTextBox4.Name = "ReactorTextBox4"
-        Me.ReactorTextBox4.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox4.TabIndex = 10
-        Me.ReactorTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox4.UsePasswordMask = False
-        '
-        'ReactorTextBox5
-        '
-        Me.ReactorTextBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox5.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox5.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox5.Location = New System.Drawing.Point(3, 129)
-        Me.ReactorTextBox5.MaxCharacters = 32767
-        Me.ReactorTextBox5.Name = "ReactorTextBox5"
-        Me.ReactorTextBox5.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox5.TabIndex = 13
-        Me.ReactorTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox5.UsePasswordMask = False
-        '
-        'ReactorTextBox6
-        '
-        Me.ReactorTextBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox6.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox6.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox6.Location = New System.Drawing.Point(3, 157)
-        Me.ReactorTextBox6.MaxCharacters = 32767
-        Me.ReactorTextBox6.Name = "ReactorTextBox6"
-        Me.ReactorTextBox6.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox6.TabIndex = 16
-        Me.ReactorTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox6.UsePasswordMask = False
-        '
-        'ReactorTextBox7
-        '
-        Me.ReactorTextBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox7.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox7.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox7.Location = New System.Drawing.Point(3, 184)
-        Me.ReactorTextBox7.MaxCharacters = 32767
-        Me.ReactorTextBox7.Name = "ReactorTextBox7"
-        Me.ReactorTextBox7.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox7.TabIndex = 19
-        Me.ReactorTextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox7.UsePasswordMask = False
-        '
-        'ReactorTextBox8
-        '
-        Me.ReactorTextBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox8.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox8.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox8.Location = New System.Drawing.Point(3, 211)
-        Me.ReactorTextBox8.MaxCharacters = 32767
-        Me.ReactorTextBox8.Name = "ReactorTextBox8"
-        Me.ReactorTextBox8.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox8.TabIndex = 22
-        Me.ReactorTextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox8.UsePasswordMask = False
-        '
-        'ReactorTextBox9
-        '
-        Me.ReactorTextBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox9.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox9.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox9.Location = New System.Drawing.Point(3, 237)
-        Me.ReactorTextBox9.MaxCharacters = 32767
-        Me.ReactorTextBox9.Name = "ReactorTextBox9"
-        Me.ReactorTextBox9.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox9.TabIndex = 25
-        Me.ReactorTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox9.UsePasswordMask = False
-        '
-        'ReactorTextBox10
-        '
-        Me.ReactorTextBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox10.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox10.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox10.Location = New System.Drawing.Point(3, 263)
-        Me.ReactorTextBox10.MaxCharacters = 32767
-        Me.ReactorTextBox10.Name = "ReactorTextBox10"
-        Me.ReactorTextBox10.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox10.TabIndex = 28
-        Me.ReactorTextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox10.UsePasswordMask = False
-        '
-        'ReactorCheckBox1
-        '
-        Me.ReactorCheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox1.Checked = False
-        Me.ReactorCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox1.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox1.Location = New System.Drawing.Point(451, 27)
-        Me.ReactorCheckBox1.Name = "ReactorCheckBox1"
-        Me.ReactorCheckBox1.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox1.TabIndex = 3
-        Me.ReactorCheckBox1.Text = "Enable"
-        '
-        'ReactorCheckBox2
-        '
-        Me.ReactorCheckBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox2.Checked = False
-        Me.ReactorCheckBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox2.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox2.Location = New System.Drawing.Point(451, 53)
-        Me.ReactorCheckBox2.Name = "ReactorCheckBox2"
-        Me.ReactorCheckBox2.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox2.TabIndex = 6
-        Me.ReactorCheckBox2.Text = "Enable"
-        '
-        'ReactorCheckBox3
-        '
-        Me.ReactorCheckBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox3.Checked = False
-        Me.ReactorCheckBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox3.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox3.Location = New System.Drawing.Point(451, 79)
-        Me.ReactorCheckBox3.Name = "ReactorCheckBox3"
-        Me.ReactorCheckBox3.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox3.TabIndex = 9
-        Me.ReactorCheckBox3.Text = "Enable"
-        '
-        'ReactorCheckBox4
-        '
-        Me.ReactorCheckBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox4.Checked = False
-        Me.ReactorCheckBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox4.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox4.Location = New System.Drawing.Point(451, 106)
-        Me.ReactorCheckBox4.Name = "ReactorCheckBox4"
-        Me.ReactorCheckBox4.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox4.TabIndex = 12
-        Me.ReactorCheckBox4.Text = "Enable"
-        '
-        'ReactorCheckBox5
-        '
-        Me.ReactorCheckBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox5.Checked = False
-        Me.ReactorCheckBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox5.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox5.Location = New System.Drawing.Point(451, 133)
-        Me.ReactorCheckBox5.Name = "ReactorCheckBox5"
-        Me.ReactorCheckBox5.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox5.TabIndex = 15
-        Me.ReactorCheckBox5.Text = "Enable"
-        '
-        'ReactorCheckBox6
-        '
-        Me.ReactorCheckBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox6.Checked = False
-        Me.ReactorCheckBox6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox6.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox6.Location = New System.Drawing.Point(451, 161)
-        Me.ReactorCheckBox6.Name = "ReactorCheckBox6"
-        Me.ReactorCheckBox6.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox6.TabIndex = 18
-        Me.ReactorCheckBox6.Text = "Enable"
-        '
-        'ReactorCheckBox10
-        '
-        Me.ReactorCheckBox10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox10.Checked = False
-        Me.ReactorCheckBox10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox10.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox10.Location = New System.Drawing.Point(451, 268)
-        Me.ReactorCheckBox10.Name = "ReactorCheckBox10"
-        Me.ReactorCheckBox10.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox10.TabIndex = 30
-        Me.ReactorCheckBox10.Text = "Enable"
-        '
-        'ReactorCheckBox7
-        '
-        Me.ReactorCheckBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox7.Checked = False
-        Me.ReactorCheckBox7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox7.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox7.Location = New System.Drawing.Point(451, 188)
-        Me.ReactorCheckBox7.Name = "ReactorCheckBox7"
-        Me.ReactorCheckBox7.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox7.TabIndex = 21
-        Me.ReactorCheckBox7.Text = "Enable"
-        '
-        'ReactorCheckBox9
-        '
-        Me.ReactorCheckBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox9.Checked = False
-        Me.ReactorCheckBox9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox9.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox9.Location = New System.Drawing.Point(451, 241)
-        Me.ReactorCheckBox9.Name = "ReactorCheckBox9"
-        Me.ReactorCheckBox9.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox9.TabIndex = 27
-        Me.ReactorCheckBox9.Text = "Enable"
-        '
-        'ReactorCheckBox8
-        '
-        Me.ReactorCheckBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox8.Checked = False
-        Me.ReactorCheckBox8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox8.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox8.Location = New System.Drawing.Point(451, 214)
-        Me.ReactorCheckBox8.Name = "ReactorCheckBox8"
-        Me.ReactorCheckBox8.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox8.TabIndex = 24
-        Me.ReactorCheckBox8.Text = "Enable"
-        '
-        'ReactorTextBox3
-        '
-        Me.ReactorTextBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox3.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox3.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox3.Location = New System.Drawing.Point(3, 75)
-        Me.ReactorTextBox3.MaxCharacters = 32767
-        Me.ReactorTextBox3.Name = "ReactorTextBox3"
-        Me.ReactorTextBox3.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox3.TabIndex = 7
-        Me.ReactorTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox3.UsePasswordMask = False
-        '
-        'TabPage5
-        '
-        Me.TabPage5.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage5.Controls.Add(Me.Label22)
-        Me.TabPage5.Controls.Add(Me.Label6)
-        Me.TabPage5.Controls.Add(Me.Label8)
-        Me.TabPage5.Controls.Add(Me.Label9)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox11)
-        Me.TabPage5.Controls.Add(Me.Label10)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox12)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox13)
-        Me.TabPage5.Controls.Add(Me.TextBox11)
-        Me.TabPage5.Controls.Add(Me.TextBox12)
-        Me.TabPage5.Controls.Add(Me.TextBox13)
-        Me.TabPage5.Controls.Add(Me.TextBox14)
-        Me.TabPage5.Controls.Add(Me.TextBox15)
-        Me.TabPage5.Controls.Add(Me.TextBox16)
-        Me.TabPage5.Controls.Add(Me.TextBox17)
-        Me.TabPage5.Controls.Add(Me.TextBox18)
-        Me.TabPage5.Controls.Add(Me.TextBox19)
-        Me.TabPage5.Controls.Add(Me.TextBox20)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox14)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox15)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox16)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox17)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox18)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox19)
-        Me.TabPage5.Controls.Add(Me.ReactorTextBox20)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox11)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox12)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox13)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox14)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox15)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox16)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox17)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox18)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox19)
-        Me.TabPage5.Controls.Add(Me.ReactorCheckBox20)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(511, 288)
-        Me.TabPage5.TabIndex = 1
-        Me.TabPage5.Text = "Page 2"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(139, 5)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(45, 17)
-        Me.Label22.TabIndex = 89
-        Me.Label22.Text = "Page 2"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(234, 6)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(128, 17)
-        Me.Label6.TabIndex = 86
-        Me.Label6.Text = "Example: /bribe 10000"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(3, 4)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(93, 17)
-        Me.Label8.TabIndex = 85
-        Me.Label8.Text = "Enter Command"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(461, 6)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(45, 17)
-        Me.Label9.TabIndex = 88
-        Me.Label9.Text = "Enable"
-        '
-        'ReactorTextBox11
-        '
-        Me.ReactorTextBox11.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox11.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox11.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox11.Location = New System.Drawing.Point(3, 23)
-        Me.ReactorTextBox11.MaxCharacters = 32767
-        Me.ReactorTextBox11.Name = "ReactorTextBox11"
-        Me.ReactorTextBox11.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox11.TabIndex = 31
-        Me.ReactorTextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox11.UsePasswordMask = False
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(373, 5)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(69, 17)
-        Me.Label10.TabIndex = 87
-        Me.Label10.Text = "Binded Key"
-        '
-        'ReactorTextBox12
-        '
-        Me.ReactorTextBox12.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox12.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox12.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox12.Location = New System.Drawing.Point(3, 49)
-        Me.ReactorTextBox12.MaxCharacters = 32767
-        Me.ReactorTextBox12.Name = "ReactorTextBox12"
-        Me.ReactorTextBox12.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox12.TabIndex = 63
-        Me.ReactorTextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox12.UsePasswordMask = False
-        '
-        'ReactorTextBox13
-        '
-        Me.ReactorTextBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox13.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox13.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox13.Location = New System.Drawing.Point(3, 75)
-        Me.ReactorTextBox13.MaxCharacters = 32767
-        Me.ReactorTextBox13.Name = "ReactorTextBox13"
-        Me.ReactorTextBox13.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox13.TabIndex = 60
-        Me.ReactorTextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox13.UsePasswordMask = False
-        '
-        'TextBox11
-        '
-        Me.TextBox11.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox11.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.ForeColor = System.Drawing.Color.White
-        Me.TextBox11.Location = New System.Drawing.Point(379, 24)
-        Me.TextBox11.MaxLength = 2
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox11.TabIndex = 83
-        '
-        'TextBox12
-        '
-        Me.TextBox12.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox12.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox12.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.ForeColor = System.Drawing.Color.White
-        Me.TextBox12.Location = New System.Drawing.Point(379, 50)
-        Me.TextBox12.MaxLength = 2
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox12.TabIndex = 82
-        '
-        'TextBox13
-        '
-        Me.TextBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox13.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.ForeColor = System.Drawing.Color.White
-        Me.TextBox13.Location = New System.Drawing.Point(379, 76)
-        Me.TextBox13.MaxLength = 2
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox13.TabIndex = 81
-        '
-        'TextBox14
-        '
-        Me.TextBox14.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox14.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox14.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.ForeColor = System.Drawing.Color.White
-        Me.TextBox14.Location = New System.Drawing.Point(379, 103)
-        Me.TextBox14.MaxLength = 2
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox14.TabIndex = 79
-        '
-        'TextBox15
-        '
-        Me.TextBox15.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.TextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox15.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox15.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox15.ForeColor = System.Drawing.Color.White
-        Me.TextBox15.Location = New System.Drawing.Point(379, 130)
-        Me.TextBox15.MaxLength = 2
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox15.TabIndex = 77
-        '
-        'TextBox16
-        '
-        Me.TextBox16.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.TextBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox16.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox16.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox16.ForeColor = System.Drawing.Color.White
-        Me.TextBox16.Location = New System.Drawing.Point(379, 158)
-        Me.TextBox16.MaxLength = 2
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox16.TabIndex = 84
-        '
-        'TextBox17
-        '
-        Me.TextBox17.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.TextBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox17.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox17.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox17.ForeColor = System.Drawing.Color.White
-        Me.TextBox17.Location = New System.Drawing.Point(379, 185)
-        Me.TextBox17.MaxLength = 2
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox17.TabIndex = 75
-        '
-        'TextBox18
-        '
-        Me.TextBox18.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.TextBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox18.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox18.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox18.ForeColor = System.Drawing.Color.White
-        Me.TextBox18.Location = New System.Drawing.Point(379, 212)
-        Me.TextBox18.MaxLength = 2
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox18.TabIndex = 76
-        '
-        'TextBox19
-        '
-        Me.TextBox19.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.TextBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox19.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TextBox19.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox19.ForeColor = System.Drawing.Color.White
-        Me.TextBox19.Location = New System.Drawing.Point(379, 238)
-        Me.TextBox19.MaxLength = 2
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox19.TabIndex = 78
+        Me.TextBox2.TabIndex = 31
+        '
+        'NsTextBox10
+        '
+        Me.NsTextBox10.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox10.Location = New System.Drawing.Point(9, 264)
+        Me.NsTextBox10.MaxLength = 32767
+        Me.NsTextBox10.Multiline = False
+        Me.NsTextBox10.Name = "NsTextBox10"
+        Me.NsTextBox10.ReadOnly = False
+        Me.NsTextBox10.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox10.TabIndex = 0
+        Me.NsTextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox10.UseSystemPasswordChar = False
+        '
+        'NsTextBox9
+        '
+        Me.NsTextBox9.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox9.Location = New System.Drawing.Point(9, 235)
+        Me.NsTextBox9.MaxLength = 32767
+        Me.NsTextBox9.Multiline = False
+        Me.NsTextBox9.Name = "NsTextBox9"
+        Me.NsTextBox9.ReadOnly = False
+        Me.NsTextBox9.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox9.TabIndex = 0
+        Me.NsTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox9.UseSystemPasswordChar = False
+        '
+        'NsTextBox8
+        '
+        Me.NsTextBox8.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox8.Location = New System.Drawing.Point(9, 206)
+        Me.NsTextBox8.MaxLength = 32767
+        Me.NsTextBox8.Multiline = False
+        Me.NsTextBox8.Name = "NsTextBox8"
+        Me.NsTextBox8.ReadOnly = False
+        Me.NsTextBox8.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox8.TabIndex = 0
+        Me.NsTextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox8.UseSystemPasswordChar = False
+        '
+        'NsTextBox7
+        '
+        Me.NsTextBox7.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox7.Location = New System.Drawing.Point(9, 177)
+        Me.NsTextBox7.MaxLength = 32767
+        Me.NsTextBox7.Multiline = False
+        Me.NsTextBox7.Name = "NsTextBox7"
+        Me.NsTextBox7.ReadOnly = False
+        Me.NsTextBox7.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox7.TabIndex = 0
+        Me.NsTextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox7.UseSystemPasswordChar = False
+        '
+        'NsTextBox6
+        '
+        Me.NsTextBox6.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox6.Location = New System.Drawing.Point(9, 148)
+        Me.NsTextBox6.MaxLength = 32767
+        Me.NsTextBox6.Multiline = False
+        Me.NsTextBox6.Name = "NsTextBox6"
+        Me.NsTextBox6.ReadOnly = False
+        Me.NsTextBox6.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox6.TabIndex = 0
+        Me.NsTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox6.UseSystemPasswordChar = False
+        '
+        'NsTextBox5
+        '
+        Me.NsTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox5.Location = New System.Drawing.Point(9, 119)
+        Me.NsTextBox5.MaxLength = 32767
+        Me.NsTextBox5.Multiline = False
+        Me.NsTextBox5.Name = "NsTextBox5"
+        Me.NsTextBox5.ReadOnly = False
+        Me.NsTextBox5.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox5.TabIndex = 0
+        Me.NsTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox5.UseSystemPasswordChar = False
+        '
+        'NsTextBox4
+        '
+        Me.NsTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox4.Location = New System.Drawing.Point(9, 90)
+        Me.NsTextBox4.MaxLength = 32767
+        Me.NsTextBox4.Multiline = False
+        Me.NsTextBox4.Name = "NsTextBox4"
+        Me.NsTextBox4.ReadOnly = False
+        Me.NsTextBox4.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox4.TabIndex = 0
+        Me.NsTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox4.UseSystemPasswordChar = False
+        '
+        'NsTextBox3
+        '
+        Me.NsTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox3.Location = New System.Drawing.Point(9, 61)
+        Me.NsTextBox3.MaxLength = 32767
+        Me.NsTextBox3.Multiline = False
+        Me.NsTextBox3.Name = "NsTextBox3"
+        Me.NsTextBox3.ReadOnly = False
+        Me.NsTextBox3.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox3.TabIndex = 0
+        Me.NsTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox3.UseSystemPasswordChar = False
+        '
+        'NsTextBox2
+        '
+        Me.NsTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox2.Location = New System.Drawing.Point(9, 32)
+        Me.NsTextBox2.MaxLength = 32767
+        Me.NsTextBox2.Multiline = False
+        Me.NsTextBox2.Name = "NsTextBox2"
+        Me.NsTextBox2.ReadOnly = False
+        Me.NsTextBox2.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox2.TabIndex = 0
+        Me.NsTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox2.UseSystemPasswordChar = False
+        '
+        'NsTextBox1
+        '
+        Me.NsTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox1.Location = New System.Drawing.Point(9, 3)
+        Me.NsTextBox1.MaxLength = 32767
+        Me.NsTextBox1.Multiline = False
+        Me.NsTextBox1.Name = "NsTextBox1"
+        Me.NsTextBox1.ReadOnly = False
+        Me.NsTextBox1.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox1.TabIndex = 0
+        Me.NsTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox1.UseSystemPasswordChar = False
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.NsOnOffBox20)
+        Me.Panel2.Controls.Add(Me.NsOnOffBox19)
+        Me.Panel2.Controls.Add(Me.NsOnOffBox18)
+        Me.Panel2.Controls.Add(Me.NsOnOffBox17)
+        Me.Panel2.Controls.Add(Me.NsOnOffBox16)
+        Me.Panel2.Controls.Add(Me.NsOnOffBox15)
+        Me.Panel2.Controls.Add(Me.NsOnOffBox14)
+        Me.Panel2.Controls.Add(Me.NsOnOffBox13)
+        Me.Panel2.Controls.Add(Me.NsOnOffBox12)
+        Me.Panel2.Controls.Add(Me.NsOnOffBox11)
+        Me.Panel2.Controls.Add(Me.TextBox20)
+        Me.Panel2.Controls.Add(Me.TextBox19)
+        Me.Panel2.Controls.Add(Me.TextBox18)
+        Me.Panel2.Controls.Add(Me.TextBox17)
+        Me.Panel2.Controls.Add(Me.TextBox16)
+        Me.Panel2.Controls.Add(Me.TextBox15)
+        Me.Panel2.Controls.Add(Me.TextBox14)
+        Me.Panel2.Controls.Add(Me.TextBox13)
+        Me.Panel2.Controls.Add(Me.TextBox11)
+        Me.Panel2.Controls.Add(Me.TextBox12)
+        Me.Panel2.Controls.Add(Me.NsTextBox20)
+        Me.Panel2.Controls.Add(Me.NsTextBox19)
+        Me.Panel2.Controls.Add(Me.NsTextBox18)
+        Me.Panel2.Controls.Add(Me.NsTextBox17)
+        Me.Panel2.Controls.Add(Me.NsTextBox16)
+        Me.Panel2.Controls.Add(Me.NsTextBox15)
+        Me.Panel2.Controls.Add(Me.NsTextBox14)
+        Me.Panel2.Controls.Add(Me.NsTextBox13)
+        Me.Panel2.Controls.Add(Me.NsTextBox12)
+        Me.Panel2.Controls.Add(Me.NsTextBox11)
+        Me.Panel2.Location = New System.Drawing.Point(3, 26)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(518, 294)
+        Me.Panel2.TabIndex = 2
+        '
+        'NsOnOffBox20
+        '
+        Me.NsOnOffBox20.Checked = False
+        Me.NsOnOffBox20.Location = New System.Drawing.Point(456, 265)
+        Me.NsOnOffBox20.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox20.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox20.Name = "NsOnOffBox20"
+        Me.NsOnOffBox20.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox20.TabIndex = 40
+        Me.NsOnOffBox20.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox19
+        '
+        Me.NsOnOffBox19.Checked = False
+        Me.NsOnOffBox19.Location = New System.Drawing.Point(456, 236)
+        Me.NsOnOffBox19.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox19.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox19.Name = "NsOnOffBox19"
+        Me.NsOnOffBox19.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox19.TabIndex = 40
+        Me.NsOnOffBox19.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox18
+        '
+        Me.NsOnOffBox18.Checked = False
+        Me.NsOnOffBox18.Location = New System.Drawing.Point(456, 206)
+        Me.NsOnOffBox18.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox18.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox18.Name = "NsOnOffBox18"
+        Me.NsOnOffBox18.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox18.TabIndex = 40
+        Me.NsOnOffBox18.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox17
+        '
+        Me.NsOnOffBox17.Checked = False
+        Me.NsOnOffBox17.Location = New System.Drawing.Point(456, 177)
+        Me.NsOnOffBox17.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox17.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox17.Name = "NsOnOffBox17"
+        Me.NsOnOffBox17.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox17.TabIndex = 40
+        Me.NsOnOffBox17.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox16
+        '
+        Me.NsOnOffBox16.Checked = False
+        Me.NsOnOffBox16.Location = New System.Drawing.Point(456, 148)
+        Me.NsOnOffBox16.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox16.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox16.Name = "NsOnOffBox16"
+        Me.NsOnOffBox16.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox16.TabIndex = 40
+        Me.NsOnOffBox16.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox15
+        '
+        Me.NsOnOffBox15.Checked = False
+        Me.NsOnOffBox15.Location = New System.Drawing.Point(456, 119)
+        Me.NsOnOffBox15.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox15.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox15.Name = "NsOnOffBox15"
+        Me.NsOnOffBox15.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox15.TabIndex = 40
+        Me.NsOnOffBox15.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox14
+        '
+        Me.NsOnOffBox14.Checked = False
+        Me.NsOnOffBox14.Location = New System.Drawing.Point(456, 90)
+        Me.NsOnOffBox14.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox14.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox14.Name = "NsOnOffBox14"
+        Me.NsOnOffBox14.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox14.TabIndex = 40
+        Me.NsOnOffBox14.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox13
+        '
+        Me.NsOnOffBox13.Checked = False
+        Me.NsOnOffBox13.Location = New System.Drawing.Point(456, 61)
+        Me.NsOnOffBox13.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox13.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox13.Name = "NsOnOffBox13"
+        Me.NsOnOffBox13.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox13.TabIndex = 40
+        Me.NsOnOffBox13.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox12
+        '
+        Me.NsOnOffBox12.Checked = False
+        Me.NsOnOffBox12.Location = New System.Drawing.Point(456, 32)
+        Me.NsOnOffBox12.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox12.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox12.Name = "NsOnOffBox12"
+        Me.NsOnOffBox12.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox12.TabIndex = 40
+        Me.NsOnOffBox12.Text = "NsOnOffBox1"
+        '
+        'NsOnOffBox11
+        '
+        Me.NsOnOffBox11.Checked = False
+        Me.NsOnOffBox11.Location = New System.Drawing.Point(456, 2)
+        Me.NsOnOffBox11.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox11.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox11.Name = "NsOnOffBox11"
+        Me.NsOnOffBox11.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox11.TabIndex = 40
+        Me.NsOnOffBox11.Text = "NsOnOffBox20"
         '
         'TextBox20
         '
@@ -1082,619 +946,764 @@ Partial Class Form1
         Me.TextBox20.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TextBox20.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox20.ForeColor = System.Drawing.Color.White
-        Me.TextBox20.Location = New System.Drawing.Point(379, 265)
-        Me.TextBox20.MaxLength = 55555555
+        Me.TextBox20.Location = New System.Drawing.Point(391, 265)
+        Me.TextBox20.MaxLength = 2
         Me.TextBox20.Name = "TextBox20"
         Me.TextBox20.Size = New System.Drawing.Size(56, 20)
-        Me.TextBox20.TabIndex = 80
+        Me.TextBox20.TabIndex = 39
         '
-        'ReactorTextBox14
+        'TextBox19
         '
-        Me.ReactorTextBox14.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox14.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox14.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox14.Location = New System.Drawing.Point(3, 102)
-        Me.ReactorTextBox14.MaxCharacters = 32767
-        Me.ReactorTextBox14.Name = "ReactorTextBox14"
-        Me.ReactorTextBox14.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox14.TabIndex = 61
-        Me.ReactorTextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox14.UsePasswordMask = False
+        Me.TextBox19.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.TextBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox19.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox19.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox19.ForeColor = System.Drawing.Color.White
+        Me.TextBox19.Location = New System.Drawing.Point(391, 236)
+        Me.TextBox19.MaxLength = 2
+        Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox19.TabIndex = 38
         '
-        'ReactorTextBox15
+        'TextBox18
         '
-        Me.ReactorTextBox15.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox15.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox15.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox15.Location = New System.Drawing.Point(3, 129)
-        Me.ReactorTextBox15.MaxCharacters = 32767
-        Me.ReactorTextBox15.Name = "ReactorTextBox15"
-        Me.ReactorTextBox15.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox15.TabIndex = 58
-        Me.ReactorTextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox15.UsePasswordMask = False
+        Me.TextBox18.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.TextBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox18.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox18.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox18.ForeColor = System.Drawing.Color.White
+        Me.TextBox18.Location = New System.Drawing.Point(391, 207)
+        Me.TextBox18.MaxLength = 2
+        Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox18.TabIndex = 37
         '
-        'ReactorTextBox16
+        'TextBox17
         '
-        Me.ReactorTextBox16.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox16.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox16.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox16.Location = New System.Drawing.Point(3, 157)
-        Me.ReactorTextBox16.MaxCharacters = 32767
-        Me.ReactorTextBox16.Name = "ReactorTextBox16"
-        Me.ReactorTextBox16.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox16.TabIndex = 57
-        Me.ReactorTextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox16.UsePasswordMask = False
+        Me.TextBox17.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.TextBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox17.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox17.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox17.ForeColor = System.Drawing.Color.White
+        Me.TextBox17.Location = New System.Drawing.Point(391, 178)
+        Me.TextBox17.MaxLength = 2
+        Me.TextBox17.Name = "TextBox17"
+        Me.TextBox17.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox17.TabIndex = 36
         '
-        'ReactorTextBox17
+        'TextBox16
         '
-        Me.ReactorTextBox17.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox17.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox17.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox17.Location = New System.Drawing.Point(3, 184)
-        Me.ReactorTextBox17.MaxCharacters = 32767
-        Me.ReactorTextBox17.Name = "ReactorTextBox17"
-        Me.ReactorTextBox17.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox17.TabIndex = 56
-        Me.ReactorTextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox17.UsePasswordMask = False
+        Me.TextBox16.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.TextBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox16.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox16.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox16.ForeColor = System.Drawing.Color.White
+        Me.TextBox16.Location = New System.Drawing.Point(391, 149)
+        Me.TextBox16.MaxLength = 2
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox16.TabIndex = 35
         '
-        'ReactorTextBox18
+        'TextBox15
         '
-        Me.ReactorTextBox18.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox18.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox18.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox18.Location = New System.Drawing.Point(3, 211)
-        Me.ReactorTextBox18.MaxCharacters = 32767
-        Me.ReactorTextBox18.Name = "ReactorTextBox18"
-        Me.ReactorTextBox18.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox18.TabIndex = 55
-        Me.ReactorTextBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox18.UsePasswordMask = False
+        Me.TextBox15.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.TextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox15.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox15.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox15.ForeColor = System.Drawing.Color.White
+        Me.TextBox15.Location = New System.Drawing.Point(391, 120)
+        Me.TextBox15.MaxLength = 2
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox15.TabIndex = 34
         '
-        'ReactorTextBox19
+        'TextBox14
         '
-        Me.ReactorTextBox19.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox19.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox19.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox19.Location = New System.Drawing.Point(3, 237)
-        Me.ReactorTextBox19.MaxCharacters = 32767
-        Me.ReactorTextBox19.Name = "ReactorTextBox19"
-        Me.ReactorTextBox19.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox19.TabIndex = 64
-        Me.ReactorTextBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox19.UsePasswordMask = False
+        Me.TextBox14.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox14.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox14.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox14.ForeColor = System.Drawing.Color.White
+        Me.TextBox14.Location = New System.Drawing.Point(391, 91)
+        Me.TextBox14.MaxLength = 2
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox14.TabIndex = 33
         '
-        'ReactorTextBox20
+        'TextBox13
         '
-        Me.ReactorTextBox20.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.ReactorTextBox20.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReactorTextBox20.ForeColor = System.Drawing.Color.White
-        Me.ReactorTextBox20.Location = New System.Drawing.Point(3, 263)
-        Me.ReactorTextBox20.MaxCharacters = 32767
-        Me.ReactorTextBox20.Name = "ReactorTextBox20"
-        Me.ReactorTextBox20.Size = New System.Drawing.Size(359, 22)
-        Me.ReactorTextBox20.TabIndex = 59
-        Me.ReactorTextBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.ReactorTextBox20.UsePasswordMask = False
+        Me.TextBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox13.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox13.ForeColor = System.Drawing.Color.White
+        Me.TextBox13.Location = New System.Drawing.Point(391, 62)
+        Me.TextBox13.MaxLength = 2
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox13.TabIndex = 32
         '
-        'ReactorCheckBox11
+        'TextBox11
         '
-        Me.ReactorCheckBox11.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox11.Checked = False
-        Me.ReactorCheckBox11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox11.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox11.Location = New System.Drawing.Point(451, 27)
-        Me.ReactorCheckBox11.Name = "ReactorCheckBox11"
-        Me.ReactorCheckBox11.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox11.TabIndex = 72
-        Me.ReactorCheckBox11.Text = "Enable"
+        Me.TextBox11.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox11.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.ForeColor = System.Drawing.Color.White
+        Me.TextBox11.Location = New System.Drawing.Point(391, 4)
+        Me.TextBox11.MaxLength = 2
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox11.TabIndex = 30
         '
-        'ReactorCheckBox12
+        'TextBox12
         '
-        Me.ReactorCheckBox12.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox12.Checked = False
-        Me.ReactorCheckBox12.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox12.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox12.Location = New System.Drawing.Point(451, 53)
-        Me.ReactorCheckBox12.Name = "ReactorCheckBox12"
-        Me.ReactorCheckBox12.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox12.TabIndex = 70
-        Me.ReactorCheckBox12.Text = "Enable"
+        Me.TextBox12.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
+        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox12.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TextBox12.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox12.ForeColor = System.Drawing.Color.White
+        Me.TextBox12.Location = New System.Drawing.Point(391, 33)
+        Me.TextBox12.MaxLength = 55555555
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(56, 20)
+        Me.TextBox12.TabIndex = 31
         '
-        'ReactorCheckBox13
+        'NsTextBox20
         '
-        Me.ReactorCheckBox13.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox13.Checked = False
-        Me.ReactorCheckBox13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox13.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox13.Location = New System.Drawing.Point(451, 79)
-        Me.ReactorCheckBox13.Name = "ReactorCheckBox13"
-        Me.ReactorCheckBox13.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox13.TabIndex = 68
-        Me.ReactorCheckBox13.Text = "Enable"
+        Me.NsTextBox20.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox20.Location = New System.Drawing.Point(9, 264)
+        Me.NsTextBox20.MaxLength = 32767
+        Me.NsTextBox20.Multiline = False
+        Me.NsTextBox20.Name = "NsTextBox20"
+        Me.NsTextBox20.ReadOnly = False
+        Me.NsTextBox20.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox20.TabIndex = 0
+        Me.NsTextBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox20.UseSystemPasswordChar = False
         '
-        'ReactorCheckBox14
+        'NsTextBox19
         '
-        Me.ReactorCheckBox14.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox14.Checked = False
-        Me.ReactorCheckBox14.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox14.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox14.Location = New System.Drawing.Point(451, 106)
-        Me.ReactorCheckBox14.Name = "ReactorCheckBox14"
-        Me.ReactorCheckBox14.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox14.TabIndex = 67
-        Me.ReactorCheckBox14.Text = "Enable"
+        Me.NsTextBox19.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox19.Location = New System.Drawing.Point(9, 235)
+        Me.NsTextBox19.MaxLength = 32767
+        Me.NsTextBox19.Multiline = False
+        Me.NsTextBox19.Name = "NsTextBox19"
+        Me.NsTextBox19.ReadOnly = False
+        Me.NsTextBox19.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox19.TabIndex = 0
+        Me.NsTextBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox19.UseSystemPasswordChar = False
         '
-        'ReactorCheckBox15
+        'NsTextBox18
         '
-        Me.ReactorCheckBox15.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox15.Checked = False
-        Me.ReactorCheckBox15.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox15.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox15.Location = New System.Drawing.Point(451, 133)
-        Me.ReactorCheckBox15.Name = "ReactorCheckBox15"
-        Me.ReactorCheckBox15.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox15.TabIndex = 65
-        Me.ReactorCheckBox15.Text = "Enable"
+        Me.NsTextBox18.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox18.Location = New System.Drawing.Point(9, 206)
+        Me.NsTextBox18.MaxLength = 32767
+        Me.NsTextBox18.Multiline = False
+        Me.NsTextBox18.Name = "NsTextBox18"
+        Me.NsTextBox18.ReadOnly = False
+        Me.NsTextBox18.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox18.TabIndex = 0
+        Me.NsTextBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox18.UseSystemPasswordChar = False
         '
-        'ReactorCheckBox16
+        'NsTextBox17
         '
-        Me.ReactorCheckBox16.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox16.Checked = False
-        Me.ReactorCheckBox16.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox16.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox16.Location = New System.Drawing.Point(451, 161)
-        Me.ReactorCheckBox16.Name = "ReactorCheckBox16"
-        Me.ReactorCheckBox16.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox16.TabIndex = 66
-        Me.ReactorCheckBox16.Text = "Enable"
+        Me.NsTextBox17.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox17.Location = New System.Drawing.Point(9, 177)
+        Me.NsTextBox17.MaxLength = 32767
+        Me.NsTextBox17.Multiline = False
+        Me.NsTextBox17.Name = "NsTextBox17"
+        Me.NsTextBox17.ReadOnly = False
+        Me.NsTextBox17.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox17.TabIndex = 0
+        Me.NsTextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox17.UseSystemPasswordChar = False
         '
-        'ReactorCheckBox17
+        'NsTextBox16
         '
-        Me.ReactorCheckBox17.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox17.Checked = False
-        Me.ReactorCheckBox17.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox17.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox17.Location = New System.Drawing.Point(451, 268)
-        Me.ReactorCheckBox17.Name = "ReactorCheckBox17"
-        Me.ReactorCheckBox17.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox17.TabIndex = 69
-        Me.ReactorCheckBox17.Text = "Enable"
+        Me.NsTextBox16.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox16.Location = New System.Drawing.Point(9, 148)
+        Me.NsTextBox16.MaxLength = 32767
+        Me.NsTextBox16.Multiline = False
+        Me.NsTextBox16.Name = "NsTextBox16"
+        Me.NsTextBox16.ReadOnly = False
+        Me.NsTextBox16.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox16.TabIndex = 0
+        Me.NsTextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox16.UseSystemPasswordChar = False
         '
-        'ReactorCheckBox18
+        'NsTextBox15
         '
-        Me.ReactorCheckBox18.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox18.Checked = False
-        Me.ReactorCheckBox18.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox18.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox18.Location = New System.Drawing.Point(451, 188)
-        Me.ReactorCheckBox18.Name = "ReactorCheckBox18"
-        Me.ReactorCheckBox18.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox18.TabIndex = 71
-        Me.ReactorCheckBox18.Text = "Enable"
+        Me.NsTextBox15.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox15.Location = New System.Drawing.Point(9, 119)
+        Me.NsTextBox15.MaxLength = 32767
+        Me.NsTextBox15.Multiline = False
+        Me.NsTextBox15.Name = "NsTextBox15"
+        Me.NsTextBox15.ReadOnly = False
+        Me.NsTextBox15.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox15.TabIndex = 0
+        Me.NsTextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox15.UseSystemPasswordChar = False
         '
-        'ReactorCheckBox19
+        'NsTextBox14
         '
-        Me.ReactorCheckBox19.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox19.Checked = False
-        Me.ReactorCheckBox19.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox19.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox19.Location = New System.Drawing.Point(451, 241)
-        Me.ReactorCheckBox19.Name = "ReactorCheckBox19"
-        Me.ReactorCheckBox19.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox19.TabIndex = 74
-        Me.ReactorCheckBox19.Text = "Enable"
+        Me.NsTextBox14.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox14.Location = New System.Drawing.Point(9, 90)
+        Me.NsTextBox14.MaxLength = 32767
+        Me.NsTextBox14.Multiline = False
+        Me.NsTextBox14.Name = "NsTextBox14"
+        Me.NsTextBox14.ReadOnly = False
+        Me.NsTextBox14.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox14.TabIndex = 0
+        Me.NsTextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox14.UseSystemPasswordChar = False
         '
-        'ReactorCheckBox20
+        'NsTextBox13
         '
-        Me.ReactorCheckBox20.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.ReactorCheckBox20.Checked = False
-        Me.ReactorCheckBox20.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ReactorCheckBox20.ForeColor = System.Drawing.Color.White
-        Me.ReactorCheckBox20.Location = New System.Drawing.Point(451, 214)
-        Me.ReactorCheckBox20.Name = "ReactorCheckBox20"
-        Me.ReactorCheckBox20.Size = New System.Drawing.Size(53, 16)
-        Me.ReactorCheckBox20.TabIndex = 73
-        Me.ReactorCheckBox20.Text = "Enable"
+        Me.NsTextBox13.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox13.Location = New System.Drawing.Point(9, 61)
+        Me.NsTextBox13.MaxLength = 32767
+        Me.NsTextBox13.Multiline = False
+        Me.NsTextBox13.Name = "NsTextBox13"
+        Me.NsTextBox13.ReadOnly = False
+        Me.NsTextBox13.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox13.TabIndex = 0
+        Me.NsTextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox13.UseSystemPasswordChar = False
         '
-        'TabPage6
+        'NsTextBox12
         '
-        Me.TabPage6.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage6.Controls.Add(Me.Label19)
-        Me.TabPage6.Controls.Add(Me.Label18)
-        Me.TabPage6.Controls.Add(Me.Label17)
-        Me.TabPage6.Controls.Add(Me.Label21)
-        Me.TabPage6.Controls.Add(Me.Label20)
-        Me.TabPage6.Controls.Add(Me.Label16)
-        Me.TabPage6.Controls.Add(Me.Label15)
-        Me.TabPage6.Controls.Add(Me.Label13)
-        Me.TabPage6.Controls.Add(Me.Label14)
-        Me.TabPage6.Controls.Add(Me.chkWheelDown)
-        Me.TabPage6.Controls.Add(Me.Label12)
-        Me.TabPage6.Controls.Add(Me.chkWheelUp)
-        Me.TabPage6.Controls.Add(Me.chkLMB)
-        Me.TabPage6.Controls.Add(Me.chkMMB)
-        Me.TabPage6.Controls.Add(Me.chkRMB)
-        Me.TabPage6.Controls.Add(Me.chkSB1)
-        Me.TabPage6.Controls.Add(Me.txtWheelDown)
-        Me.TabPage6.Controls.Add(Me.chkSB2)
-        Me.TabPage6.Controls.Add(Me.txtWheelUp)
-        Me.TabPage6.Controls.Add(Me.txtlmb)
-        Me.TabPage6.Controls.Add(Me.txtMMB)
-        Me.TabPage6.Controls.Add(Me.txtRMB)
-        Me.TabPage6.Controls.Add(Me.txtSB1)
-        Me.TabPage6.Controls.Add(Me.txtSB2)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(515, 307)
-        Me.TabPage6.TabIndex = 3
-        Me.TabPage6.Text = "Mouse Binds"
+        Me.NsTextBox12.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox12.Location = New System.Drawing.Point(9, 32)
+        Me.NsTextBox12.MaxLength = 32767
+        Me.NsTextBox12.Multiline = False
+        Me.NsTextBox12.Name = "NsTextBox12"
+        Me.NsTextBox12.ReadOnly = False
+        Me.NsTextBox12.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox12.TabIndex = 0
+        Me.NsTextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox12.UseSystemPasswordChar = False
+        '
+        'NsTextBox11
+        '
+        Me.NsTextBox11.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox11.Location = New System.Drawing.Point(9, 3)
+        Me.NsTextBox11.MaxLength = 32767
+        Me.NsTextBox11.Multiline = False
+        Me.NsTextBox11.Name = "NsTextBox11"
+        Me.NsTextBox11.ReadOnly = False
+        Me.NsTextBox11.Size = New System.Drawing.Size(376, 23)
+        Me.NsTextBox11.TabIndex = 0
+        Me.NsTextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox11.UseSystemPasswordChar = False
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage2.Controls.Add(Me.NsLabel2)
+        Me.TabPage2.Controls.Add(Me.chkWheelDown)
+        Me.TabPage2.Controls.Add(Me.chkWheelUp)
+        Me.TabPage2.Controls.Add(Me.chkSB2)
+        Me.TabPage2.Controls.Add(Me.chkSB1)
+        Me.TabPage2.Controls.Add(Me.chkRMB)
+        Me.TabPage2.Controls.Add(Me.chkMMB)
+        Me.TabPage2.Controls.Add(Me.chkLMB)
+        Me.TabPage2.Controls.Add(Me.txtWheelDown)
+        Me.TabPage2.Controls.Add(Me.txtWheelUp)
+        Me.TabPage2.Controls.Add(Me.txtSB2)
+        Me.TabPage2.Controls.Add(Me.txtSB1)
+        Me.TabPage2.Controls.Add(Me.txtRMB)
+        Me.TabPage2.Controls.Add(Me.txtMMB)
+        Me.TabPage2.Controls.Add(Me.txtLMB)
+        Me.TabPage2.Controls.Add(Me.Label19)
+        Me.TabPage2.Controls.Add(Me.Label18)
+        Me.TabPage2.Controls.Add(Me.Label17)
+        Me.TabPage2.Controls.Add(Me.Label21)
+        Me.TabPage2.Controls.Add(Me.Label20)
+        Me.TabPage2.Controls.Add(Me.Label16)
+        Me.TabPage2.Controls.Add(Me.Label15)
+        Me.TabPage2.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(521, 345)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Mouse Binds"
+        '
+        'NsLabel2
+        '
+        Me.NsLabel2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel2.Location = New System.Drawing.Point(216, 2)
+        Me.NsLabel2.Name = "NsLabel2"
+        Me.NsLabel2.Size = New System.Drawing.Size(103, 23)
+        Me.NsLabel2.TabIndex = 74
+        Me.NsLabel2.Text = "NsLabel2"
+        Me.NsLabel2.Value1 = "Mouse"
+        Me.NsLabel2.Value2 = " Binds"
+        '
+        'chkWheelDown
+        '
+        Me.chkWheelDown.Checked = False
+        Me.chkWheelDown.Location = New System.Drawing.Point(457, 290)
+        Me.chkWheelDown.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkWheelDown.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkWheelDown.Name = "chkWheelDown"
+        Me.chkWheelDown.Size = New System.Drawing.Size(56, 24)
+        Me.chkWheelDown.TabIndex = 73
+        Me.chkWheelDown.Text = "NsOnOffBox21"
+        '
+        'chkWheelUp
+        '
+        Me.chkWheelUp.Checked = False
+        Me.chkWheelUp.Location = New System.Drawing.Point(457, 249)
+        Me.chkWheelUp.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkWheelUp.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkWheelUp.Name = "chkWheelUp"
+        Me.chkWheelUp.Size = New System.Drawing.Size(56, 24)
+        Me.chkWheelUp.TabIndex = 73
+        Me.chkWheelUp.Text = "NsOnOffBox21"
+        '
+        'chkSB2
+        '
+        Me.chkSB2.Checked = False
+        Me.chkSB2.Location = New System.Drawing.Point(457, 208)
+        Me.chkSB2.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkSB2.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkSB2.Name = "chkSB2"
+        Me.chkSB2.Size = New System.Drawing.Size(56, 24)
+        Me.chkSB2.TabIndex = 73
+        Me.chkSB2.Text = "NsOnOffBox21"
+        '
+        'chkSB1
+        '
+        Me.chkSB1.Checked = False
+        Me.chkSB1.Location = New System.Drawing.Point(457, 166)
+        Me.chkSB1.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkSB1.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkSB1.Name = "chkSB1"
+        Me.chkSB1.Size = New System.Drawing.Size(56, 24)
+        Me.chkSB1.TabIndex = 73
+        Me.chkSB1.Text = "NsOnOffBox21"
+        '
+        'chkRMB
+        '
+        Me.chkRMB.Checked = False
+        Me.chkRMB.Location = New System.Drawing.Point(457, 124)
+        Me.chkRMB.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkRMB.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkRMB.Name = "chkRMB"
+        Me.chkRMB.Size = New System.Drawing.Size(56, 24)
+        Me.chkRMB.TabIndex = 73
+        Me.chkRMB.Text = "NsOnOffBox21"
+        '
+        'chkMMB
+        '
+        Me.chkMMB.Checked = False
+        Me.chkMMB.Location = New System.Drawing.Point(456, 83)
+        Me.chkMMB.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkMMB.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkMMB.Name = "chkMMB"
+        Me.chkMMB.Size = New System.Drawing.Size(56, 24)
+        Me.chkMMB.TabIndex = 73
+        Me.chkMMB.Text = "NsOnOffBox21"
+        '
+        'chkLMB
+        '
+        Me.chkLMB.Checked = False
+        Me.chkLMB.Location = New System.Drawing.Point(456, 42)
+        Me.chkLMB.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkLMB.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkLMB.Name = "chkLMB"
+        Me.chkLMB.Size = New System.Drawing.Size(56, 24)
+        Me.chkLMB.TabIndex = 73
+        Me.chkLMB.Text = "NsOnOffBox21"
+        '
+        'txtWheelDown
+        '
+        Me.txtWheelDown.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtWheelDown.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtWheelDown.Location = New System.Drawing.Point(91, 289)
+        Me.txtWheelDown.MaxLength = 32767
+        Me.txtWheelDown.Multiline = False
+        Me.txtWheelDown.Name = "txtWheelDown"
+        Me.txtWheelDown.ReadOnly = False
+        Me.txtWheelDown.Size = New System.Drawing.Size(359, 26)
+        Me.txtWheelDown.TabIndex = 72
+        Me.txtWheelDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtWheelDown.UseSystemPasswordChar = False
+        '
+        'txtWheelUp
+        '
+        Me.txtWheelUp.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtWheelUp.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtWheelUp.Location = New System.Drawing.Point(91, 248)
+        Me.txtWheelUp.MaxLength = 32767
+        Me.txtWheelUp.Multiline = False
+        Me.txtWheelUp.Name = "txtWheelUp"
+        Me.txtWheelUp.ReadOnly = False
+        Me.txtWheelUp.Size = New System.Drawing.Size(359, 26)
+        Me.txtWheelUp.TabIndex = 72
+        Me.txtWheelUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtWheelUp.UseSystemPasswordChar = False
+        '
+        'txtSB2
+        '
+        Me.txtSB2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSB2.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSB2.Location = New System.Drawing.Point(91, 207)
+        Me.txtSB2.MaxLength = 32767
+        Me.txtSB2.Multiline = False
+        Me.txtSB2.Name = "txtSB2"
+        Me.txtSB2.ReadOnly = False
+        Me.txtSB2.Size = New System.Drawing.Size(359, 26)
+        Me.txtSB2.TabIndex = 72
+        Me.txtSB2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtSB2.UseSystemPasswordChar = False
+        '
+        'txtSB1
+        '
+        Me.txtSB1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSB1.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSB1.Location = New System.Drawing.Point(91, 165)
+        Me.txtSB1.MaxLength = 32767
+        Me.txtSB1.Multiline = False
+        Me.txtSB1.Name = "txtSB1"
+        Me.txtSB1.ReadOnly = False
+        Me.txtSB1.Size = New System.Drawing.Size(359, 26)
+        Me.txtSB1.TabIndex = 72
+        Me.txtSB1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtSB1.UseSystemPasswordChar = False
+        '
+        'txtRMB
+        '
+        Me.txtRMB.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtRMB.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRMB.Location = New System.Drawing.Point(91, 123)
+        Me.txtRMB.MaxLength = 32767
+        Me.txtRMB.Multiline = False
+        Me.txtRMB.Name = "txtRMB"
+        Me.txtRMB.ReadOnly = False
+        Me.txtRMB.Size = New System.Drawing.Size(359, 26)
+        Me.txtRMB.TabIndex = 72
+        Me.txtRMB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtRMB.UseSystemPasswordChar = False
+        '
+        'txtMMB
+        '
+        Me.txtMMB.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtMMB.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMMB.Location = New System.Drawing.Point(90, 82)
+        Me.txtMMB.MaxLength = 32767
+        Me.txtMMB.Multiline = False
+        Me.txtMMB.Name = "txtMMB"
+        Me.txtMMB.ReadOnly = False
+        Me.txtMMB.Size = New System.Drawing.Size(359, 26)
+        Me.txtMMB.TabIndex = 72
+        Me.txtMMB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtMMB.UseSystemPasswordChar = False
+        '
+        'txtLMB
+        '
+        Me.txtLMB.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtLMB.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLMB.Location = New System.Drawing.Point(90, 41)
+        Me.txtLMB.MaxLength = 32767
+        Me.txtLMB.Multiline = False
+        Me.txtLMB.Name = "txtLMB"
+        Me.txtLMB.ReadOnly = False
+        Me.txtLMB.Size = New System.Drawing.Size(359, 26)
+        Me.txtLMB.TabIndex = 72
+        Me.txtLMB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtLMB.UseSystemPasswordChar = False
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(6, 200)
+        Me.Label19.Location = New System.Drawing.Point(9, 211)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(83, 17)
-        Me.Label19.TabIndex = 64
+        Me.Label19.TabIndex = 65
         Me.Label19.Text = "Side Button 2:"
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label18
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(8, 158)
+        Me.Label18.Location = New System.Drawing.Point(11, 169)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(81, 17)
-        Me.Label18.TabIndex = 64
+        Me.Label18.TabIndex = 66
         Me.Label18.Text = "Side Button 1:"
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(20, 116)
+        Me.Label17.Location = New System.Drawing.Point(23, 127)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(69, 17)
-        Me.Label17.TabIndex = 64
+        Me.Label17.TabIndex = 67
         Me.Label17.Text = "Right Click:"
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(11, 282)
+        Me.Label21.Location = New System.Drawing.Point(14, 294)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(79, 17)
-        Me.Label21.TabIndex = 64
+        Me.Label21.TabIndex = 68
         Me.Label21.Text = "Wheel Down:"
-        Me.Label21.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(26, 241)
+        Me.Label20.Location = New System.Drawing.Point(29, 253)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(63, 17)
-        Me.Label20.TabIndex = 64
+        Me.Label20.TabIndex = 69
         Me.Label20.Text = "Wheel Up:"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label16
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(11, 74)
+        Me.Label16.Location = New System.Drawing.Point(14, 87)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(78, 17)
-        Me.Label16.TabIndex = 64
+        Me.Label16.TabIndex = 70
         Me.Label16.Text = "Middle Click:"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(29, 35)
+        Me.Label15.Location = New System.Drawing.Point(32, 45)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(60, 17)
-        Me.Label15.TabIndex = 64
+        Me.Label15.TabIndex = 71
         Me.Label15.Text = "Left Click:"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Label13
+        'TabPage3
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(306, 10)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(128, 17)
-        Me.Label13.TabIndex = 62
-        Me.Label13.Text = "Example: /bribe 10000"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(92, 10)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(93, 17)
-        Me.Label14.TabIndex = 63
-        Me.Label14.Text = "Enter Command"
-        '
-        'chkWheelDown
-        '
-        Me.chkWheelDown.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkWheelDown.Checked = False
-        Me.chkWheelDown.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkWheelDown.ForeColor = System.Drawing.Color.White
-        Me.chkWheelDown.Location = New System.Drawing.Point(447, 283)
-        Me.chkWheelDown.Name = "chkWheelDown"
-        Me.chkWheelDown.Size = New System.Drawing.Size(52, 16)
-        Me.chkWheelDown.TabIndex = 56
-        Me.chkWheelDown.Text = "Enable"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(454, 10)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(45, 17)
-        Me.Label12.TabIndex = 61
-        Me.Label12.Text = "Enable"
-        '
-        'chkWheelUp
-        '
-        Me.chkWheelUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkWheelUp.Checked = False
-        Me.chkWheelUp.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkWheelUp.ForeColor = System.Drawing.Color.White
-        Me.chkWheelUp.Location = New System.Drawing.Point(447, 242)
-        Me.chkWheelUp.Name = "chkWheelUp"
-        Me.chkWheelUp.Size = New System.Drawing.Size(52, 16)
-        Me.chkWheelUp.TabIndex = 56
-        Me.chkWheelUp.Text = "Enable"
-        '
-        'chkLMB
-        '
-        Me.chkLMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkLMB.Checked = False
-        Me.chkLMB.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkLMB.ForeColor = System.Drawing.Color.White
-        Me.chkLMB.Location = New System.Drawing.Point(447, 36)
-        Me.chkLMB.Name = "chkLMB"
-        Me.chkLMB.Size = New System.Drawing.Size(52, 16)
-        Me.chkLMB.TabIndex = 55
-        Me.chkLMB.Text = "Enable"
-        '
-        'chkMMB
-        '
-        Me.chkMMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkMMB.Checked = False
-        Me.chkMMB.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkMMB.ForeColor = System.Drawing.Color.White
-        Me.chkMMB.Location = New System.Drawing.Point(447, 75)
-        Me.chkMMB.Name = "chkMMB"
-        Me.chkMMB.Size = New System.Drawing.Size(52, 16)
-        Me.chkMMB.TabIndex = 56
-        Me.chkMMB.Text = "Enable"
-        '
-        'chkRMB
-        '
-        Me.chkRMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkRMB.Checked = False
-        Me.chkRMB.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkRMB.ForeColor = System.Drawing.Color.White
-        Me.chkRMB.Location = New System.Drawing.Point(447, 117)
-        Me.chkRMB.Name = "chkRMB"
-        Me.chkRMB.Size = New System.Drawing.Size(52, 16)
-        Me.chkRMB.TabIndex = 57
-        Me.chkRMB.Text = "Enable"
-        '
-        'chkSB1
-        '
-        Me.chkSB1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkSB1.Checked = False
-        Me.chkSB1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkSB1.ForeColor = System.Drawing.Color.White
-        Me.chkSB1.Location = New System.Drawing.Point(447, 159)
-        Me.chkSB1.Name = "chkSB1"
-        Me.chkSB1.Size = New System.Drawing.Size(52, 16)
-        Me.chkSB1.TabIndex = 58
-        Me.chkSB1.Text = "Enable"
-        '
-        'txtWheelDown
-        '
-        Me.txtWheelDown.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtWheelDown.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtWheelDown.ForeColor = System.Drawing.Color.White
-        Me.txtWheelDown.Location = New System.Drawing.Point(95, 280)
-        Me.txtWheelDown.MaxCharacters = 32767
-        Me.txtWheelDown.Name = "txtWheelDown"
-        Me.txtWheelDown.Size = New System.Drawing.Size(336, 22)
-        Me.txtWheelDown.TabIndex = 48
-        Me.txtWheelDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtWheelDown.UsePasswordMask = False
-        '
-        'chkSB2
-        '
-        Me.chkSB2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkSB2.Checked = False
-        Me.chkSB2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkSB2.ForeColor = System.Drawing.Color.White
-        Me.chkSB2.Location = New System.Drawing.Point(447, 201)
-        Me.chkSB2.Name = "chkSB2"
-        Me.chkSB2.Size = New System.Drawing.Size(52, 16)
-        Me.chkSB2.TabIndex = 59
-        Me.chkSB2.Text = "Enable"
-        '
-        'txtWheelUp
-        '
-        Me.txtWheelUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtWheelUp.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtWheelUp.ForeColor = System.Drawing.Color.White
-        Me.txtWheelUp.Location = New System.Drawing.Point(95, 239)
-        Me.txtWheelUp.MaxCharacters = 32767
-        Me.txtWheelUp.Name = "txtWheelUp"
-        Me.txtWheelUp.Size = New System.Drawing.Size(336, 22)
-        Me.txtWheelUp.TabIndex = 48
-        Me.txtWheelUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtWheelUp.UsePasswordMask = False
-        '
-        'txtlmb
-        '
-        Me.txtlmb.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtlmb.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtlmb.ForeColor = System.Drawing.Color.White
-        Me.txtlmb.Location = New System.Drawing.Point(95, 33)
-        Me.txtlmb.MaxCharacters = 32767
-        Me.txtlmb.Name = "txtlmb"
-        Me.txtlmb.Size = New System.Drawing.Size(336, 22)
-        Me.txtlmb.TabIndex = 47
-        Me.txtlmb.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtlmb.UsePasswordMask = False
-        '
-        'txtMMB
-        '
-        Me.txtMMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtMMB.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMMB.ForeColor = System.Drawing.Color.White
-        Me.txtMMB.Location = New System.Drawing.Point(95, 72)
-        Me.txtMMB.MaxCharacters = 32767
-        Me.txtMMB.Name = "txtMMB"
-        Me.txtMMB.Size = New System.Drawing.Size(336, 22)
-        Me.txtMMB.TabIndex = 48
-        Me.txtMMB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtMMB.UsePasswordMask = False
-        '
-        'txtRMB
-        '
-        Me.txtRMB.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtRMB.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRMB.ForeColor = System.Drawing.Color.White
-        Me.txtRMB.Location = New System.Drawing.Point(95, 114)
-        Me.txtRMB.MaxCharacters = 32767
-        Me.txtRMB.Name = "txtRMB"
-        Me.txtRMB.Size = New System.Drawing.Size(336, 22)
-        Me.txtRMB.TabIndex = 49
-        Me.txtRMB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtRMB.UsePasswordMask = False
-        '
-        'txtSB1
-        '
-        Me.txtSB1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtSB1.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSB1.ForeColor = System.Drawing.Color.White
-        Me.txtSB1.Location = New System.Drawing.Point(95, 156)
-        Me.txtSB1.MaxCharacters = 32767
-        Me.txtSB1.Name = "txtSB1"
-        Me.txtSB1.Size = New System.Drawing.Size(336, 22)
-        Me.txtSB1.TabIndex = 50
-        Me.txtSB1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtSB1.UsePasswordMask = False
-        '
-        'txtSB2
-        '
-        Me.txtSB2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtSB2.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSB2.ForeColor = System.Drawing.Color.White
-        Me.txtSB2.Location = New System.Drawing.Point(95, 198)
-        Me.txtSB2.MaxCharacters = 32767
-        Me.txtSB2.Name = "txtSB2"
-        Me.txtSB2.Size = New System.Drawing.Size(336, 22)
-        Me.txtSB2.TabIndex = 51
-        Me.txtSB2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtSB2.UsePasswordMask = False
-        '
-        'TabPage10
-        '
-        Me.TabPage10.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage10.Controls.Add(Me.chkEnable360)
-        Me.TabPage10.Controls.Add(Me.Label56)
-        Me.TabPage10.Controls.Add(Me.Label52)
-        Me.TabPage10.Controls.Add(Me.Label43)
-        Me.TabPage10.Controls.Add(Me.Label55)
-        Me.TabPage10.Controls.Add(Me.Label46)
-        Me.TabPage10.Controls.Add(Me.Label47)
-        Me.TabPage10.Controls.Add(Me.Label54)
-        Me.TabPage10.Controls.Add(Me.Label45)
-        Me.TabPage10.Controls.Add(Me.Label42)
-        Me.TabPage10.Controls.Add(Me.Label53)
-        Me.TabPage10.Controls.Add(Me.Label44)
-        Me.TabPage10.Controls.Add(Me.Label48)
-        Me.TabPage10.Controls.Add(Me.Label50)
-        Me.TabPage10.Controls.Add(Me.Label51)
-        Me.TabPage10.Controls.Add(Me.chkLeftStick)
-        Me.TabPage10.Controls.Add(Me.chkDpadLeft)
-        Me.TabPage10.Controls.Add(Me.chkButtonX)
-        Me.TabPage10.Controls.Add(Me.chkLB)
-        Me.TabPage10.Controls.Add(Me.chkDpadUp)
-        Me.TabPage10.Controls.Add(Me.chkButtonA)
-        Me.TabPage10.Controls.Add(Me.chkRightStick)
-        Me.TabPage10.Controls.Add(Me.chkDpadRight)
-        Me.TabPage10.Controls.Add(Me.chkButtonY)
-        Me.TabPage10.Controls.Add(Me.chkRB)
-        Me.TabPage10.Controls.Add(Me.chkDpadDown)
-        Me.TabPage10.Controls.Add(Me.chkButtonB)
-        Me.TabPage10.Controls.Add(Me.txtLeftStickPress)
-        Me.TabPage10.Controls.Add(Me.txtDpadLeft)
-        Me.TabPage10.Controls.Add(Me.txtButtonX)
-        Me.TabPage10.Controls.Add(Me.txtRightStickPress)
-        Me.TabPage10.Controls.Add(Me.txtDpadRight)
-        Me.TabPage10.Controls.Add(Me.txtButtonY)
-        Me.TabPage10.Controls.Add(Me.txtLb)
-        Me.TabPage10.Controls.Add(Me.txtRB)
-        Me.TabPage10.Controls.Add(Me.txtDpadUp)
-        Me.TabPage10.Controls.Add(Me.txtDpadDown)
-        Me.TabPage10.Controls.Add(Me.txtButtonA)
-        Me.TabPage10.Controls.Add(Me.txtButtonB)
-        Me.TabPage10.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage10.Name = "TabPage10"
-        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(515, 307)
-        Me.TabPage10.TabIndex = 4
-        Me.TabPage10.Text = "X360 Controller Binds"
+        Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage3.Controls.Add(Me.chkEnable360)
+        Me.TabPage3.Controls.Add(Me.NsLabel3)
+        Me.TabPage3.Controls.Add(Me.chkRightStick)
+        Me.TabPage3.Controls.Add(Me.chkLeftStick)
+        Me.TabPage3.Controls.Add(Me.chkRB)
+        Me.TabPage3.Controls.Add(Me.chkLB)
+        Me.TabPage3.Controls.Add(Me.chkDpadRight)
+        Me.TabPage3.Controls.Add(Me.chkDpadLeft)
+        Me.TabPage3.Controls.Add(Me.chkDpadDown)
+        Me.TabPage3.Controls.Add(Me.chkDpadUp)
+        Me.TabPage3.Controls.Add(Me.chkButtonY)
+        Me.TabPage3.Controls.Add(Me.chkButtonX)
+        Me.TabPage3.Controls.Add(Me.chkButtonB)
+        Me.TabPage3.Controls.Add(Me.chkButtonA)
+        Me.TabPage3.Controls.Add(Me.Label56)
+        Me.TabPage3.Controls.Add(Me.Label52)
+        Me.TabPage3.Controls.Add(Me.Label43)
+        Me.TabPage3.Controls.Add(Me.Label55)
+        Me.TabPage3.Controls.Add(Me.Label46)
+        Me.TabPage3.Controls.Add(Me.Label47)
+        Me.TabPage3.Controls.Add(Me.Label54)
+        Me.TabPage3.Controls.Add(Me.Label45)
+        Me.TabPage3.Controls.Add(Me.Label42)
+        Me.TabPage3.Controls.Add(Me.Label53)
+        Me.TabPage3.Controls.Add(Me.Label44)
+        Me.TabPage3.Controls.Add(Me.Label48)
+        Me.TabPage3.Controls.Add(Me.txtRightStickPress)
+        Me.TabPage3.Controls.Add(Me.txtLeftStickPress)
+        Me.TabPage3.Controls.Add(Me.txtRb)
+        Me.TabPage3.Controls.Add(Me.txtLb)
+        Me.TabPage3.Controls.Add(Me.txtDpadRight)
+        Me.TabPage3.Controls.Add(Me.txtDpadLeft)
+        Me.TabPage3.Controls.Add(Me.txtDpadDown)
+        Me.TabPage3.Controls.Add(Me.txtDpadUp)
+        Me.TabPage3.Controls.Add(Me.txtButtonY)
+        Me.TabPage3.Controls.Add(Me.txtButtonX)
+        Me.TabPage3.Controls.Add(Me.txtButtonB)
+        Me.TabPage3.Controls.Add(Me.txtButtonA)
+        Me.TabPage3.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(521, 345)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Xbox 360 Binds"
         '
         'chkEnable360
         '
-        Me.chkEnable360.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
         Me.chkEnable360.Checked = False
-        Me.chkEnable360.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkEnable360.ForeColor = System.Drawing.Color.White
-        Me.chkEnable360.Location = New System.Drawing.Point(290, 2)
+        Me.chkEnable360.Location = New System.Drawing.Point(396, 3)
+        Me.chkEnable360.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkEnable360.MinimumSize = New System.Drawing.Size(56, 24)
         Me.chkEnable360.Name = "chkEnable360"
-        Me.chkEnable360.Size = New System.Drawing.Size(139, 16)
-        Me.chkEnable360.TabIndex = 84
-        Me.chkEnable360.Text = "Xbox 360 Master Switch"
+        Me.chkEnable360.Size = New System.Drawing.Size(56, 24)
+        Me.chkEnable360.TabIndex = 111
+        Me.chkEnable360.Text = "NsOnOffBox28"
+        '
+        'NsLabel3
+        '
+        Me.NsLabel3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel3.Location = New System.Drawing.Point(198, 2)
+        Me.NsLabel3.Name = "NsLabel3"
+        Me.NsLabel3.Size = New System.Drawing.Size(121, 23)
+        Me.NsLabel3.TabIndex = 110
+        Me.NsLabel3.Text = "NsLabel3"
+        Me.NsLabel3.Value1 = "Xbox 360"
+        Me.NsLabel3.Value2 = " Binds"
+        '
+        'chkRightStick
+        '
+        Me.chkRightStick.Checked = False
+        Me.chkRightStick.Location = New System.Drawing.Point(460, 317)
+        Me.chkRightStick.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkRightStick.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkRightStick.Name = "chkRightStick"
+        Me.chkRightStick.Size = New System.Drawing.Size(56, 24)
+        Me.chkRightStick.TabIndex = 109
+        Me.chkRightStick.Text = "NsOnOffBox28"
+        '
+        'chkLeftStick
+        '
+        Me.chkLeftStick.Checked = False
+        Me.chkLeftStick.Location = New System.Drawing.Point(460, 290)
+        Me.chkLeftStick.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkLeftStick.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkLeftStick.Name = "chkLeftStick"
+        Me.chkLeftStick.Size = New System.Drawing.Size(56, 24)
+        Me.chkLeftStick.TabIndex = 109
+        Me.chkLeftStick.Text = "NsOnOffBox28"
+        '
+        'chkRB
+        '
+        Me.chkRB.Checked = False
+        Me.chkRB.Location = New System.Drawing.Point(460, 265)
+        Me.chkRB.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkRB.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkRB.Name = "chkRB"
+        Me.chkRB.Size = New System.Drawing.Size(56, 24)
+        Me.chkRB.TabIndex = 109
+        Me.chkRB.Text = "NsOnOffBox28"
+        '
+        'chkLB
+        '
+        Me.chkLB.Checked = False
+        Me.chkLB.Location = New System.Drawing.Point(460, 239)
+        Me.chkLB.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkLB.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkLB.Name = "chkLB"
+        Me.chkLB.Size = New System.Drawing.Size(56, 24)
+        Me.chkLB.TabIndex = 109
+        Me.chkLB.Text = "NsOnOffBox28"
+        '
+        'chkDpadRight
+        '
+        Me.chkDpadRight.Checked = False
+        Me.chkDpadRight.Location = New System.Drawing.Point(460, 213)
+        Me.chkDpadRight.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkDpadRight.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkDpadRight.Name = "chkDpadRight"
+        Me.chkDpadRight.Size = New System.Drawing.Size(56, 24)
+        Me.chkDpadRight.TabIndex = 109
+        Me.chkDpadRight.Text = "NsOnOffBox28"
+        '
+        'chkDpadLeft
+        '
+        Me.chkDpadLeft.Checked = False
+        Me.chkDpadLeft.Location = New System.Drawing.Point(460, 187)
+        Me.chkDpadLeft.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkDpadLeft.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkDpadLeft.Name = "chkDpadLeft"
+        Me.chkDpadLeft.Size = New System.Drawing.Size(56, 24)
+        Me.chkDpadLeft.TabIndex = 109
+        Me.chkDpadLeft.Text = "NsOnOffBox28"
+        '
+        'chkDpadDown
+        '
+        Me.chkDpadDown.Checked = False
+        Me.chkDpadDown.Location = New System.Drawing.Point(460, 161)
+        Me.chkDpadDown.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkDpadDown.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkDpadDown.Name = "chkDpadDown"
+        Me.chkDpadDown.Size = New System.Drawing.Size(56, 24)
+        Me.chkDpadDown.TabIndex = 109
+        Me.chkDpadDown.Text = "NsOnOffBox28"
+        '
+        'chkDpadUp
+        '
+        Me.chkDpadUp.Checked = False
+        Me.chkDpadUp.Location = New System.Drawing.Point(460, 135)
+        Me.chkDpadUp.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkDpadUp.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkDpadUp.Name = "chkDpadUp"
+        Me.chkDpadUp.Size = New System.Drawing.Size(56, 24)
+        Me.chkDpadUp.TabIndex = 109
+        Me.chkDpadUp.Text = "NsOnOffBox28"
+        '
+        'chkButtonY
+        '
+        Me.chkButtonY.Checked = False
+        Me.chkButtonY.Location = New System.Drawing.Point(460, 109)
+        Me.chkButtonY.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkButtonY.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkButtonY.Name = "chkButtonY"
+        Me.chkButtonY.Size = New System.Drawing.Size(56, 24)
+        Me.chkButtonY.TabIndex = 109
+        Me.chkButtonY.Text = "NsOnOffBox28"
+        '
+        'chkButtonX
+        '
+        Me.chkButtonX.Checked = False
+        Me.chkButtonX.Location = New System.Drawing.Point(460, 83)
+        Me.chkButtonX.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkButtonX.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkButtonX.Name = "chkButtonX"
+        Me.chkButtonX.Size = New System.Drawing.Size(56, 24)
+        Me.chkButtonX.TabIndex = 109
+        Me.chkButtonX.Text = "NsOnOffBox28"
+        '
+        'chkButtonB
+        '
+        Me.chkButtonB.Checked = False
+        Me.chkButtonB.Location = New System.Drawing.Point(460, 57)
+        Me.chkButtonB.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkButtonB.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkButtonB.Name = "chkButtonB"
+        Me.chkButtonB.Size = New System.Drawing.Size(56, 24)
+        Me.chkButtonB.TabIndex = 109
+        Me.chkButtonB.Text = "NsOnOffBox28"
+        '
+        'chkButtonA
+        '
+        Me.chkButtonA.Checked = False
+        Me.chkButtonA.Location = New System.Drawing.Point(460, 31)
+        Me.chkButtonA.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkButtonA.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkButtonA.Name = "chkButtonA"
+        Me.chkButtonA.Size = New System.Drawing.Size(56, 24)
+        Me.chkButtonA.TabIndex = 109
+        Me.chkButtonA.Text = "NsOnOffBox28"
         '
         'Label56
         '
         Me.Label56.AutoSize = True
         Me.Label56.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label56.ForeColor = System.Drawing.Color.White
-        Me.Label56.Location = New System.Drawing.Point(16, 283)
+        Me.Label56.Location = New System.Drawing.Point(21, 319)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(69, 17)
-        Me.Label56.TabIndex = 83
+        Me.Label56.TabIndex = 103
         Me.Label56.Text = "Right Stick:"
         Me.Label56.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1703,10 +1712,10 @@ Partial Class Form1
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label52.ForeColor = System.Drawing.Color.White
-        Me.Label52.Location = New System.Drawing.Point(17, 189)
+        Me.Label52.Location = New System.Drawing.Point(22, 215)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(70, 17)
-        Me.Label52.TabIndex = 83
+        Me.Label52.TabIndex = 104
         Me.Label52.Text = "Dpad Right:"
         Me.Label52.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1715,10 +1724,10 @@ Partial Class Form1
         Me.Label43.AutoSize = True
         Me.Label43.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label43.ForeColor = System.Drawing.Color.White
-        Me.Label43.Location = New System.Drawing.Point(31, 92)
+        Me.Label43.Location = New System.Drawing.Point(36, 112)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(57, 17)
-        Me.Label43.TabIndex = 83
+        Me.Label43.TabIndex = 105
         Me.Label43.Text = "Button  Y:"
         Me.Label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1728,10 +1737,10 @@ Partial Class Form1
         Me.Label55.BackColor = System.Drawing.Color.Transparent
         Me.Label55.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label55.ForeColor = System.Drawing.Color.White
-        Me.Label55.Location = New System.Drawing.Point(2, 236)
+        Me.Label55.Location = New System.Drawing.Point(7, 268)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(85, 17)
-        Me.Label55.TabIndex = 83
+        Me.Label55.TabIndex = 106
         Me.Label55.Text = "Right Bumper:"
         Me.Label55.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1740,10 +1749,10 @@ Partial Class Form1
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label46.ForeColor = System.Drawing.Color.White
-        Me.Label46.Location = New System.Drawing.Point(17, 140)
+        Me.Label46.Location = New System.Drawing.Point(22, 164)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(71, 17)
-        Me.Label46.TabIndex = 83
+        Me.Label46.TabIndex = 107
         Me.Label46.Text = "Dpad Down:"
         Me.Label46.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1752,10 +1761,10 @@ Partial Class Form1
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label47.ForeColor = System.Drawing.Color.White
-        Me.Label47.Location = New System.Drawing.Point(32, 44)
+        Me.Label47.Location = New System.Drawing.Point(37, 60)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(58, 17)
-        Me.Label47.TabIndex = 83
+        Me.Label47.TabIndex = 108
         Me.Label47.Text = "Button  B:"
         Me.Label47.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1764,10 +1773,10 @@ Partial Class Form1
         Me.Label54.AutoSize = True
         Me.Label54.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label54.ForeColor = System.Drawing.Color.White
-        Me.Label54.Location = New System.Drawing.Point(26, 260)
+        Me.Label54.Location = New System.Drawing.Point(31, 293)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(60, 17)
-        Me.Label54.TabIndex = 82
+        Me.Label54.TabIndex = 97
         Me.Label54.Text = "Left Stick:"
         Me.Label54.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1776,10 +1785,10 @@ Partial Class Form1
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.White
-        Me.Label45.Location = New System.Drawing.Point(26, 164)
+        Me.Label45.Location = New System.Drawing.Point(31, 189)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(61, 17)
-        Me.Label45.TabIndex = 82
+        Me.Label45.TabIndex = 98
         Me.Label45.Text = "Dpad Left:"
         Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1788,10 +1797,10 @@ Partial Class Form1
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label42.ForeColor = System.Drawing.Color.White
-        Me.Label42.Location = New System.Drawing.Point(33, 68)
+        Me.Label42.Location = New System.Drawing.Point(38, 86)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(56, 17)
-        Me.Label42.TabIndex = 82
+        Me.Label42.TabIndex = 99
         Me.Label42.Text = "Button  X:"
         Me.Label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1800,10 +1809,10 @@ Partial Class Form1
         Me.Label53.AutoSize = True
         Me.Label53.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label53.ForeColor = System.Drawing.Color.White
-        Me.Label53.Location = New System.Drawing.Point(11, 212)
+        Me.Label53.Location = New System.Drawing.Point(16, 241)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(76, 17)
-        Me.Label53.TabIndex = 82
+        Me.Label53.TabIndex = 100
         Me.Label53.Text = "Left Bumper:"
         Me.Label53.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1812,10 +1821,10 @@ Partial Class Form1
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.White
-        Me.Label44.Location = New System.Drawing.Point(33, 116)
+        Me.Label44.Location = New System.Drawing.Point(38, 138)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(55, 17)
-        Me.Label44.TabIndex = 82
+        Me.Label44.TabIndex = 101
         Me.Label44.Text = "Dpad Up:"
         Me.Label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -1824,870 +1833,737 @@ Partial Class Form1
         Me.Label48.AutoSize = True
         Me.Label48.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label48.ForeColor = System.Drawing.Color.White
-        Me.Label48.Location = New System.Drawing.Point(32, 20)
+        Me.Label48.Location = New System.Drawing.Point(37, 34)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(58, 17)
-        Me.Label48.TabIndex = 82
+        Me.Label48.TabIndex = 102
         Me.Label48.Text = "Button  A:"
         Me.Label48.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Label50
+        'txtRightStickPress
         '
-        Me.Label50.AutoSize = True
-        Me.Label50.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.ForeColor = System.Drawing.Color.White
-        Me.Label50.Location = New System.Drawing.Point(93, 1)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(93, 17)
-        Me.Label50.TabIndex = 81
-        Me.Label50.Text = "Enter Command"
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.ForeColor = System.Drawing.Color.White
-        Me.Label51.Location = New System.Drawing.Point(458, 1)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(45, 17)
-        Me.Label51.TabIndex = 79
-        Me.Label51.Text = "Enable"
-        '
-        'chkLeftStick
-        '
-        Me.chkLeftStick.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkLeftStick.Checked = False
-        Me.chkLeftStick.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkLeftStick.ForeColor = System.Drawing.Color.White
-        Me.chkLeftStick.Location = New System.Drawing.Point(446, 261)
-        Me.chkLeftStick.Name = "chkLeftStick"
-        Me.chkLeftStick.Size = New System.Drawing.Size(57, 16)
-        Me.chkLeftStick.TabIndex = 72
-        Me.chkLeftStick.Text = "Enable"
-        '
-        'chkDpadLeft
-        '
-        Me.chkDpadLeft.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkDpadLeft.Checked = False
-        Me.chkDpadLeft.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkDpadLeft.ForeColor = System.Drawing.Color.White
-        Me.chkDpadLeft.Location = New System.Drawing.Point(446, 165)
-        Me.chkDpadLeft.Name = "chkDpadLeft"
-        Me.chkDpadLeft.Size = New System.Drawing.Size(57, 16)
-        Me.chkDpadLeft.TabIndex = 72
-        Me.chkDpadLeft.Text = "Enable"
-        '
-        'chkButtonX
-        '
-        Me.chkButtonX.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkButtonX.Checked = False
-        Me.chkButtonX.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkButtonX.ForeColor = System.Drawing.Color.White
-        Me.chkButtonX.Location = New System.Drawing.Point(446, 69)
-        Me.chkButtonX.Name = "chkButtonX"
-        Me.chkButtonX.Size = New System.Drawing.Size(57, 16)
-        Me.chkButtonX.TabIndex = 72
-        Me.chkButtonX.Text = "Enable"
-        '
-        'chkLB
-        '
-        Me.chkLB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkLB.Checked = False
-        Me.chkLB.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkLB.ForeColor = System.Drawing.Color.White
-        Me.chkLB.Location = New System.Drawing.Point(446, 213)
-        Me.chkLB.Name = "chkLB"
-        Me.chkLB.Size = New System.Drawing.Size(57, 16)
-        Me.chkLB.TabIndex = 72
-        Me.chkLB.Text = "Enable"
-        '
-        'chkDpadUp
-        '
-        Me.chkDpadUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkDpadUp.Checked = False
-        Me.chkDpadUp.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkDpadUp.ForeColor = System.Drawing.Color.White
-        Me.chkDpadUp.Location = New System.Drawing.Point(446, 117)
-        Me.chkDpadUp.Name = "chkDpadUp"
-        Me.chkDpadUp.Size = New System.Drawing.Size(57, 16)
-        Me.chkDpadUp.TabIndex = 72
-        Me.chkDpadUp.Text = "Enable"
-        '
-        'chkButtonA
-        '
-        Me.chkButtonA.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkButtonA.Checked = False
-        Me.chkButtonA.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkButtonA.ForeColor = System.Drawing.Color.White
-        Me.chkButtonA.Location = New System.Drawing.Point(446, 21)
-        Me.chkButtonA.Name = "chkButtonA"
-        Me.chkButtonA.Size = New System.Drawing.Size(57, 16)
-        Me.chkButtonA.TabIndex = 72
-        Me.chkButtonA.Text = "Enable"
-        '
-        'chkRightStick
-        '
-        Me.chkRightStick.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkRightStick.Checked = False
-        Me.chkRightStick.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkRightStick.ForeColor = System.Drawing.Color.White
-        Me.chkRightStick.Location = New System.Drawing.Point(446, 285)
-        Me.chkRightStick.Name = "chkRightStick"
-        Me.chkRightStick.Size = New System.Drawing.Size(57, 16)
-        Me.chkRightStick.TabIndex = 73
-        Me.chkRightStick.Text = "Enable"
-        '
-        'chkDpadRight
-        '
-        Me.chkDpadRight.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkDpadRight.Checked = False
-        Me.chkDpadRight.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkDpadRight.ForeColor = System.Drawing.Color.White
-        Me.chkDpadRight.Location = New System.Drawing.Point(446, 189)
-        Me.chkDpadRight.Name = "chkDpadRight"
-        Me.chkDpadRight.Size = New System.Drawing.Size(57, 16)
-        Me.chkDpadRight.TabIndex = 73
-        Me.chkDpadRight.Text = "Enable"
-        '
-        'chkButtonY
-        '
-        Me.chkButtonY.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkButtonY.Checked = False
-        Me.chkButtonY.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkButtonY.ForeColor = System.Drawing.Color.White
-        Me.chkButtonY.Location = New System.Drawing.Point(446, 93)
-        Me.chkButtonY.Name = "chkButtonY"
-        Me.chkButtonY.Size = New System.Drawing.Size(57, 16)
-        Me.chkButtonY.TabIndex = 73
-        Me.chkButtonY.Text = "Enable"
-        '
-        'chkRB
-        '
-        Me.chkRB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkRB.Checked = False
-        Me.chkRB.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkRB.ForeColor = System.Drawing.Color.White
-        Me.chkRB.Location = New System.Drawing.Point(446, 237)
-        Me.chkRB.Name = "chkRB"
-        Me.chkRB.Size = New System.Drawing.Size(57, 16)
-        Me.chkRB.TabIndex = 73
-        Me.chkRB.Text = "Enable"
-        '
-        'chkDpadDown
-        '
-        Me.chkDpadDown.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkDpadDown.Checked = False
-        Me.chkDpadDown.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkDpadDown.ForeColor = System.Drawing.Color.White
-        Me.chkDpadDown.Location = New System.Drawing.Point(446, 141)
-        Me.chkDpadDown.Name = "chkDpadDown"
-        Me.chkDpadDown.Size = New System.Drawing.Size(57, 16)
-        Me.chkDpadDown.TabIndex = 73
-        Me.chkDpadDown.Text = "Enable"
-        '
-        'chkButtonB
-        '
-        Me.chkButtonB.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkButtonB.Checked = False
-        Me.chkButtonB.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkButtonB.ForeColor = System.Drawing.Color.White
-        Me.chkButtonB.Location = New System.Drawing.Point(446, 45)
-        Me.chkButtonB.Name = "chkButtonB"
-        Me.chkButtonB.Size = New System.Drawing.Size(57, 16)
-        Me.chkButtonB.TabIndex = 73
-        Me.chkButtonB.Text = "Enable"
+        Me.txtRightStickPress.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtRightStickPress.Location = New System.Drawing.Point(96, 317)
+        Me.txtRightStickPress.MaxLength = 32767
+        Me.txtRightStickPress.Multiline = False
+        Me.txtRightStickPress.Name = "txtRightStickPress"
+        Me.txtRightStickPress.ReadOnly = False
+        Me.txtRightStickPress.Size = New System.Drawing.Size(356, 23)
+        Me.txtRightStickPress.TabIndex = 96
+        Me.txtRightStickPress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtRightStickPress.UseSystemPasswordChar = False
         '
         'txtLeftStickPress
         '
-        Me.txtLeftStickPress.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtLeftStickPress.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLeftStickPress.ForeColor = System.Drawing.Color.White
-        Me.txtLeftStickPress.Location = New System.Drawing.Point(92, 258)
-        Me.txtLeftStickPress.MaxCharacters = 32767
+        Me.txtLeftStickPress.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtLeftStickPress.Location = New System.Drawing.Point(96, 291)
+        Me.txtLeftStickPress.MaxLength = 32767
+        Me.txtLeftStickPress.Multiline = False
         Me.txtLeftStickPress.Name = "txtLeftStickPress"
-        Me.txtLeftStickPress.Size = New System.Drawing.Size(342, 22)
-        Me.txtLeftStickPress.TabIndex = 65
+        Me.txtLeftStickPress.ReadOnly = False
+        Me.txtLeftStickPress.Size = New System.Drawing.Size(356, 23)
+        Me.txtLeftStickPress.TabIndex = 96
         Me.txtLeftStickPress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtLeftStickPress.UsePasswordMask = False
+        Me.txtLeftStickPress.UseSystemPasswordChar = False
         '
-        'txtDpadLeft
+        'txtRb
         '
-        Me.txtDpadLeft.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtDpadLeft.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDpadLeft.ForeColor = System.Drawing.Color.White
-        Me.txtDpadLeft.Location = New System.Drawing.Point(92, 162)
-        Me.txtDpadLeft.MaxCharacters = 32767
-        Me.txtDpadLeft.Name = "txtDpadLeft"
-        Me.txtDpadLeft.Size = New System.Drawing.Size(342, 22)
-        Me.txtDpadLeft.TabIndex = 65
-        Me.txtDpadLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtDpadLeft.UsePasswordMask = False
-        '
-        'txtButtonX
-        '
-        Me.txtButtonX.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtButtonX.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtButtonX.ForeColor = System.Drawing.Color.White
-        Me.txtButtonX.Location = New System.Drawing.Point(92, 66)
-        Me.txtButtonX.MaxCharacters = 32767
-        Me.txtButtonX.Name = "txtButtonX"
-        Me.txtButtonX.Size = New System.Drawing.Size(342, 22)
-        Me.txtButtonX.TabIndex = 65
-        Me.txtButtonX.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtButtonX.UsePasswordMask = False
-        '
-        'txtRightStickPress
-        '
-        Me.txtRightStickPress.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtRightStickPress.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRightStickPress.ForeColor = System.Drawing.Color.White
-        Me.txtRightStickPress.Location = New System.Drawing.Point(92, 281)
-        Me.txtRightStickPress.MaxCharacters = 32767
-        Me.txtRightStickPress.Name = "txtRightStickPress"
-        Me.txtRightStickPress.Size = New System.Drawing.Size(342, 22)
-        Me.txtRightStickPress.TabIndex = 66
-        Me.txtRightStickPress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtRightStickPress.UsePasswordMask = False
-        '
-        'txtDpadRight
-        '
-        Me.txtDpadRight.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtDpadRight.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDpadRight.ForeColor = System.Drawing.Color.White
-        Me.txtDpadRight.Location = New System.Drawing.Point(92, 186)
-        Me.txtDpadRight.MaxCharacters = 32767
-        Me.txtDpadRight.Name = "txtDpadRight"
-        Me.txtDpadRight.Size = New System.Drawing.Size(342, 22)
-        Me.txtDpadRight.TabIndex = 66
-        Me.txtDpadRight.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtDpadRight.UsePasswordMask = False
-        '
-        'txtButtonY
-        '
-        Me.txtButtonY.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtButtonY.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtButtonY.ForeColor = System.Drawing.Color.White
-        Me.txtButtonY.Location = New System.Drawing.Point(92, 90)
-        Me.txtButtonY.MaxCharacters = 32767
-        Me.txtButtonY.Name = "txtButtonY"
-        Me.txtButtonY.Size = New System.Drawing.Size(342, 22)
-        Me.txtButtonY.TabIndex = 66
-        Me.txtButtonY.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtButtonY.UsePasswordMask = False
+        Me.txtRb.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtRb.Location = New System.Drawing.Point(96, 266)
+        Me.txtRb.MaxLength = 32767
+        Me.txtRb.Multiline = False
+        Me.txtRb.Name = "txtRb"
+        Me.txtRb.ReadOnly = False
+        Me.txtRb.Size = New System.Drawing.Size(356, 23)
+        Me.txtRb.TabIndex = 96
+        Me.txtRb.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtRb.UseSystemPasswordChar = False
         '
         'txtLb
         '
-        Me.txtLb.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtLb.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLb.ForeColor = System.Drawing.Color.White
-        Me.txtLb.Location = New System.Drawing.Point(92, 210)
-        Me.txtLb.MaxCharacters = 32767
+        Me.txtLb.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtLb.Location = New System.Drawing.Point(96, 240)
+        Me.txtLb.MaxLength = 32767
+        Me.txtLb.Multiline = False
         Me.txtLb.Name = "txtLb"
-        Me.txtLb.Size = New System.Drawing.Size(342, 22)
-        Me.txtLb.TabIndex = 65
+        Me.txtLb.ReadOnly = False
+        Me.txtLb.Size = New System.Drawing.Size(356, 23)
+        Me.txtLb.TabIndex = 96
         Me.txtLb.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtLb.UsePasswordMask = False
+        Me.txtLb.UseSystemPasswordChar = False
         '
-        'txtRB
+        'txtDpadRight
         '
-        Me.txtRB.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtRB.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRB.ForeColor = System.Drawing.Color.White
-        Me.txtRB.Location = New System.Drawing.Point(92, 234)
-        Me.txtRB.MaxCharacters = 32767
-        Me.txtRB.Name = "txtRB"
-        Me.txtRB.Size = New System.Drawing.Size(342, 22)
-        Me.txtRB.TabIndex = 66
-        Me.txtRB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtRB.UsePasswordMask = False
+        Me.txtDpadRight.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDpadRight.Location = New System.Drawing.Point(96, 214)
+        Me.txtDpadRight.MaxLength = 32767
+        Me.txtDpadRight.Multiline = False
+        Me.txtDpadRight.Name = "txtDpadRight"
+        Me.txtDpadRight.ReadOnly = False
+        Me.txtDpadRight.Size = New System.Drawing.Size(356, 23)
+        Me.txtDpadRight.TabIndex = 96
+        Me.txtDpadRight.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtDpadRight.UseSystemPasswordChar = False
         '
-        'txtDpadUp
+        'txtDpadLeft
         '
-        Me.txtDpadUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtDpadUp.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDpadUp.ForeColor = System.Drawing.Color.White
-        Me.txtDpadUp.Location = New System.Drawing.Point(92, 114)
-        Me.txtDpadUp.MaxCharacters = 32767
-        Me.txtDpadUp.Name = "txtDpadUp"
-        Me.txtDpadUp.Size = New System.Drawing.Size(342, 22)
-        Me.txtDpadUp.TabIndex = 65
-        Me.txtDpadUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtDpadUp.UsePasswordMask = False
+        Me.txtDpadLeft.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDpadLeft.Location = New System.Drawing.Point(96, 188)
+        Me.txtDpadLeft.MaxLength = 32767
+        Me.txtDpadLeft.Multiline = False
+        Me.txtDpadLeft.Name = "txtDpadLeft"
+        Me.txtDpadLeft.ReadOnly = False
+        Me.txtDpadLeft.Size = New System.Drawing.Size(356, 23)
+        Me.txtDpadLeft.TabIndex = 96
+        Me.txtDpadLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtDpadLeft.UseSystemPasswordChar = False
         '
         'txtDpadDown
         '
-        Me.txtDpadDown.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtDpadDown.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDpadDown.ForeColor = System.Drawing.Color.White
-        Me.txtDpadDown.Location = New System.Drawing.Point(92, 138)
-        Me.txtDpadDown.MaxCharacters = 32767
+        Me.txtDpadDown.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDpadDown.Location = New System.Drawing.Point(96, 162)
+        Me.txtDpadDown.MaxLength = 32767
+        Me.txtDpadDown.Multiline = False
         Me.txtDpadDown.Name = "txtDpadDown"
-        Me.txtDpadDown.Size = New System.Drawing.Size(342, 22)
-        Me.txtDpadDown.TabIndex = 66
+        Me.txtDpadDown.ReadOnly = False
+        Me.txtDpadDown.Size = New System.Drawing.Size(356, 23)
+        Me.txtDpadDown.TabIndex = 96
         Me.txtDpadDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtDpadDown.UsePasswordMask = False
+        Me.txtDpadDown.UseSystemPasswordChar = False
         '
-        'txtButtonA
+        'txtDpadUp
         '
-        Me.txtButtonA.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtButtonA.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtButtonA.ForeColor = System.Drawing.Color.White
-        Me.txtButtonA.Location = New System.Drawing.Point(92, 18)
-        Me.txtButtonA.MaxCharacters = 32767
-        Me.txtButtonA.Name = "txtButtonA"
-        Me.txtButtonA.Size = New System.Drawing.Size(342, 22)
-        Me.txtButtonA.TabIndex = 65
-        Me.txtButtonA.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtButtonA.UsePasswordMask = False
+        Me.txtDpadUp.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDpadUp.Location = New System.Drawing.Point(96, 136)
+        Me.txtDpadUp.MaxLength = 32767
+        Me.txtDpadUp.Multiline = False
+        Me.txtDpadUp.Name = "txtDpadUp"
+        Me.txtDpadUp.ReadOnly = False
+        Me.txtDpadUp.Size = New System.Drawing.Size(356, 23)
+        Me.txtDpadUp.TabIndex = 96
+        Me.txtDpadUp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtDpadUp.UseSystemPasswordChar = False
+        '
+        'txtButtonY
+        '
+        Me.txtButtonY.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtButtonY.Location = New System.Drawing.Point(96, 110)
+        Me.txtButtonY.MaxLength = 32767
+        Me.txtButtonY.Multiline = False
+        Me.txtButtonY.Name = "txtButtonY"
+        Me.txtButtonY.ReadOnly = False
+        Me.txtButtonY.Size = New System.Drawing.Size(356, 23)
+        Me.txtButtonY.TabIndex = 96
+        Me.txtButtonY.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtButtonY.UseSystemPasswordChar = False
+        '
+        'txtButtonX
+        '
+        Me.txtButtonX.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtButtonX.Location = New System.Drawing.Point(96, 84)
+        Me.txtButtonX.MaxLength = 32767
+        Me.txtButtonX.Multiline = False
+        Me.txtButtonX.Name = "txtButtonX"
+        Me.txtButtonX.ReadOnly = False
+        Me.txtButtonX.Size = New System.Drawing.Size(356, 23)
+        Me.txtButtonX.TabIndex = 96
+        Me.txtButtonX.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtButtonX.UseSystemPasswordChar = False
         '
         'txtButtonB
         '
-        Me.txtButtonB.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtButtonB.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtButtonB.ForeColor = System.Drawing.Color.White
-        Me.txtButtonB.Location = New System.Drawing.Point(92, 42)
-        Me.txtButtonB.MaxCharacters = 32767
+        Me.txtButtonB.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtButtonB.Location = New System.Drawing.Point(96, 58)
+        Me.txtButtonB.MaxLength = 32767
+        Me.txtButtonB.Multiline = False
         Me.txtButtonB.Name = "txtButtonB"
-        Me.txtButtonB.Size = New System.Drawing.Size(342, 22)
-        Me.txtButtonB.TabIndex = 66
+        Me.txtButtonB.ReadOnly = False
+        Me.txtButtonB.Size = New System.Drawing.Size(356, 23)
+        Me.txtButtonB.TabIndex = 96
         Me.txtButtonB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtButtonB.UsePasswordMask = False
+        Me.txtButtonB.UseSystemPasswordChar = False
         '
-        'TabPage3
+        'txtButtonA
         '
-        Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage3.Controls.Add(Me.ReactorTabControl4)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(515, 307)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Settings"
+        Me.txtButtonA.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtButtonA.Location = New System.Drawing.Point(96, 32)
+        Me.txtButtonA.MaxLength = 32767
+        Me.txtButtonA.Multiline = False
+        Me.txtButtonA.Name = "txtButtonA"
+        Me.txtButtonA.ReadOnly = False
+        Me.txtButtonA.Size = New System.Drawing.Size(356, 23)
+        Me.txtButtonA.TabIndex = 96
+        Me.txtButtonA.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtButtonA.UseSystemPasswordChar = False
         '
-        'ReactorTabControl4
+        'TabPage4
         '
-        Me.ReactorTabControl4.Controls.Add(Me.TabPage12)
-        Me.ReactorTabControl4.Controls.Add(Me.TabPage7)
-        Me.ReactorTabControl4.ItemSize = New System.Drawing.Size(258, 21)
-        Me.ReactorTabControl4.Location = New System.Drawing.Point(0, -6)
-        Me.ReactorTabControl4.Name = "ReactorTabControl4"
-        Me.ReactorTabControl4.SelectedIndex = 0
-        Me.ReactorTabControl4.Size = New System.Drawing.Size(519, 317)
-        Me.ReactorTabControl4.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.ReactorTabControl4.TabBorderColor = System.Drawing.Color.White
-        Me.ReactorTabControl4.TabIndex = 0
-        Me.ReactorTabControl4.TabTextColor = System.Drawing.Color.White
+        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage4.Controls.Add(Me.Panel3)
+        Me.TabPage4.Controls.Add(Me.NsButton5)
+        Me.TabPage4.Controls.Add(Me.NsLabel7)
+        Me.TabPage4.Controls.Add(Me.NsGroupBox3)
+        Me.TabPage4.Controls.Add(Me.NsGroupBox2)
+        Me.TabPage4.Controls.Add(Me.NsGroupBox1)
+        Me.TabPage4.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(521, 345)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Settings"
         '
-        'TabPage12
+        'Panel3
         '
-        Me.TabPage12.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage12.Controls.Add(Me.ReactorGroupBox2)
-        Me.TabPage12.Controls.Add(Me.ReactorGroupBox7)
-        Me.TabPage12.Controls.Add(Me.ReactorGroupBox6)
-        Me.TabPage12.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage12.Name = "TabPage12"
-        Me.TabPage12.Size = New System.Drawing.Size(511, 288)
-        Me.TabPage12.TabIndex = 0
-        Me.TabPage12.Text = "General Settings"
+        Me.Panel3.Controls.Add(Me.NsGroupBox4)
+        Me.Panel3.Controls.Add(Me.NsGroupBox5)
+        Me.Panel3.Controls.Add(Me.NsGroupBox6)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 31)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(521, 314)
+        Me.Panel3.TabIndex = 7
+        Me.Panel3.Visible = False
         '
-        'ReactorGroupBox2
+        'NsGroupBox4
         '
-        Me.ReactorGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox2.Controls.Add(Me.Label27)
-        Me.ReactorGroupBox2.Controls.Add(Me.chkStartup)
-        Me.ReactorGroupBox2.Controls.Add(Me.chkSkipChangelog)
-        Me.ReactorGroupBox2.Controls.Add(Me.chkAutoupdates)
-        Me.ReactorGroupBox2.Location = New System.Drawing.Point(222, 135)
-        Me.ReactorGroupBox2.Name = "ReactorGroupBox2"
-        Me.ReactorGroupBox2.Size = New System.Drawing.Size(269, 129)
-        Me.ReactorGroupBox2.TabIndex = 54
-        Me.ReactorGroupBox2.Text = "Additional Settings"
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.ForeColor = System.Drawing.Color.White
-        Me.Label27.Location = New System.Drawing.Point(27, 27)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(225, 12)
-        Me.Label27.TabIndex = 62
-        Me.Label27.Text = "Additional settings that you may find useful."
-        '
-        'chkStartup
-        '
-        Me.chkStartup.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkStartup.Checked = False
-        Me.chkStartup.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkStartup.ForeColor = System.Drawing.Color.White
-        Me.chkStartup.Location = New System.Drawing.Point(21, 106)
-        Me.chkStartup.Name = "chkStartup"
-        Me.chkStartup.Size = New System.Drawing.Size(202, 16)
-        Me.chkStartup.TabIndex = 4
-        Me.chkStartup.Text = "Start minimized with windows startup"
-        '
-        'chkSkipChangelog
-        '
-        Me.chkSkipChangelog.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkSkipChangelog.Checked = True
-        Me.chkSkipChangelog.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkSkipChangelog.ForeColor = System.Drawing.Color.White
-        Me.chkSkipChangelog.Location = New System.Drawing.Point(21, 78)
-        Me.chkSkipChangelog.Name = "chkSkipChangelog"
-        Me.chkSkipChangelog.Size = New System.Drawing.Size(241, 16)
-        Me.chkSkipChangelog.TabIndex = 3
-        Me.chkSkipChangelog.Text = "Show changelog when application is updated"
-        '
-        'chkAutoupdates
-        '
-        Me.chkAutoupdates.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkAutoupdates.Checked = False
-        Me.chkAutoupdates.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkAutoupdates.ForeColor = System.Drawing.Color.White
-        Me.chkAutoupdates.Location = New System.Drawing.Point(21, 51)
-        Me.chkAutoupdates.Name = "chkAutoupdates"
-        Me.chkAutoupdates.Size = New System.Drawing.Size(215, 16)
-        Me.chkAutoupdates.TabIndex = 2
-        Me.chkAutoupdates.Text = "Check for updates at aplication startup"
-        '
-        'ReactorGroupBox7
-        '
-        Me.ReactorGroupBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox7.Controls.Add(Me.Label26)
-        Me.ReactorGroupBox7.Controls.Add(Me.txtSAMPUsername)
-        Me.ReactorGroupBox7.Controls.Add(Me.btnSaveRestart)
-        Me.ReactorGroupBox7.Controls.Add(Me.Label33)
-        Me.ReactorGroupBox7.Location = New System.Drawing.Point(16, 23)
-        Me.ReactorGroupBox7.Name = "ReactorGroupBox7"
-        Me.ReactorGroupBox7.Size = New System.Drawing.Size(479, 106)
-        Me.ReactorGroupBox7.TabIndex = 60
-        Me.ReactorGroupBox7.Text = "Profile Settings"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.ForeColor = System.Drawing.Color.White
-        Me.Label26.Location = New System.Drawing.Point(6, 26)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(465, 12)
-        Me.Label26.TabIndex = 61
-        Me.Label26.Text = "This option allows you to change the active profile, Designed for people who shar" & _
-    "e a system."
-        '
-        'txtSAMPUsername
-        '
-        Me.txtSAMPUsername.BackColor = System.Drawing.Color.Black
-        Me.txtSAMPUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.txtSAMPUsername.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSAMPUsername.ForeColor = System.Drawing.Color.White
-        Me.txtSAMPUsername.FormattingEnabled = True
-        Me.txtSAMPUsername.Location = New System.Drawing.Point(12, 71)
-        Me.txtSAMPUsername.Name = "txtSAMPUsername"
-        Me.txtSAMPUsername.Size = New System.Drawing.Size(351, 22)
-        Me.txtSAMPUsername.TabIndex = 57
-        '
-        'btnSaveRestart
-        '
-        Me.btnSaveRestart.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.btnSaveRestart.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSaveRestart.Location = New System.Drawing.Point(370, 50)
-        Me.btnSaveRestart.Name = "btnSaveRestart"
-        Me.btnSaveRestart.Size = New System.Drawing.Size(107, 53)
-        Me.btnSaveRestart.TabIndex = 56
-        Me.btnSaveRestart.Text = "Save And Restart Application"
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.ForeColor = System.Drawing.Color.White
-        Me.Label33.Location = New System.Drawing.Point(12, 53)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(351, 12)
-        Me.Label33.TabIndex = 6
-        Me.Label33.Text = "Change your SAMP username and keybinder profile at the same time."
-        '
-        'ReactorGroupBox6
-        '
-        Me.ReactorGroupBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox6.Controls.Add(Me.Label28)
-        Me.ReactorGroupBox6.Controls.Add(Me.btnLogs)
-        Me.ReactorGroupBox6.Controls.Add(Me.chkEnableLogs)
-        Me.ReactorGroupBox6.Location = New System.Drawing.Point(16, 135)
-        Me.ReactorGroupBox6.Name = "ReactorGroupBox6"
-        Me.ReactorGroupBox6.Size = New System.Drawing.Size(200, 129)
-        Me.ReactorGroupBox6.TabIndex = 63
-        Me.ReactorGroupBox6.Text = "Log Management"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.ForeColor = System.Drawing.Color.White
-        Me.Label28.Location = New System.Drawing.Point(10, 26)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(180, 12)
-        Me.Label28.TabIndex = 63
-        Me.Label28.Text = "Manage your SAMP logs with ease."
-        '
-        'btnLogs
-        '
-        Me.btnLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.btnLogs.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogs.Location = New System.Drawing.Point(4, 88)
-        Me.btnLogs.Name = "btnLogs"
-        Me.btnLogs.Size = New System.Drawing.Size(193, 38)
-        Me.btnLogs.TabIndex = 57
-        Me.btnLogs.Text = "Open Log Folder"
-        '
-        'chkEnableLogs
-        '
-        Me.chkEnableLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.chkEnableLogs.Checked = False
-        Me.chkEnableLogs.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chkEnableLogs.ForeColor = System.Drawing.Color.White
-        Me.chkEnableLogs.Location = New System.Drawing.Point(22, 59)
-        Me.chkEnableLogs.Name = "chkEnableLogs"
-        Me.chkEnableLogs.Size = New System.Drawing.Size(163, 16)
-        Me.chkEnableLogs.TabIndex = 3
-        Me.chkEnableLogs.Text = "Copy logs to ""\Logs\[USER]"""
-        '
-        'TabPage7
-        '
-        Me.TabPage7.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage7.Controls.Add(Me.ReactorGroupBox4)
-        Me.TabPage7.Controls.Add(Me.ReactorGroupBox3)
-        Me.TabPage7.Controls.Add(Me.ReactorGroupBox1)
-        Me.TabPage7.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(511, 288)
-        Me.TabPage7.TabIndex = 1
-        Me.TabPage7.Text = "Advanced Settings"
-        '
-        'ReactorGroupBox4
-        '
-        Me.ReactorGroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox4.Controls.Add(Me.txtDelayChar)
-        Me.ReactorGroupBox4.Controls.Add(Me.txtMacroChar)
-        Me.ReactorGroupBox4.Controls.Add(Me.txtToggleChar)
-        Me.ReactorGroupBox4.Controls.Add(Me.Label30)
-        Me.ReactorGroupBox4.Controls.Add(Me.Label24)
-        Me.ReactorGroupBox4.Controls.Add(Me.Label29)
-        Me.ReactorGroupBox4.Controls.Add(Me.Label25)
-        Me.ReactorGroupBox4.Location = New System.Drawing.Point(16, 23)
-        Me.ReactorGroupBox4.Name = "ReactorGroupBox4"
-        Me.ReactorGroupBox4.Size = New System.Drawing.Size(234, 170)
-        Me.ReactorGroupBox4.TabIndex = 66
-        Me.ReactorGroupBox4.Text = "Characters"
+        Me.NsGroupBox4.Controls.Add(Me.txtDelayChar)
+        Me.NsGroupBox4.Controls.Add(Me.txtMacroChar)
+        Me.NsGroupBox4.Controls.Add(Me.txtToggleChar)
+        Me.NsGroupBox4.Controls.Add(Me.Label29)
+        Me.NsGroupBox4.Controls.Add(Me.Label25)
+        Me.NsGroupBox4.Controls.Add(Me.Label24)
+        Me.NsGroupBox4.DrawSeperator = True
+        Me.NsGroupBox4.Location = New System.Drawing.Point(16, 6)
+        Me.NsGroupBox4.Name = "NsGroupBox4"
+        Me.NsGroupBox4.Size = New System.Drawing.Size(217, 209)
+        Me.NsGroupBox4.SubTitle = "Change the default ""#"", ""*"" and ""¬"" keys"
+        Me.NsGroupBox4.TabIndex = 1
+        Me.NsGroupBox4.Text = "NsGroupBox1"
+        Me.NsGroupBox4.Title = "Characters"
         '
         'txtDelayChar
         '
         Me.txtDelayChar.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtDelayChar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDelayChar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txtDelayChar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDelayChar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDelayChar.ForeColor = System.Drawing.Color.White
-        Me.txtDelayChar.Location = New System.Drawing.Point(140, 135)
-        Me.txtDelayChar.MaxLength = 1
+        Me.txtDelayChar.Location = New System.Drawing.Point(133, 154)
+        Me.txtDelayChar.MaxLength = 2
         Me.txtDelayChar.Name = "txtDelayChar"
-        Me.txtDelayChar.Size = New System.Drawing.Size(42, 20)
-        Me.txtDelayChar.TabIndex = 7
+        Me.txtDelayChar.Size = New System.Drawing.Size(56, 22)
+        Me.txtDelayChar.TabIndex = 42
         '
         'txtMacroChar
         '
         Me.txtMacroChar.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtMacroChar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtMacroChar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txtMacroChar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMacroChar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMacroChar.ForeColor = System.Drawing.Color.White
-        Me.txtMacroChar.Location = New System.Drawing.Point(140, 107)
-        Me.txtMacroChar.MaxLength = 1
+        Me.txtMacroChar.Location = New System.Drawing.Point(133, 110)
+        Me.txtMacroChar.MaxLength = 2
         Me.txtMacroChar.Name = "txtMacroChar"
-        Me.txtMacroChar.Size = New System.Drawing.Size(42, 20)
-        Me.txtMacroChar.TabIndex = 7
+        Me.txtMacroChar.Size = New System.Drawing.Size(56, 22)
+        Me.txtMacroChar.TabIndex = 41
         '
         'txtToggleChar
         '
         Me.txtToggleChar.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
         Me.txtToggleChar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtToggleChar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txtToggleChar.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtToggleChar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtToggleChar.ForeColor = System.Drawing.Color.White
-        Me.txtToggleChar.Location = New System.Drawing.Point(140, 79)
-        Me.txtToggleChar.MaxLength = 1
+        Me.txtToggleChar.Location = New System.Drawing.Point(133, 68)
+        Me.txtToggleChar.MaxLength = 2
         Me.txtToggleChar.Name = "txtToggleChar"
-        Me.txtToggleChar.Size = New System.Drawing.Size(42, 20)
-        Me.txtToggleChar.TabIndex = 7
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.ForeColor = System.Drawing.Color.White
-        Me.Label30.Location = New System.Drawing.Point(12, 27)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(210, 24)
-        Me.Label30.TabIndex = 6
-        Me.Label30.Text = "Change the default ""#"", ""*"" and ""¬"" keys" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "to something easier to remember or use." & _
-    ""
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(40, 82)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(96, 12)
-        Me.Label24.TabIndex = 5
-        Me.Label24.Text = "Toggle character: "
+        Me.txtToggleChar.Size = New System.Drawing.Size(56, 22)
+        Me.txtToggleChar.TabIndex = 40
         '
         'Label29
         '
         Me.Label29.AutoSize = True
         Me.Label29.ForeColor = System.Drawing.Color.White
-        Me.Label29.Location = New System.Drawing.Point(40, 138)
+        Me.Label29.Location = New System.Drawing.Point(27, 158)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(92, 12)
-        Me.Label29.TabIndex = 5
+        Me.Label29.Size = New System.Drawing.Size(107, 13)
+        Me.Label29.TabIndex = 44
         Me.Label29.Text = "Delay character: "
         '
         'Label25
         '
         Me.Label25.AutoSize = True
         Me.Label25.ForeColor = System.Drawing.Color.White
-        Me.Label25.Location = New System.Drawing.Point(40, 110)
+        Me.Label25.Location = New System.Drawing.Point(26, 114)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(94, 12)
-        Me.Label25.TabIndex = 5
+        Me.Label25.Size = New System.Drawing.Size(108, 13)
+        Me.Label25.TabIndex = 45
         Me.Label25.Text = "Macro character: "
         '
-        'ReactorGroupBox3
+        'Label24
         '
-        Me.ReactorGroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox3.Controls.Add(Me.btnReset)
-        Me.ReactorGroupBox3.Location = New System.Drawing.Point(17, 199)
-        Me.ReactorGroupBox3.Name = "ReactorGroupBox3"
-        Me.ReactorGroupBox3.Size = New System.Drawing.Size(475, 66)
-        Me.ReactorGroupBox3.TabIndex = 65
-        Me.ReactorGroupBox3.Text = "Master Reset Button"
+        Me.Label24.AutoSize = True
+        Me.Label24.ForeColor = System.Drawing.Color.White
+        Me.Label24.Location = New System.Drawing.Point(23, 72)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(111, 13)
+        Me.Label24.TabIndex = 43
+        Me.Label24.Text = "Toggle character: "
         '
-        'btnReset
+        'NsGroupBox5
         '
-        Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.btnReset.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReset.ForeColor = System.Drawing.Color.Transparent
-        Me.btnReset.Location = New System.Drawing.Point(1, 25)
-        Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(473, 40)
-        Me.btnReset.TabIndex = 56
-        Me.btnReset.Text = "Reset Everything"
-        '
-        'ReactorGroupBox1
-        '
-        Me.ReactorGroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox1.Controls.Add(Me.chkUseKeyUp)
-        Me.ReactorGroupBox1.Controls.Add(Me.chkSendT)
-        Me.ReactorGroupBox1.Controls.Add(Me.chkDebug)
-        Me.ReactorGroupBox1.Controls.Add(Me.chkUseMouseUp)
-        Me.ReactorGroupBox1.Controls.Add(Me.chkSendEnter)
-        Me.ReactorGroupBox1.Location = New System.Drawing.Point(256, 23)
-        Me.ReactorGroupBox1.Name = "ReactorGroupBox1"
-        Me.ReactorGroupBox1.Size = New System.Drawing.Size(235, 170)
-        Me.ReactorGroupBox1.TabIndex = 64
-        Me.ReactorGroupBox1.Text = "Advanced Settings"
-        '
-        'chkUseKeyUp
-        '
-        Me.chkUseKeyUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.chkUseKeyUp.Checked = False
-        Me.chkUseKeyUp.ForeColor = System.Drawing.Color.White
-        Me.chkUseKeyUp.Location = New System.Drawing.Point(28, 33)
-        Me.chkUseKeyUp.Name = "chkUseKeyUp"
-        Me.chkUseKeyUp.Size = New System.Drawing.Size(181, 16)
-        Me.chkUseKeyUp.TabIndex = 4
-        Me.chkUseKeyUp.Text = "Use KeyUp instead of KeyDown"
-        '
-        'chkSendT
-        '
-        Me.chkSendT.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.chkSendT.Checked = False
-        Me.chkSendT.ForeColor = System.Drawing.Color.White
-        Me.chkSendT.Location = New System.Drawing.Point(28, 115)
-        Me.chkSendT.Name = "chkSendT"
-        Me.chkSendT.Size = New System.Drawing.Size(181, 16)
-        Me.chkSendT.TabIndex = 2
-        Me.chkSendT.Text = "Send ""T"" key automatically"
+        Me.NsGroupBox5.Controls.Add(Me.chkDebug)
+        Me.NsGroupBox5.Controls.Add(Me.chkSendT)
+        Me.NsGroupBox5.Controls.Add(Me.chkSendEnter)
+        Me.NsGroupBox5.Controls.Add(Me.chkUseMouseUp)
+        Me.NsGroupBox5.Controls.Add(Me.chkUseKeyUp)
+        Me.NsGroupBox5.Controls.Add(Me.Label5)
+        Me.NsGroupBox5.DrawSeperator = True
+        Me.NsGroupBox5.Location = New System.Drawing.Point(239, 6)
+        Me.NsGroupBox5.Name = "NsGroupBox5"
+        Me.NsGroupBox5.Size = New System.Drawing.Size(263, 209)
+        Me.NsGroupBox5.SubTitle = ""
+        Me.NsGroupBox5.TabIndex = 2
+        Me.NsGroupBox5.Text = "NsGroupBox1"
+        Me.NsGroupBox5.Title = "Advanced Settings"
         '
         'chkDebug
         '
-        Me.chkDebug.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.chkDebug.Checked = False
-        Me.chkDebug.ForeColor = System.Drawing.Color.White
-        Me.chkDebug.Location = New System.Drawing.Point(28, 143)
+        Me.chkDebug.Location = New System.Drawing.Point(200, 184)
+        Me.chkDebug.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkDebug.MinimumSize = New System.Drawing.Size(56, 24)
         Me.chkDebug.Name = "chkDebug"
-        Me.chkDebug.Size = New System.Drawing.Size(181, 16)
-        Me.chkDebug.TabIndex = 1
-        Me.chkDebug.Text = "Skip check for GTA:SA:MP"
+        Me.chkDebug.Size = New System.Drawing.Size(56, 24)
+        Me.chkDebug.TabIndex = 67
+        Me.chkDebug.Text = "NsOnOffBox41"
         '
-        'chkUseMouseUp
+        'chkSendT
         '
-        Me.chkUseMouseUp.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.chkUseMouseUp.Checked = False
-        Me.chkUseMouseUp.ForeColor = System.Drawing.Color.White
-        Me.chkUseMouseUp.Location = New System.Drawing.Point(28, 60)
-        Me.chkUseMouseUp.Name = "chkUseMouseUp"
-        Me.chkUseMouseUp.Size = New System.Drawing.Size(204, 16)
-        Me.chkUseMouseUp.TabIndex = 0
-        Me.chkUseMouseUp.Text = "Use MouseUp instead of MouseDown"
+        Me.chkSendT.Checked = False
+        Me.chkSendT.Location = New System.Drawing.Point(199, 146)
+        Me.chkSendT.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkSendT.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkSendT.Name = "chkSendT"
+        Me.chkSendT.Size = New System.Drawing.Size(56, 24)
+        Me.chkSendT.TabIndex = 67
+        Me.chkSendT.Text = "NsOnOffBox41"
         '
         'chkSendEnter
         '
-        Me.chkSendEnter.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.chkSendEnter.Checked = False
-        Me.chkSendEnter.ForeColor = System.Drawing.Color.White
-        Me.chkSendEnter.Location = New System.Drawing.Point(28, 88)
+        Me.chkSendEnter.Location = New System.Drawing.Point(199, 109)
+        Me.chkSendEnter.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkSendEnter.MinimumSize = New System.Drawing.Size(56, 24)
         Me.chkSendEnter.Name = "chkSendEnter"
-        Me.chkSendEnter.Size = New System.Drawing.Size(181, 16)
-        Me.chkSendEnter.TabIndex = 3
-        Me.chkSendEnter.Text = "Send ""ENTER"" key automatically"
+        Me.chkSendEnter.Size = New System.Drawing.Size(56, 24)
+        Me.chkSendEnter.TabIndex = 67
+        Me.chkSendEnter.Text = "NsOnOffBox41"
         '
-        'TabPage2
+        'chkUseMouseUp
         '
-        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage2.Controls.Add(Me.ReactorTabControl3)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(515, 307)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Help"
+        Me.chkUseMouseUp.Checked = False
+        Me.chkUseMouseUp.Location = New System.Drawing.Point(199, 70)
+        Me.chkUseMouseUp.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkUseMouseUp.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkUseMouseUp.Name = "chkUseMouseUp"
+        Me.chkUseMouseUp.Size = New System.Drawing.Size(56, 24)
+        Me.chkUseMouseUp.TabIndex = 67
+        Me.chkUseMouseUp.Text = "NsOnOffBox41"
         '
-        'ReactorTabControl3
+        'chkUseKeyUp
         '
-        Me.ReactorTabControl3.Controls.Add(Me.TabPage8)
-        Me.ReactorTabControl3.Controls.Add(Me.TabPage11)
-        Me.ReactorTabControl3.Controls.Add(Me.TabPage9)
-        Me.ReactorTabControl3.ItemSize = New System.Drawing.Size(100, 21)
-        Me.ReactorTabControl3.Location = New System.Drawing.Point(0, -6)
-        Me.ReactorTabControl3.Name = "ReactorTabControl3"
-        Me.ReactorTabControl3.SelectedIndex = 0
-        Me.ReactorTabControl3.Size = New System.Drawing.Size(519, 317)
-        Me.ReactorTabControl3.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
-        Me.ReactorTabControl3.TabBorderColor = System.Drawing.Color.White
-        Me.ReactorTabControl3.TabIndex = 5
-        Me.ReactorTabControl3.TabTextColor = System.Drawing.Color.White
+        Me.chkUseKeyUp.Checked = False
+        Me.chkUseKeyUp.Location = New System.Drawing.Point(199, 31)
+        Me.chkUseKeyUp.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkUseKeyUp.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkUseKeyUp.Name = "chkUseKeyUp"
+        Me.chkUseKeyUp.Size = New System.Drawing.Size(56, 24)
+        Me.chkUseKeyUp.TabIndex = 67
+        Me.chkUseKeyUp.Text = "NsOnOffBox47"
         '
-        'TabPage8
+        'Label5
         '
-        Me.TabPage8.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage8.Controls.Add(Me.Label31)
-        Me.TabPage8.Controls.Add(Me.RichTextBox2)
-        Me.TabPage8.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(511, 288)
-        Me.TabPage8.TabIndex = 0
-        Me.TabPage8.Text = "Usage"
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(16, 35)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(184, 169)
+        Me.Label5.TabIndex = 65
+        Me.Label5.Text = "Use KeyUp instead of Down:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use MouseUp instead of Down:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Send ENTER key:" & _
+    "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Send T key:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Skip check for ""GTA:SA:MP"":"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Label31
+        'NsGroupBox6
         '
-        Me.Label31.Font = New System.Drawing.Font("Impact", 15.75!)
-        Me.Label31.ForeColor = System.Drawing.Color.White
-        Me.Label31.Location = New System.Drawing.Point(3, 2)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(508, 26)
-        Me.Label31.TabIndex = 90
-        Me.Label31.Text = "How To Use ""SACNR Keybinder Evolution"""
-        Me.Label31.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.NsGroupBox6.Controls.Add(Me.btnReset)
+        Me.NsGroupBox6.DrawSeperator = True
+        Me.NsGroupBox6.Location = New System.Drawing.Point(16, 221)
+        Me.NsGroupBox6.Name = "NsGroupBox6"
+        Me.NsGroupBox6.Size = New System.Drawing.Size(486, 83)
+        Me.NsGroupBox6.SubTitle = "This will reset all keybinds and settings back to default"
+        Me.NsGroupBox6.TabIndex = 3
+        Me.NsGroupBox6.Text = "NsGroupBox6"
+        Me.NsGroupBox6.Title = "Master Reset"
+        '
+        'btnReset
+        '
+        Me.btnReset.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReset.Location = New System.Drawing.Point(3, 41)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(480, 40)
+        Me.btnReset.TabIndex = 0
+        Me.btnReset.Text = "              Reset everything including all keybinds and settings"
+        '
+        'NsButton5
+        '
+        Me.NsButton5.Location = New System.Drawing.Point(349, 3)
+        Me.NsButton5.Name = "NsButton5"
+        Me.NsButton5.Size = New System.Drawing.Size(152, 26)
+        Me.NsButton5.TabIndex = 6
+        Me.NsButton5.Text = "Show advanced settings"
+        '
+        'NsLabel7
+        '
+        Me.NsLabel7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel7.Location = New System.Drawing.Point(230, 2)
+        Me.NsLabel7.Name = "NsLabel7"
+        Me.NsLabel7.Size = New System.Drawing.Size(65, 23)
+        Me.NsLabel7.TabIndex = 3
+        Me.NsLabel7.Text = "NsLabel7"
+        Me.NsLabel7.Value1 = " "
+        Me.NsLabel7.Value2 = "Settings"
+        '
+        'NsGroupBox3
+        '
+        Me.NsGroupBox3.Controls.Add(Me.Label2)
+        Me.NsGroupBox3.Controls.Add(Me.Label28)
+        Me.NsGroupBox3.Controls.Add(Me.chkEnableLogs)
+        Me.NsGroupBox3.Controls.Add(Me.btnLogs)
+        Me.NsGroupBox3.Controls.Add(Me.NsSeperator1)
+        Me.NsGroupBox3.DrawSeperator = True
+        Me.NsGroupBox3.Location = New System.Drawing.Point(16, 172)
+        Me.NsGroupBox3.Name = "NsGroupBox3"
+        Me.NsGroupBox3.Size = New System.Drawing.Size(217, 161)
+        Me.NsGroupBox3.SubTitle = "Manage your SAMP logs with ease."
+        Me.NsGroupBox3.TabIndex = 0
+        Me.NsGroupBox3.Text = "NsGroupBox1"
+        Me.NsGroupBox3.Title = "Log Management"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(79, 93)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.TabIndex = 66
+        Me.Label2.Text = "Copy Logs:"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.ForeColor = System.Drawing.Color.White
+        Me.Label28.Location = New System.Drawing.Point(7, 42)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(200, 39)
+        Me.Label28.TabIndex = 64
+        Me.Label28.Text = "SAMP automatically overwites old" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "log files, This option allows you to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "backup yo" & _
+    "ur log files."
+        '
+        'chkEnableLogs
+        '
+        Me.chkEnableLogs.Checked = False
+        Me.chkEnableLogs.Location = New System.Drawing.Point(152, 88)
+        Me.chkEnableLogs.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkEnableLogs.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkEnableLogs.Name = "chkEnableLogs"
+        Me.chkEnableLogs.Size = New System.Drawing.Size(56, 24)
+        Me.chkEnableLogs.TabIndex = 0
+        Me.chkEnableLogs.Text = "NsOnOffBox40"
+        '
+        'btnLogs
+        '
+        Me.btnLogs.Location = New System.Drawing.Point(3, 118)
+        Me.btnLogs.Name = "btnLogs"
+        Me.btnLogs.Size = New System.Drawing.Size(211, 41)
+        Me.btnLogs.TabIndex = 6
+        Me.btnLogs.Text = "          Open your log folder"
+        '
+        'NsSeperator1
+        '
+        Me.NsSeperator1.Location = New System.Drawing.Point(3, 111)
+        Me.NsSeperator1.Name = "NsSeperator1"
+        Me.NsSeperator1.Size = New System.Drawing.Size(211, 23)
+        Me.NsSeperator1.TabIndex = 1
+        Me.NsSeperator1.Text = "NsSeperator1"
+        '
+        'NsGroupBox2
+        '
+        Me.NsGroupBox2.Controls.Add(Me.chkStartup)
+        Me.NsGroupBox2.Controls.Add(Me.chkShowChangelog)
+        Me.NsGroupBox2.Controls.Add(Me.chkAutoUpdates)
+        Me.NsGroupBox2.Controls.Add(Me.Label1)
+        Me.NsGroupBox2.DrawSeperator = True
+        Me.NsGroupBox2.Location = New System.Drawing.Point(239, 172)
+        Me.NsGroupBox2.Name = "NsGroupBox2"
+        Me.NsGroupBox2.Size = New System.Drawing.Size(263, 161)
+        Me.NsGroupBox2.SubTitle = "Various settings that you may find useful."
+        Me.NsGroupBox2.TabIndex = 0
+        Me.NsGroupBox2.Text = "NsGroupBox1"
+        Me.NsGroupBox2.Title = "Additional Settings"
+        '
+        'chkStartup
+        '
+        Me.chkStartup.Checked = False
+        Me.chkStartup.Location = New System.Drawing.Point(190, 127)
+        Me.chkStartup.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkStartup.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkStartup.Name = "chkStartup"
+        Me.chkStartup.Size = New System.Drawing.Size(56, 24)
+        Me.chkStartup.TabIndex = 67
+        Me.chkStartup.Text = "NsOnOffBox41"
+        '
+        'chkShowChangelog
+        '
+        Me.chkShowChangelog.Checked = True
+        Me.chkShowChangelog.Location = New System.Drawing.Point(190, 88)
+        Me.chkShowChangelog.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkShowChangelog.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkShowChangelog.Name = "chkShowChangelog"
+        Me.chkShowChangelog.Size = New System.Drawing.Size(56, 24)
+        Me.chkShowChangelog.TabIndex = 67
+        Me.chkShowChangelog.Text = "NsOnOffBox41"
+        '
+        'chkAutoUpdates
+        '
+        Me.chkAutoUpdates.Checked = False
+        Me.chkAutoUpdates.Location = New System.Drawing.Point(190, 50)
+        Me.chkAutoUpdates.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkAutoUpdates.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkAutoUpdates.Name = "chkAutoUpdates"
+        Me.chkAutoUpdates.Size = New System.Drawing.Size(56, 24)
+        Me.chkAutoUpdates.TabIndex = 67
+        Me.chkAutoUpdates.Text = "NsOnOffBox41"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(12, 54)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(181, 91)
+        Me.Label1.TabIndex = 65
+        Me.Label1.Text = "Check for updates at startup:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Show changelog after update:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Start minimi" & _
+    "zed with windows:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'NsGroupBox1
+        '
+        Me.NsGroupBox1.Controls.Add(Me.Label4)
+        Me.NsGroupBox1.Controls.Add(Me.btnAddUser)
+        Me.NsGroupBox1.Controls.Add(Me.txtSAMPUsername)
+        Me.NsGroupBox1.Controls.Add(Me.btnSaveRestart)
+        Me.NsGroupBox1.Controls.Add(Me.cmbSAMPUsername)
+        Me.NsGroupBox1.Controls.Add(Me.Label3)
+        Me.NsGroupBox1.DrawSeperator = True
+        Me.NsGroupBox1.Location = New System.Drawing.Point(16, 35)
+        Me.NsGroupBox1.Name = "NsGroupBox1"
+        Me.NsGroupBox1.Size = New System.Drawing.Size(486, 131)
+        Me.NsGroupBox1.SubTitle = "These options allow you to change the active profile, Designed for people who sha" & _
+    "re a system."
+        Me.NsGroupBox1.TabIndex = 0
+        Me.NsGroupBox1.Text = "NsGroupBox1"
+        Me.NsGroupBox1.Title = "Profile Settings"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(25, 94)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(64, 13)
+        Me.Label4.TabIndex = 68
+        Me.Label4.Text = "Add User:"
+        '
+        'btnAddUser
+        '
+        Me.btnAddUser.Location = New System.Drawing.Point(266, 89)
+        Me.btnAddUser.Name = "btnAddUser"
+        Me.btnAddUser.Size = New System.Drawing.Size(23, 23)
+        Me.btnAddUser.TabIndex = 4
+        Me.btnAddUser.Text = "+"
+        '
+        'txtSAMPUsername
+        '
+        Me.txtSAMPUsername.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSAMPUsername.Location = New System.Drawing.Point(90, 89)
+        Me.txtSAMPUsername.MaxLength = 32767
+        Me.txtSAMPUsername.Multiline = False
+        Me.txtSAMPUsername.Name = "txtSAMPUsername"
+        Me.txtSAMPUsername.ReadOnly = False
+        Me.txtSAMPUsername.Size = New System.Drawing.Size(172, 23)
+        Me.txtSAMPUsername.TabIndex = 3
+        Me.txtSAMPUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtSAMPUsername.UseSystemPasswordChar = False
+        '
+        'btnSaveRestart
+        '
+        Me.btnSaveRestart.Location = New System.Drawing.Point(356, 83)
+        Me.btnSaveRestart.Name = "btnSaveRestart"
+        Me.btnSaveRestart.Size = New System.Drawing.Size(118, 35)
+        Me.btnSaveRestart.TabIndex = 2
+        Me.btnSaveRestart.Text = "Change Username"
+        '
+        'cmbSAMPUsername
+        '
+        Me.cmbSAMPUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.cmbSAMPUsername.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbSAMPUsername.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSAMPUsername.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbSAMPUsername.ForeColor = System.Drawing.Color.White
+        Me.cmbSAMPUsername.FormattingEnabled = True
+        Me.cmbSAMPUsername.Location = New System.Drawing.Point(114, 48)
+        Me.cmbSAMPUsername.Name = "cmbSAMPUsername"
+        Me.cmbSAMPUsername.Size = New System.Drawing.Size(360, 28)
+        Me.cmbSAMPUsername.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(9, 55)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(110, 13)
+        Me.Label3.TabIndex = 67
+        Me.Label3.Text = "SAMP Username: "
+        '
+        'TabPage5
+        '
+        Me.TabPage5.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage5.Controls.Add(Me.NsLabel4)
+        Me.TabPage5.Controls.Add(Me.RichTextBox2)
+        Me.TabPage5.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(521, 345)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Help"
+        '
+        'NsLabel4
+        '
+        Me.NsLabel4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel4.Location = New System.Drawing.Point(110, 3)
+        Me.NsLabel4.Name = "NsLabel4"
+        Me.NsLabel4.Size = New System.Drawing.Size(330, 23)
+        Me.NsLabel4.TabIndex = 111
+        Me.NsLabel4.Text = "NsLabel4"
+        Me.NsLabel4.Value1 = " Help:"
+        Me.NsLabel4.Value2 = " How to use SACNR Keybinder Evolution"
         '
         'RichTextBox2
         '
-        Me.RichTextBox2.BackColor = System.Drawing.Color.Black
+        Me.RichTextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.RichTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.RichTextBox2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox2.ForeColor = System.Drawing.Color.PowderBlue
-        Me.RichTextBox2.Location = New System.Drawing.Point(3, 31)
+        Me.RichTextBox2.Location = New System.Drawing.Point(0, 30)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.ReadOnly = True
-        Me.RichTextBox2.Size = New System.Drawing.Size(505, 254)
-        Me.RichTextBox2.TabIndex = 3
+        Me.RichTextBox2.Size = New System.Drawing.Size(521, 315)
+        Me.RichTextBox2.TabIndex = 4
         Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
         '
-        'TabPage11
+        'TabPage7
         '
-        Me.TabPage11.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage11.Controls.Add(Me.WebBrowser1)
-        Me.TabPage11.Controls.Add(Me.Label62)
-        Me.TabPage11.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage11.Name = "TabPage11"
-        Me.TabPage11.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage11.Size = New System.Drawing.Size(511, 288)
-        Me.TabPage11.TabIndex = 2
-        Me.TabPage11.Text = "Change Log"
+        Me.TabPage7.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage7.Controls.Add(Me.Panel4)
+        Me.TabPage7.Controls.Add(Me.NsButton7)
+        Me.TabPage7.Controls.Add(Me.NsGroupBox7)
+        Me.TabPage7.Controls.Add(Me.NsLabel5)
+        Me.TabPage7.Controls.Add(Me.Label11)
+        Me.TabPage7.Controls.Add(Me.lblVersion)
+        Me.TabPage7.Controls.Add(Me.Label6)
+        Me.TabPage7.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Size = New System.Drawing.Size(521, 345)
+        Me.TabPage7.TabIndex = 6
+        Me.TabPage7.Text = "About"
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.WebBrowser1)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(0, 31)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(521, 314)
+        Me.Panel4.TabIndex = 13
+        Me.Panel4.Visible = False
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(3, 31)
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(528, 254)
-        Me.WebBrowser1.TabIndex = 3
+        Me.WebBrowser1.Size = New System.Drawing.Size(521, 314)
+        Me.WebBrowser1.TabIndex = 4
         Me.WebBrowser1.Url = New System.Uri("http://cyanlabs.co.uk/keybinder/changelog.html", System.UriKind.Absolute)
+        Me.WebBrowser1.WebBrowserShortcutsEnabled = False
         '
-        'Label62
+        'NsButton7
         '
-        Me.Label62.Font = New System.Drawing.Font("Impact", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label62.ForeColor = System.Drawing.Color.White
-        Me.Label62.Location = New System.Drawing.Point(3, 2)
-        Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(502, 26)
-        Me.Label62.TabIndex = 4
-        Me.Label62.Text = "Change Log" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.Label62.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.NsButton7.Location = New System.Drawing.Point(390, 3)
+        Me.NsButton7.Name = "NsButton7"
+        Me.NsButton7.Size = New System.Drawing.Size(111, 26)
+        Me.NsButton7.TabIndex = 12
+        Me.NsButton7.Text = "Show changelog"
         '
-        'TabPage9
+        'NsGroupBox7
         '
-        Me.TabPage9.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.TabPage9.Controls.Add(Me.ReactorGroupBox9)
-        Me.TabPage9.Controls.Add(Me.Label11)
-        Me.TabPage9.Controls.Add(Me.lblVersion)
-        Me.TabPage9.Controls.Add(Me.Label3)
-        Me.TabPage9.Controls.Add(Me.Label1)
-        Me.TabPage9.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage9.Name = "TabPage9"
-        Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(511, 288)
-        Me.TabPage9.TabIndex = 1
-        Me.TabPage9.Text = "About"
-        '
-        'ReactorGroupBox9
-        '
-        Me.ReactorGroupBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(33, Byte), Integer))
-        Me.ReactorGroupBox9.Controls.Add(Me.txtFeedback)
-        Me.ReactorGroupBox9.Controls.Add(Me.btnSendRequest)
-        Me.ReactorGroupBox9.Location = New System.Drawing.Point(13, 182)
-        Me.ReactorGroupBox9.Name = "ReactorGroupBox9"
-        Me.ReactorGroupBox9.Size = New System.Drawing.Size(483, 85)
-        Me.ReactorGroupBox9.TabIndex = 64
-        Me.ReactorGroupBox9.Text = "Feedback, Bug Reports and Suggestions"
-        '
-        'txtFeedback
-        '
-        Me.txtFeedback.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.txtFeedback.ForeColor = System.Drawing.Color.White
-        Me.txtFeedback.Location = New System.Drawing.Point(6, 27)
-        Me.txtFeedback.MaxCharacters = 32767
-        Me.txtFeedback.Name = "txtFeedback"
-        Me.txtFeedback.Size = New System.Drawing.Size(391, 55)
-        Me.txtFeedback.TabIndex = 58
-        Me.txtFeedback.Text = "Leave feedback or suggest a new feature or change here."
-        Me.txtFeedback.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsGroupBox7.Controls.Add(Me.btnSendRequest)
+        Me.NsGroupBox7.Controls.Add(Me.txtFeedback)
+        Me.NsGroupBox7.DrawSeperator = True
+        Me.NsGroupBox7.Location = New System.Drawing.Point(12, 227)
+        Me.NsGroupBox7.Name = "NsGroupBox7"
+        Me.NsGroupBox7.Size = New System.Drawing.Size(498, 98)
+        Me.NsGroupBox7.SubTitle = "Please do not send spam or malicious feedback"
+        Me.NsGroupBox7.TabIndex = 11
+        Me.NsGroupBox7.Text = "NsGroupBox7"
+        Me.NsGroupBox7.Title = "Leave Feedback"
         '
         'btnSendRequest
         '
-        Me.btnSendRequest.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(38, Byte), Integer))
-        Me.btnSendRequest.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSendRequest.Location = New System.Drawing.Point(396, 27)
+        Me.btnSendRequest.Location = New System.Drawing.Point(407, 43)
         Me.btnSendRequest.Name = "btnSendRequest"
-        Me.btnSendRequest.Size = New System.Drawing.Size(83, 57)
-        Me.btnSendRequest.TabIndex = 57
-        Me.btnSendRequest.Text = "Submit Feedback"
+        Me.btnSendRequest.Size = New System.Drawing.Size(86, 52)
+        Me.btnSendRequest.TabIndex = 1
+        Me.btnSendRequest.Text = "    Submit"
+        '
+        'txtFeedback
+        '
+        Me.txtFeedback.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtFeedback.Location = New System.Drawing.Point(5, 43)
+        Me.txtFeedback.MaxLength = 32767
+        Me.txtFeedback.Multiline = False
+        Me.txtFeedback.Name = "txtFeedback"
+        Me.txtFeedback.ReadOnly = False
+        Me.txtFeedback.Size = New System.Drawing.Size(398, 52)
+        Me.txtFeedback.TabIndex = 0
+        Me.txtFeedback.Text = "Leave feedback or suggest a new feature or change here."
+        Me.txtFeedback.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtFeedback.UseSystemPasswordChar = False
+        '
+        'NsLabel5
+        '
+        Me.NsLabel5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel5.Location = New System.Drawing.Point(236, 2)
+        Me.NsLabel5.Name = "NsLabel5"
+        Me.NsLabel5.Size = New System.Drawing.Size(58, 23)
+        Me.NsLabel5.TabIndex = 10
+        Me.NsLabel5.Text = "NsLabel5"
+        Me.NsLabel5.Value1 = " "
+        Me.NsLabel5.Value2 = "About"
         '
         'Label11
         '
@@ -2695,10 +2571,10 @@ Partial Class Form1
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(10, 45)
+        Me.Label11.Location = New System.Drawing.Point(14, 52)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(493, 126)
-        Me.Label11.TabIndex = 5
+        Me.Label11.Size = New System.Drawing.Size(490, 154)
+        Me.Label11.TabIndex = 9
         Me.Label11.Text = resources.GetString("Label11.Text")
         '
         'lblVersion
@@ -2707,192 +2583,93 @@ Partial Class Form1
         Me.lblVersion.BackColor = System.Drawing.Color.Transparent
         Me.lblVersion.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVersion.ForeColor = System.Drawing.Color.White
-        Me.lblVersion.Location = New System.Drawing.Point(456, 271)
+        Me.lblVersion.Location = New System.Drawing.Point(466, 328)
         Me.lblVersion.Name = "lblVersion"
         Me.lblVersion.Size = New System.Drawing.Size(52, 14)
-        Me.lblVersion.TabIndex = 4
+        Me.lblVersion.TabIndex = 8
         Me.lblVersion.Text = "VX.X.X.X"
         Me.lblVersion.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Label3
+        'Label6
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(3, 271)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(236, 14)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Copyright 2013 Fma965 && DHeppell (CyanLabs)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Impact", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(9, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(492, 26)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "SACNR Keybinder Evolution is licensed under GNU GPL V3"
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(3, 328)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(441, 14)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "Application copyright © 2013 CyanLabs && Theme copyright © 2012-2013 Nimoru softw" & _
+    "are"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(533, 476)
-        Me.Controls.Add(Me.ReactorTheme1)
+        Me.ClientSize = New System.Drawing.Size(650, 509)
+        Me.Controls.Add(Me.NsTheme1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.KeyPreview = True
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SACNR Keybinder 2013 Edition"
-        Me.ReactorTheme1.ResumeLayout(False)
+        Me.Text = "SACNR Keybinder Evolution"
+        Me.NsTheme1.ResumeLayout(False)
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ReactorTabControl1.ResumeLayout(False)
+        Me.NsTabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.ReactorTabControl2.ResumeLayout(False)
-        Me.TabPage4.ResumeLayout(False)
-        Me.TabPage4.PerformLayout()
-        Me.TabPage5.ResumeLayout(False)
-        Me.TabPage5.PerformLayout()
-        Me.TabPage6.ResumeLayout(False)
-        Me.TabPage6.PerformLayout()
-        Me.TabPage10.ResumeLayout(False)
-        Me.TabPage10.PerformLayout()
-        Me.TabPage3.ResumeLayout(False)
-        Me.ReactorTabControl4.ResumeLayout(False)
-        Me.TabPage12.ResumeLayout(False)
-        Me.ReactorGroupBox2.ResumeLayout(False)
-        Me.ReactorGroupBox2.PerformLayout()
-        Me.ReactorGroupBox7.ResumeLayout(False)
-        Me.ReactorGroupBox7.PerformLayout()
-        Me.ReactorGroupBox6.ResumeLayout(False)
-        Me.ReactorGroupBox6.PerformLayout()
-        Me.TabPage7.ResumeLayout(False)
-        Me.ReactorGroupBox4.ResumeLayout(False)
-        Me.ReactorGroupBox4.PerformLayout()
-        Me.ReactorGroupBox3.ResumeLayout(False)
-        Me.ReactorGroupBox1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
-        Me.ReactorTabControl3.ResumeLayout(False)
-        Me.TabPage8.ResumeLayout(False)
-        Me.TabPage11.ResumeLayout(False)
-        Me.TabPage9.ResumeLayout(False)
-        Me.TabPage9.PerformLayout()
-        Me.ReactorGroupBox9.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        Me.TabPage4.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.NsGroupBox4.ResumeLayout(False)
+        Me.NsGroupBox4.PerformLayout()
+        Me.NsGroupBox5.ResumeLayout(False)
+        Me.NsGroupBox5.PerformLayout()
+        Me.NsGroupBox6.ResumeLayout(False)
+        Me.NsGroupBox3.ResumeLayout(False)
+        Me.NsGroupBox3.PerformLayout()
+        Me.NsGroupBox2.ResumeLayout(False)
+        Me.NsGroupBox2.PerformLayout()
+        Me.NsGroupBox1.ResumeLayout(False)
+        Me.NsGroupBox1.PerformLayout()
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage7.ResumeLayout(False)
+        Me.TabPage7.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.NsGroupBox7.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
-    Friend WithEvents ReactorTabControl1 As SACNR_Keybinder_Evolution.ReactorTabControl
+    Friend WithEvents NsTheme1 As SACNR_Keybinder_Evolution.NSTheme
+    Friend WithEvents NsTabControl1 As SACNR_Keybinder_Evolution.NSTabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents chkWheelDown As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents chkWheelUp As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkLMB As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkMMB As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkRMB As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkSB1 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents txtWheelDown As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents chkSB2 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents txtWheelUp As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtlmb As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtMMB As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtRMB As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtSB1 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtSB2 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents imgLogo2 As System.Windows.Forms.PictureBox
-    Friend WithEvents btnLaunch As SACNR_Keybinder_Evolution.ReactorButton
-    Friend WithEvents ReactorTheme1 As SACNR_Keybinder_Evolution.ReactorTheme
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents ReactorGroupBox2 As SACNR_Keybinder_Evolution.ReactorGroupBox
-    Friend WithEvents chkAutoupdates As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents lblVersion As System.Windows.Forms.Label
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents chkEnableLogs As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorTabControl3 As SACNR_Keybinder_Evolution.ReactorTabControl
-    Friend WithEvents TabPage8 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage9 As System.Windows.Forms.TabPage
-    Friend WithEvents Label31 As System.Windows.Forms.Label
-    Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
-    Friend WithEvents ReactorGroupBox7 As SACNR_Keybinder_Evolution.ReactorGroupBox
-    Friend WithEvents Label33 As System.Windows.Forms.Label
-    Friend WithEvents btnSaveRestart As SACNR_Keybinder_Evolution.ReactorButton
-    Friend WithEvents TabPage10 As System.Windows.Forms.TabPage
-    Friend WithEvents Timer2 As System.Windows.Forms.Timer
-    Friend WithEvents Label47 As System.Windows.Forms.Label
-    Friend WithEvents Label48 As System.Windows.Forms.Label
-    Friend WithEvents Label50 As System.Windows.Forms.Label
-    Friend WithEvents Label51 As System.Windows.Forms.Label
-    Friend WithEvents chkButtonA As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkButtonB As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents txtButtonA As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtButtonB As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents Label56 As System.Windows.Forms.Label
-    Friend WithEvents Label52 As System.Windows.Forms.Label
-    Friend WithEvents Label43 As System.Windows.Forms.Label
-    Friend WithEvents Label55 As System.Windows.Forms.Label
-    Friend WithEvents Label46 As System.Windows.Forms.Label
-    Friend WithEvents Label54 As System.Windows.Forms.Label
-    Friend WithEvents Label45 As System.Windows.Forms.Label
-    Friend WithEvents Label42 As System.Windows.Forms.Label
-    Friend WithEvents Label53 As System.Windows.Forms.Label
-    Friend WithEvents Label44 As System.Windows.Forms.Label
-    Friend WithEvents chkLeftStick As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkDpadLeft As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkButtonX As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkLB As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkDpadUp As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkRightStick As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkDpadRight As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkButtonY As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkRB As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkDpadDown As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents txtLeftStickPress As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtDpadLeft As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtButtonX As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtRightStickPress As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtDpadRight As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtButtonY As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtLb As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtRB As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtDpadUp As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents txtDpadDown As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents chkEnable360 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkSkipChangelog As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents TabPage11 As System.Windows.Forms.TabPage
-    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
-    Friend WithEvents ReactorGroupBox6 As SACNR_Keybinder_Evolution.ReactorGroupBox
-    Friend WithEvents btnLogs As SACNR_Keybinder_Evolution.ReactorButton
-    Friend WithEvents ReactorGroupBox9 As SACNR_Keybinder_Evolution.ReactorGroupBox
-    Friend WithEvents btnSendRequest As SACNR_Keybinder_Evolution.ReactorButton
-    Friend WithEvents txtFeedback As SACNR_Keybinder_Evolution.ReactorMultiLineTextBox
-    Friend WithEvents Label62 As System.Windows.Forms.Label
-    Friend WithEvents ReactorTabControl2 As SACNR_Keybinder_Evolution.ReactorTabControl
+    Friend WithEvents CBtnMin As SACNR_Keybinder_Evolution.NSControlButton
+    Friend WithEvents CBtnClose As SACNR_Keybinder_Evolution.NSControlButton
+    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents ReactorTextBox1 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents ReactorTextBox2 As SACNR_Keybinder_Evolution.ReactorTextBox
+    Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
+    Friend WithEvents btnLaunch As SACNR_Keybinder_Evolution.NSButton
+    Friend WithEvents NsPaginator1 As SACNR_Keybinder_Evolution.NSPaginator
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents NsTextBox10 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox9 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox8 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox7 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox6 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox5 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox4 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox3 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox2 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox1 As SACNR_Keybinder_Evolution.NSTextBox
     Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
@@ -2903,84 +2680,160 @@ Partial Class Form1
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents ReactorTextBox4 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox5 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox6 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox7 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox8 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox9 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox10 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorCheckBox1 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox2 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox3 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox4 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox5 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox6 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox10 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox7 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox9 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox8 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorTextBox3 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents ReactorTextBox11 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents ReactorTextBox12 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox13 As SACNR_Keybinder_Evolution.ReactorTextBox
+    Friend WithEvents NsOnOffBox10 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox9 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox8 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox7 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox6 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox5 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox4 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox3 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox2 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox1 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents NsOnOffBox20 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox19 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox18 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox17 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox16 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox15 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox14 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox13 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox12 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsOnOffBox11 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
-    Friend WithEvents ReactorTextBox14 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox15 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox16 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox17 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox18 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox19 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorTextBox20 As SACNR_Keybinder_Evolution.ReactorTextBox
-    Friend WithEvents ReactorCheckBox11 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox12 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox13 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox14 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox15 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox16 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox17 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox18 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox19 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorCheckBox20 As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents txtSAMPUsername As System.Windows.Forms.ComboBox
-    Friend WithEvents chkStartup As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorGroupBox1 As SACNR_Keybinder_Evolution.ReactorGroupBox
-    Friend WithEvents chkUseMouseUp As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkDebug As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents ReactorTabControl4 As SACNR_Keybinder_Evolution.ReactorTabControl
-    Friend WithEvents TabPage12 As System.Windows.Forms.TabPage
+    Friend WithEvents NsTextBox20 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox19 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox18 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox17 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox16 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox15 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox14 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox13 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox12 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsTextBox11 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsLabel1 As SACNR_Keybinder_Evolution.NSLabel
+    Friend WithEvents chkWheelDown As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkWheelUp As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkSB2 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkSB1 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkRMB As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkMMB As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkLMB As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents txtWheelDown As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtWheelUp As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtSB2 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtSB1 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtRMB As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtMMB As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtLMB As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents NsLabel2 As SACNR_Keybinder_Evolution.NSLabel
+    Friend WithEvents txtRightStickPress As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtLeftStickPress As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtRb As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtLb As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtDpadRight As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtDpadLeft As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtDpadDown As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtDpadUp As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtButtonY As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtButtonX As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtButtonB As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtButtonA As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents chkRightStick As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkLeftStick As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkRB As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkLB As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkDpadRight As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkDpadLeft As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkDpadDown As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkDpadUp As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkButtonY As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkButtonX As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkButtonB As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkButtonA As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents Label56 As System.Windows.Forms.Label
+    Friend WithEvents Label52 As System.Windows.Forms.Label
+    Friend WithEvents Label43 As System.Windows.Forms.Label
+    Friend WithEvents Label55 As System.Windows.Forms.Label
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents Label47 As System.Windows.Forms.Label
+    Friend WithEvents Label54 As System.Windows.Forms.Label
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents Label42 As System.Windows.Forms.Label
+    Friend WithEvents Label53 As System.Windows.Forms.Label
+    Friend WithEvents Label44 As System.Windows.Forms.Label
+    Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents NsLabel3 As SACNR_Keybinder_Evolution.NSLabel
+    Friend WithEvents NsGroupBox3 As SACNR_Keybinder_Evolution.NSGroupBox
+    Friend WithEvents NsGroupBox2 As SACNR_Keybinder_Evolution.NSGroupBox
+    Friend WithEvents NsGroupBox1 As SACNR_Keybinder_Evolution.NSGroupBox
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
-    Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents btnSaveRestart As SACNR_Keybinder_Evolution.NSButton
+    Friend WithEvents cmbSAMPUsername As SACNR_Keybinder_Evolution.NSComboBox
+    Friend WithEvents txtSAMPUsername As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents btnAddUser As SACNR_Keybinder_Evolution.NSButton
     Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents btnReset As SACNR_Keybinder_Evolution.ReactorButton
-    Friend WithEvents ReactorGroupBox3 As SACNR_Keybinder_Evolution.ReactorGroupBox
-    Friend WithEvents ReactorGroupBox4 As SACNR_Keybinder_Evolution.ReactorGroupBox
-    Friend WithEvents Label30 As System.Windows.Forms.Label
-    Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents Label29 As System.Windows.Forms.Label
-    Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents chkSendEnter As SACNR_Keybinder_Evolution.ReactorCheckBox
-    Friend WithEvents chkSendT As SACNR_Keybinder_Evolution.ReactorCheckBox
+    Friend WithEvents chkEnableLogs As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents btnLogs As SACNR_Keybinder_Evolution.NSButton
+    Friend WithEvents NsSeperator1 As SACNR_Keybinder_Evolution.NSSeperator
+    Friend WithEvents NsLabel7 As SACNR_Keybinder_Evolution.NSLabel
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents chkShowChangelog As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkAutoUpdates As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents NsButton5 As SACNR_Keybinder_Evolution.NSButton
+    Friend WithEvents NsGroupBox4 As SACNR_Keybinder_Evolution.NSGroupBox
     Friend WithEvents txtDelayChar As System.Windows.Forms.TextBox
     Friend WithEvents txtMacroChar As System.Windows.Forms.TextBox
     Friend WithEvents txtToggleChar As System.Windows.Forms.TextBox
-    Friend WithEvents chkUseKeyUp As SACNR_Keybinder_Evolution.ReactorCheckBox
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents Label25 As System.Windows.Forms.Label
+    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents NsGroupBox5 As SACNR_Keybinder_Evolution.NSGroupBox
+    Friend WithEvents chkDebug As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkSendT As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkSendEnter As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkUseMouseUp As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkUseKeyUp As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents NsGroupBox6 As SACNR_Keybinder_Evolution.NSGroupBox
+    Friend WithEvents btnReset As SACNR_Keybinder_Evolution.NSButton
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents NsLabel4 As SACNR_Keybinder_Evolution.NSLabel
+    Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents lblVersion As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents NsButton7 As SACNR_Keybinder_Evolution.NSButton
+    Friend WithEvents NsGroupBox7 As SACNR_Keybinder_Evolution.NSGroupBox
+    Friend WithEvents NsLabel5 As SACNR_Keybinder_Evolution.NSLabel
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
+    Friend WithEvents Timer2 As System.Windows.Forms.Timer
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
+    Friend WithEvents chkEnable360 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkStartup As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents btnSendRequest As SACNR_Keybinder_Evolution.NSButton
+    Friend WithEvents txtFeedback As SACNR_Keybinder_Evolution.NSTextBox
 
 End Class
