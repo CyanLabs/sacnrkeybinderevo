@@ -26,7 +26,6 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.NsTheme1 = New SACNR_Keybinder_Evolution.NSTheme()
         Me.btnLaunch = New SACNR_Keybinder_Evolution.NSButton()
         Me.CBtnMin = New SACNR_Keybinder_Evolution.NSControlButton()
@@ -212,6 +211,10 @@ Partial Class Form1
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lblVersion = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.NsContextMenu1 = New SACNR_Keybinder_Evolution.NSContextMenu()
+        Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NsTheme1.SuspendLayout()
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NsTabControl1.SuspendLayout()
@@ -232,6 +235,7 @@ Partial Class Form1
         Me.TabPage7.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.NsGroupBox7.SuspendLayout()
+        Me.NsContextMenu1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Timer2
@@ -242,15 +246,6 @@ Partial Class Form1
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 5000
-        '
-        'NotifyIcon1
-        '
-        Me.NotifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        Me.NotifyIcon1.BalloonTipText = "Minimized To Tray"
-        Me.NotifyIcon1.BalloonTipTitle = "SACNR KeyBinder Evolution"
-        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
-        Me.NotifyIcon1.Text = "SACNR KeyBinder Evolution"
-        Me.NotifyIcon1.Visible = True
         '
         'NsTheme1
         '
@@ -2603,6 +2598,34 @@ Partial Class Form1
         Me.Label6.Text = "Application copyright © 2013 CyanLabs && Theme copyright © 2012-2013 Nimoru softw" & _
     "are"
         '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.NotifyIcon1.BalloonTipText = "Minimized To Tray"
+        Me.NotifyIcon1.BalloonTipTitle = "SACNR KeyBinder Evolution"
+        Me.NotifyIcon1.ContextMenuStrip = Me.NsContextMenu1
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "SACNR KeyBinder Evolution"
+        '
+        'NsContextMenu1
+        '
+        Me.NsContextMenu1.ForeColor = System.Drawing.Color.White
+        Me.NsContextMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.NsContextMenu1.Name = "NsContextMenu1"
+        Me.NsContextMenu1.Size = New System.Drawing.Size(153, 70)
+        '
+        'ShowToolStripMenuItem
+        '
+        Me.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem"
+        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ShowToolStripMenuItem.Text = "Show"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2644,6 +2667,7 @@ Partial Class Form1
         Me.TabPage7.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.NsGroupBox7.ResumeLayout(False)
+        Me.NsContextMenu1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -2835,5 +2859,8 @@ Partial Class Form1
     Friend WithEvents chkStartup As SACNR_Keybinder_Evolution.NSOnOffBox
     Friend WithEvents btnSendRequest As SACNR_Keybinder_Evolution.NSButton
     Friend WithEvents txtFeedback As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents NsContextMenu1 As SACNR_Keybinder_Evolution.NSContextMenu
+    Friend WithEvents ShowToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -364,7 +364,7 @@ Public Class Form1
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         If MsgBox("Are you sure you wish to reset all settings and keybinds?", vbYesNo + MsgBoxStyle.Question, "Confirmation") = vbYes Then
             skipsavesettings = True
-            If IO.File.Exists(Application.StartupPath & "\keybinds\" & cmbSAMPUsername.Text & "_keybinds.sav") Then IO.File.Delete(Application.StartupPath & "\keybinds\" & cmbSAMPUsername.Text & "_keybinds.sav")
+            If IO.File.Exists(Application.StartupPath & "\keybinds\" & txtSAMPUsername.Text & "_keybinds.sav") Then IO.File.Delete(Application.StartupPath & "\keybinds\" & txtSAMPUsername.Text & "_keybinds.sav")
             MsgBox("Default settings restored! Application will now restart", vbInformation, "Success!")
             Application.Restart()
         End If
@@ -416,6 +416,7 @@ Public Class Form1
             For Each x As String In Environment.GetCommandLineArgs
                 If x = "-startup" Then
                     Me.WindowState = FormWindowState.Minimized
+                    ShowInTaskbar = False
                     NotifyIcon1.Visible = True
                 End If
                 If x.Contains("-updated=") Then
@@ -615,12 +616,8 @@ Public Class Form1
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As Windows.Forms.MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
         NotifyIcon1.Visible = False
         ShowInTaskbar = True
+        Me.Show()
         Me.WindowState = FormWindowState.Normal
-    End Sub
-
-    'Code that runs when notification icon is right clicked
-    Private Sub NotifyIcon1_MouseClick(sender As Object, e As Windows.Forms.MouseEventArgs) Handles NotifyIcon1.MouseClick
-        If e.Button = Windows.Forms.MouseButtons.Right Then Application.Exit()
     End Sub
 
     'Saves all advanced checkbox settings
@@ -677,5 +674,20 @@ Public Class Form1
 
     Private Sub NsButton1_Click(sender As Object, e As EventArgs)
         MsgBox(My.Application.Info.AssemblyName.Replace(" ", "_"))
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowToolStripMenuItem.Click
+        NotifyIcon1.Visible = False
+        ShowInTaskbar = True
+        Me.Show()
+        Me.WindowState = FormWindowState.Normal
+    End Sub
+
+    Private Sub NotifyIcon1_MouseClick(sender As Object, e As Windows.Forms.MouseEventArgs)
+
     End Sub
 End Class
