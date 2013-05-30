@@ -1,14 +1,5 @@
-﻿'Add this just after class ...
-'---------------------------------
-'Private UpdateChecker As System.Threading.Thread = New Thread(AddressOf Updater.IsLatest)
-'---------------------------------
-
-'Add this in a method
-'---------------------------------
-'UpdateChecker.IsBackground = True
-'UpdateChecker.Start()
-'---------------------------------
-Public Module Updater
+﻿Public Module Updater
+    Dim product As String = My.Application.Info.AssemblyName.Replace(" ", "_")
     Dim wc As New Net.WebClient
     Dim localversion As String = My.Application.Info.Version.ToString
     Public Sub IsLatest(Optional ByVal server As String = "ftp://199.96.156.121/")
@@ -18,22 +9,22 @@ Public Module Updater
             Next
         End If
         Try
-            wc.Credentials = New Net.NetworkCredential("anonymous@cyanlabs.co.uk", "anonymous")
-            Dim xm As New Xml.XmlDocument
-            xm.LoadXml(wc.DownloadString(server & "updates/versions.xml"))
-            Dim latestVersion As String = xm.SelectSingleNode("//" & My.Application.Info.AssemblyName.Replace(" ", "_") & "//CurrentVersion").InnerText.Trim
-            If localversion < latestVersion Then
-                If MsgBox("A new update is available for download" & vbNewLine & vbNewLine & "Would you like to download version v" & latestVersion & " now?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Update Avaliable") = vbYes Then
+            Dim latestversion As String = wc.DownloadString("http://downloads.cyanlabs.co.uk/version.php?product=" & product)
+            Debug.WriteLine("http://changelog.cyanlabs.co.uk?product=" & product & "&from=" & localversion & "&to=" & latestversion)
+            Dim changelog As String = wc.DownloadString("http://changelog.cyanlabs.co.uk?product=" & product & "&from=" & localversion & "&to=" & latestversion)
+            changelog = changelog.Substring(0, changelog.Length - 11).Replace("<br/><br/>", vbNewLine & vbNewLine).Replace("<br/>", "")
+            If localversion < latestversion Then
+                If MsgBox("A new update is available for download" & vbNewLine & vbNewLine & "Would you like to download v" & latestversion & "?" & vbNewLine & vbNewLine & changelog, MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Update Avaliable") = vbYes Then
                     If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then
                         Dim updaterversion As FileVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(Application.StartupPath & "\AutoUpdater.exe")
-                        If updaterversion.FileVersion < xm.SelectSingleNode("//autoupdater//CurrentVersion").InnerText.Trim Then
-                            DownloadUpdater(latestVersion)
+                        If updaterversion.FileVersion < wc.DownloadString("http://downloads.cyanlabs.co.uk/version.php?product=AutoUpdater") Then
+                            DownloadUpdater(latestversion)
                         Else
-                            Process.Start(Application.StartupPath & "\AutoUpdater.exe ", "-product=" & My.Application.Info.AssemblyName.Replace(" ", "_") & " -v=" & latestVersion)
+                            Process.Start(Application.StartupPath & "\AutoUpdater.exe ", "-product=" & product & " -v=" & latestversion)
                             Application.Exit()
                         End If
                     Else
-                        DownloadUpdater(latestVersion)
+                        DownloadUpdater(latestversion)
                     End If
                 End If
             End If
@@ -45,11 +36,12 @@ Public Module Updater
             MsgBox(ex.Message.ToString)
         End Try
     End Sub
-    Private Sub DownloadUpdater(ByVal latestversion As String, Optional ByVal server As String = "ftp://199.96.156.121/")
+    Private Sub DownloadUpdater(ByVal latestversion As String)
         Try
             If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then IO.File.Delete(Application.StartupPath & "\AutoUpdater.exe")
-            wc.DownloadFile(New Uri(server & "/updates/" & "AutoUpdater.exe"), Application.StartupPath & "\AutoUpdater.exe")
-            Process.Start(Application.StartupPath & "\AutoUpdater.exe ", "-product=" & My.Application.Info.AssemblyName.Replace(" ", "_") & " -v=" & latestversion)
+            wc.DownloadFile(New Uri("http://downloads.cyanlabs.co.uk/AutoUpdater/AutoUpdater.exe"), Application.StartupPath & "\AutoUpdater.exe")
+            Process.Start(Application.StartupPath & "\AutoUpdater.exe ", "-product=" & product & " -v=" & latestversion)
+            Debug.Print(4)
             Application.Exit()
         Catch ex As Net.WebException
             MsgBox(ex.Message.ToString)
