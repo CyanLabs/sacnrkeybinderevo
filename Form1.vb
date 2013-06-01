@@ -103,7 +103,7 @@ Public Class Form1
                 If x = "-debug" Then Return "GTA:SA:MP"
             Next
         End If
-        If chkDebug.Checked Then Return "GTA:SA:MP"
+        If inisettings.GetString("Advanced Settings", "Debug", False) Then Return "GTA:SA:MP"
         Return GetCaption()
     End Function
     'Sub to savesettings
@@ -411,6 +411,7 @@ Public Class Form1
 
     'Form1 Shown code
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        WebBrowser1.Navigate("http://changelog.cyanlabs.co.uk/?product=SACNR_Keybinder_Evolution")
         CheckForIllegalCrossThreadCalls = False
         If Environment.GetCommandLineArgs.Length > 1 Then
             For Each x As String In Environment.GetCommandLineArgs
@@ -487,6 +488,7 @@ Public Class Form1
         chkShowChangelog.Checked = inisettings.GetString("Settings", "ShowChangelog", True)
         chkUseMouseUp.Checked = inisettings.GetString("Advanced Settings", "UseKeyUp", False)
         chkUseKeyUp.Checked = inisettings.GetString("Advanced Settings", "UseMouseUp", False)
+        chkDebug.Checked = inisettings.GetString("Advanced Settings", "Debug", False)
         txtMacroChar.Text = inisettings.GetString("Advanced Settings", "MacroChar", "*")
         txtToggleChar.Text = inisettings.GetString("Advanced Settings", "ToggleChar", "#")
         txtDelayChar.Text = inisettings.GetString("Advanced Settings", "DelayChar", "¬")
@@ -507,7 +509,7 @@ Public Class Form1
     End Sub
 
     'Autoupdate check change
-    Private Sub chkAutoupdates_CheckedChanged(sender As Object) Handles chkUseMouseUp.CheckedChanged, chkUseKeyUp.CheckedChanged, chkSendT.CheckedChanged, chkSendEnter.CheckedChanged, chkDebug.CheckedChanged
+    Private Sub chkAutoupdates_CheckedChanged(sender As Object)
         Try
             inisettings.WriteString("Settings", "AutoUpdate", sender.checked.ToString)
         Catch ex As NullReferenceException
@@ -621,7 +623,7 @@ Public Class Form1
     End Sub
 
     'Saves all advanced checkbox settings
-    Private Sub chkAdvancedSettings_CheckedChanged(sender As Object)
+    Private Sub chkAdvancedSettings_CheckedChanged(sender As Object) Handles chkUseMouseUp.CheckedChanged, chkUseKeyUp.CheckedChanged, chkSendT.CheckedChanged, chkSendEnter.CheckedChanged, chkDebug.CheckedChanged
         Try
             inisettings.WriteString("Advanced Settings", sender.name.replace("chk", ""), sender.checked.ToString)
         Catch ex As NullReferenceException

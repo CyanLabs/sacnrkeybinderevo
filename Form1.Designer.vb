@@ -2503,7 +2503,7 @@ Partial Class Form1
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(521, 314)
         Me.WebBrowser1.TabIndex = 4
-        Me.WebBrowser1.Url = New System.Uri("http://cyanlabs.co.uk/keybinder/changelog.html", System.UriKind.Absolute)
+        Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
         Me.WebBrowser1.WebBrowserShortcutsEnabled = False
         '
         'NsButton7
@@ -2612,18 +2612,18 @@ Partial Class Form1
         Me.NsContextMenu1.ForeColor = System.Drawing.Color.White
         Me.NsContextMenu1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.NsContextMenu1.Name = "NsContextMenu1"
-        Me.NsContextMenu1.Size = New System.Drawing.Size(153, 70)
+        Me.NsContextMenu1.Size = New System.Drawing.Size(104, 48)
         '
         'ShowToolStripMenuItem
         '
         Me.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem"
-        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
         Me.ShowToolStripMenuItem.Text = "Show"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'Form1
