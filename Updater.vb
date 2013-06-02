@@ -20,7 +20,7 @@
                 If MsgBox("A new update is available for download" & vbNewLine & vbNewLine & "Would you like to download v" & latestversion & "?" & vbNewLine & vbNewLine & changelog, MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Update Avaliable") = vbYes Then
                     If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then
                         Dim updaterversion As FileVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(Application.StartupPath & "\AutoUpdater.exe")
-                        If updaterversion.FileVersion <= wc.DownloadString("http://downloads.cyanlabs.co.uk/version.php?product=AutoUpdater").Replace(" ", "") Then
+                        If updaterversion.FileVersion < wc.DownloadString("http://downloads.cyanlabs.co.uk/version.php?product=AutoUpdater").Replace(" ", "") Then
                             DownloadUpdater(latestversion)
                         Else
                             Process.Start(Application.StartupPath & "\AutoUpdater.exe ", "-product=" & product & " -v=" & latestversion)

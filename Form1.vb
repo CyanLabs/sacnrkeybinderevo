@@ -88,7 +88,7 @@ Public Class Form1
             End If
             keybinderdisabled = False
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("String contains invalid character!")
         End Try
     End Sub
     'Sub to check key matches pressed key
@@ -271,6 +271,7 @@ Public Class Form1
         If e.KeyData.ToString = "Return" Or e.KeyData.ToString = "Escape" Then keybinderdisabled = False
     End Sub
     'Sub timer to control x360 binds (can't use a global hook like keyboard and mouse)
+    Dim Prev360Buttons As GamePadState
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles timer360.Tick
         If DebugCheck() = "GTA:SA:MP" Then
             trd2 = New Thread(AddressOf macro)
@@ -278,89 +279,90 @@ Public Class Form1
             Dim currentState As GamePadState = GamePad.GetState(PlayerIndex.One)
             If currentState.IsConnected Then
                 If chkButtonA.Checked = True Then
-                    If currentState.Buttons.A = ButtonState.Pressed Then
+                    If currentState.Buttons.A = ButtonState.Pressed AndAlso Prev360Buttons.Buttons.A = ButtonState.Released Then
                         param_obj(0) = "A"
                         param_obj(1) = txtButtonA.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkButtonX.Checked = True Then
-                    If currentState.Buttons.X = ButtonState.Pressed Then
+                    If currentState.Buttons.X = ButtonState.Pressed AndAlso Prev360Buttons.Buttons.X = ButtonState.Released Then
                         param_obj(0) = "XButton"
                         param_obj(1) = txtButtonX.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkButtonY.Checked = True Then
-                    If currentState.Buttons.Y = ButtonState.Pressed Then
+                    If currentState.Buttons.Y = ButtonState.Pressed AndAlso Prev360Buttons.Buttons.Y = ButtonState.Released Then
                         param_obj(0) = "YButton"
                         param_obj(1) = txtButtonY.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkButtonB.Checked = True Then
-                    If currentState.Buttons.B = ButtonState.Pressed Then
+                    If currentState.Buttons.B = ButtonState.Pressed AndAlso Prev360Buttons.Buttons.B = ButtonState.Released Then
                         param_obj(0) = "BButton"
                         param_obj(1) = txtButtonB.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkRB.Checked = True Then
-                    If currentState.Buttons.RightShoulder = ButtonState.Pressed Then
+                    If currentState.Buttons.RightShoulder = ButtonState.Pressed AndAlso Prev360Buttons.Buttons.RightShoulder = ButtonState.Released Then
                         param_obj(0) = "RB"
                         param_obj(1) = txtRb.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkLB.Checked = True Then
-                    If currentState.Buttons.LeftShoulder = ButtonState.Pressed Then
+                    If currentState.Buttons.LeftShoulder = ButtonState.Pressed AndAlso Prev360Buttons.Buttons.LeftShoulder = ButtonState.Released Then
                         param_obj(0) = "LB"
                         param_obj(1) = txtLb.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkDpadDown.Checked = True Then
-                    If currentState.DPad.Down = ButtonState.Pressed Then
+                    If currentState.DPad.Down = ButtonState.Pressed AndAlso Prev360Buttons.DPad.Down = ButtonState.Released Then
                         param_obj(0) = "DpadDown"
                         param_obj(1) = txtDpadDown.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkDpadLeft.Checked = True Then
-                    If currentState.DPad.Left = ButtonState.Pressed Then
+                    If currentState.DPad.Left = ButtonState.Pressed AndAlso Prev360Buttons.DPad.Left = ButtonState.Released Then
                         param_obj(0) = "DpadLeft"
                         param_obj(1) = txtDpadLeft.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkDpadRight.Checked = True Then
-                    If currentState.DPad.Right = ButtonState.Pressed Then
+                    If currentState.DPad.Right = ButtonState.Pressed AndAlso Prev360Buttons.DPad.Right = ButtonState.Released Then
                         param_obj(0) = "DpadRight"
                         param_obj(1) = txtDpadRight.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkDpadUp.Checked = True Then
-                    If currentState.DPad.Up = ButtonState.Pressed Then
+                    If currentState.DPad.Up = ButtonState.Pressed AndAlso Prev360Buttons.DPad.Up = ButtonState.Released Then
                         param_obj(0) = "DpadUp"
                         param_obj(1) = txtDpadUp.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkRightStick.Checked = True Then
-                    If currentState.Buttons.RightStick = ButtonState.Pressed Then
+                    If currentState.Buttons.RightStick = ButtonState.Pressed AndAlso Prev360Buttons.Buttons.RightStick = ButtonState.Released Then
                         param_obj(0) = "RS"
                         param_obj(1) = txtRightStickPress.Text
                         trd2.Start(param_obj)
                     End If
                 End If
                 If chkLeftStick.Checked = True Then
-                    If currentState.Buttons.LeftStick = ButtonState.Pressed Then
+                    If currentState.Buttons.LeftStick = ButtonState.Pressed AndAlso Prev360Buttons.Buttons.LeftStick = ButtonState.Released Then
                         param_obj(0) = "LS"
                         param_obj(1) = txtLeftStickPress.Text
                         trd2.Start(param_obj)
                     End If
                 End If
+                Prev360Buttons = currentState
             End If
         End If
     End Sub
@@ -587,6 +589,9 @@ Public Class Form1
             Else
                 timer360.Stop()
             End If
+            If chkEnablePc.Checked Then
+                chkEnablePc.Checked = False
+            End If
         Catch ex As NullReferenceException
         End Try
     End Sub
@@ -714,7 +719,7 @@ Public Class Form1
         Me.Show()
         Me.WindowState = FormWindowState.Normal
     End Sub
-
+    Dim prevPCButtons
     Private Sub timerPC_Tick(sender As Object, e As EventArgs) Handles timerPC.Tick
         If (gameControllerList.Count > 0) Then
             Try
@@ -723,89 +728,90 @@ Public Class Form1
                     trd2.IsBackground = True
                     Dim state As JoystickState = joystickDevice.CurrentJoystickState
                     If chkPCButton1.Checked = True Then
-                        If state.GetButtons(0) = 128 Then
+                        If state.GetButtons(0) = 128 AndAlso prevPCButtons(0) = 0 Then
                             param_obj(0) = "PC1"
                             param_obj(1) = txtPCButton1.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton2.Checked = True Then
-                        If state.GetButtons(1) = 128 Then
+                        If state.GetButtons(1) = 128 AndAlso prevPCButtons(1) = 0 Then
                             param_obj(0) = "PC2"
                             param_obj(1) = txtPCButton2.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton3.Checked = True Then
-                        If state.GetButtons(2) = 128 Then
+                        If state.GetButtons(2) = 128 AndAlso prevPCButtons(2) = 0 Then
                             param_obj(0) = "PC3"
                             param_obj(1) = txtPCButton3.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton4.Checked = True Then
-                        If state.GetButtons(3) = 128 Then
+                        If state.GetButtons(3) = 128 AndAlso prevPCButtons(3) = 0 Then
                             param_obj(0) = "PC4"
                             param_obj(1) = txtPCButton4.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton5.Checked = True Then
-                        If state.GetButtons(4) = 128 Then
+                        If state.GetButtons(4) = 128 AndAlso prevPCButtons(4) = 0 Then
                             param_obj(0) = "PC5"
                             param_obj(1) = txtPCButton5.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton6.Checked = True Then
-                        If state.GetButtons(5) = 128 Then
+                        If state.GetButtons(5) = 128 AndAlso prevPCButtons(5) = 0 Then
                             param_obj(0) = "PC6"
                             param_obj(1) = txtPCButton6.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton7.Checked = True Then
-                        If state.GetButtons(6) = 128 Then
+                        If state.GetButtons(6) = 128 AndAlso prevPCButtons(6) = 0 Then
                             param_obj(0) = "PC7"
                             param_obj(1) = txtPCButton7.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton8.Checked = True Then
-                        If state.GetButtons(7) = 128 Then
+                        If state.GetButtons(7) = 128 AndAlso prevPCButtons(7) = 0 Then
                             param_obj(0) = "PC8"
                             param_obj(1) = txtPCButton8.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton9.Checked = True Then
-                        If state.GetButtons(8) = 128 Then
+                        If state.GetButtons(8) = 128 AndAlso prevPCButtons(8) = 0 Then
                             param_obj(0) = "PC9"
                             param_obj(1) = txtPCButton9.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton10.Checked = True Then
-                        If state.GetButtons(9) = 128 Then
+                        If state.GetButtons(9) = 128 AndAlso prevPCButtons(9) = 0 Then
                             param_obj(0) = "PC10"
                             param_obj(1) = txtPCButton10.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton11.Checked = True Then
-                        If state.GetButtons(10) = 128 Then
+                        If state.GetButtons(10) = 128 AndAlso prevPCButtons(10) = 0 Then
                             param_obj(0) = "PC11"
                             param_obj(1) = txtPCButton11.Text
                             trd2.Start(param_obj)
                         End If
                     End If
                     If chkPCButton12.Checked = True Then
-                        If state.GetButtons(11) = 128 Then
+                        If state.GetButtons(11) = 128 AndAlso prevPCButtons(11) = 0 Then
                             param_obj(0) = "PC12"
                             param_obj(1) = txtPCButton12.Text
                             trd2.Start(param_obj)
                         End If
                     End If
+                    prevPCButtons = state.GetButtons
                 End If
             Catch ex As Exception
             End Try
@@ -819,6 +825,9 @@ Public Class Form1
                 timerPC.Start()
             Else
                 timerPC.Stop()
+            End If
+            If chkEnable360.Checked Then
+                chkEnable360.Checked = False
             End If
         Catch ex As NullReferenceException
         End Try
