@@ -17,7 +17,10 @@ Imports Microsoft.Xna.Framework
 Imports Microsoft.Xna.Framework.Input
 Imports System.Net.Mail
 Imports WindowsHookLib
+Imports Microsoft.DirectX.DirectInput
+
 Public Class Form1
+    Dim joystickDevice As Device
     Dim updated As Boolean = False, newversion As String = ""
     Dim running As Integer = 1, finishedload As Boolean = False, inisettings As ini, skipsavesettings As Boolean = False
     Dim loglocation As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\GTA San Andreas User Files\SAMP"
@@ -53,36 +56,40 @@ Public Class Form1
     End Function
     'Sub that handles all the splitting and toggling of the commands
     Sub macro(ByVal param_obj() As Object)
-        Dim substr As String = param_obj(1)
-        Dim pressed As String = param_obj(0)
-        If substr.Contains(txtToggleChar.Text) Then
-            Debug.WriteLine("this is trhingy")
-            If Not CMDNumber.ContainsKey(pressed) Then CMDNumber(pressed) = 1
-            Dim splitstring() As String = Split(substr, txtToggleChar.Text)
-            Dim x As Integer = 0
-            For Each item In splitstring
-                x = x + 1
-                If x >= CMDNumber(pressed) Then
-                    SendKeys.SendWait(SendT() + item + SendEnter())
-                    CMDNumber(pressed) = CMDNumber(pressed) + 1
-                    If splitstring.GetLength(0) = x Then CMDNumber(pressed) = 1
-                    Exit Sub
-                End If
-            Next
-        Else
-            substr = substr.Replace(txtDelayChar.Text, txtMacroChar.Text + txtDelayChar.Text)
-            Dim splitstring() As String = Split(substr, txtMacroChar.Text)
-            For Each item In splitstring
-                If item.Length > 4 Then
-                    If item(0) = txtDelayChar.Text And IsNumeric(item.Substring(1, 4)) = True Then
-                        Thread.Sleep(item.Substring(1, 4))
-                        item = item.Remove(0, 5)
+        Try
+            Dim substr As String = param_obj(1)
+            Dim pressed As String = param_obj(0)
+            If substr.Contains(txtToggleChar.Text) Then
+                Debug.WriteLine("this is trhingy")
+                If Not CMDNumber.ContainsKey(pressed) Then CMDNumber(pressed) = 1
+                Dim splitstring() As String = Split(substr, txtToggleChar.Text)
+                Dim x As Integer = 0
+                For Each item In splitstring
+                    x = x + 1
+                    If x >= CMDNumber(pressed) Then
+                        SendKeys.SendWait(SendT() + item + SendEnter())
+                        CMDNumber(pressed) = CMDNumber(pressed) + 1
+                        If splitstring.GetLength(0) = x Then CMDNumber(pressed) = 1
+                        Exit Sub
                     End If
-                End If
-                SendKeys.SendWait(SendT() + item + SendEnter())
-            Next
-        End If
-        keybinderdisabled = False
+                Next
+            Else
+                substr = substr.Replace(txtDelayChar.Text, txtMacroChar.Text + txtDelayChar.Text)
+                Dim splitstring() As String = Split(substr, txtMacroChar.Text)
+                For Each item In splitstring
+                    If item.Length > 4 Then
+                        If item(0) = txtDelayChar.Text And IsNumeric(item.Substring(1, 4)) = True Then
+                            Thread.Sleep(item.Substring(1, 4))
+                            item = item.Remove(0, 5)
+                        End If
+                    End If
+                    SendKeys.SendWait(SendT() + item + SendEnter())
+                Next
+            End If
+            keybinderdisabled = False
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
     'Sub to check key matches pressed key
     Public Sub KeyCheck(checkbox As NSOnOffBox, pressedkey As String, chosenkey As String, cmd As NSTextBox, ByVal e As WindowsHookLib.KeyboardEventArgs)
@@ -117,13 +124,17 @@ Public Class Form1
             For Each ctrl In Me.Panel2.Controls
                 If TypeOf ctrl Is NSTextBox Then inisettings.WriteString("SendKey", ctrl.name.replace("NsTextBox", "Send"), ctrl.Text)
                 If TypeOf ctrl Is TextBox Then If ctrl.text = Nothing Then inisettings.WriteString("HotKey", ctrl.name.replace("TextBox", "Key"), ctrl.text.ToString)
-                If TypeOf ctrl Is NsOnOffBox Then inisettings.WriteString("Activate", ctrl.name.replace("NsOnOffBox", "act"), ctrl.checked.ToString)
+                If TypeOf ctrl Is NSOnOffBox Then inisettings.WriteString("Activate", ctrl.name.replace("NsOnOffBox", "act"), ctrl.checked.ToString)
             Next
-            For Each ctrl In Me.NSTabControl1.TabPages(2).Controls
+            For Each ctrl In Me.NsTabControl1.TabPages(2).Controls
                 If TypeOf ctrl Is NSTextBox Then inisettings.WriteString("360", ctrl.name.replace("txt", "360"), ctrl.text)
-                If TypeOf ctrl Is NsOnOffBox Then inisettings.WriteString("360", ctrl.name.replace("chk", "360act"), ctrl.checked.ToString)
+                If TypeOf ctrl Is NSOnOffBox Then inisettings.WriteString("360", ctrl.name.replace("chk", "360act"), ctrl.checked.ToString)
             Next
-            inisettings.WriteString("Mouse", "LeftClick", txtlmb.Text)
+            For Each ctrl In Me.NsTabControl1.TabPages(3).Controls
+                If TypeOf ctrl Is NSTextBox Then inisettings.WriteString("Controller", ctrl.name.replace("txt", ""), ctrl.text)
+                If TypeOf ctrl Is NSOnOffBox Then inisettings.WriteString("Controller", ctrl.name.replace("chk", "act"), ctrl.checked.ToString)
+            Next
+            inisettings.WriteString("Mouse", "LeftClick", txtLMB.Text)
             inisettings.WriteString("Mouse", "RightClick", txtRMB.Text)
             inisettings.WriteString("Mouse", "MiddleClick", txtMMB.Text)
             inisettings.WriteString("Mouse", "WheelUp", txtWheelUp.Text)
@@ -169,7 +180,7 @@ Public Class Form1
             If keybinderdisabled = False Then
                 If e.Button = Windows.Forms.MouseButtons.Left Then
                     If chkLMB.Checked = True Then
-                        param_obj(1) = txtlmb.Text
+                        param_obj(1) = txtLMB.Text
                         trd2.Start(param_obj)
                     End If
                 ElseIf e.Button = Windows.Forms.MouseButtons.Middle Then
@@ -260,98 +271,98 @@ Public Class Form1
         If e.KeyData.ToString = "Return" Or e.KeyData.ToString = "Escape" Then keybinderdisabled = False
     End Sub
     'Sub timer to control x360 binds (can't use a global hook like keyboard and mouse)
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles timer360.Tick
         If DebugCheck() = "GTA:SA:MP" Then
-                trd2 = New Thread(AddressOf macro)
-                trd2.IsBackground = True
-                Dim currentState As GamePadState = GamePad.GetState(PlayerIndex.One)
-                If currentState.IsConnected Then
-                    If chkButtonA.Checked = True Then
-                        If currentState.Buttons.A = ButtonState.Pressed Then
-                            param_obj(0) = "A"
-                            param_obj(1) = txtButtonA.Text
-                            trd2.Start(param_obj)
-                        End If
+            trd2 = New Thread(AddressOf macro)
+            trd2.IsBackground = True
+            Dim currentState As GamePadState = GamePad.GetState(PlayerIndex.One)
+            If currentState.IsConnected Then
+                If chkButtonA.Checked = True Then
+                    If currentState.Buttons.A = ButtonState.Pressed Then
+                        param_obj(0) = "A"
+                        param_obj(1) = txtButtonA.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkButtonX.Checked = True Then
-                        If currentState.Buttons.X = ButtonState.Pressed Then
-                            param_obj(0) = "XButton"
-                            param_obj(1) = txtButtonX.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkButtonX.Checked = True Then
+                    If currentState.Buttons.X = ButtonState.Pressed Then
+                        param_obj(0) = "XButton"
+                        param_obj(1) = txtButtonX.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkButtonY.Checked = True Then
-                        If currentState.Buttons.Y = ButtonState.Pressed Then
-                            param_obj(0) = "YButton"
-                            param_obj(1) = txtButtonY.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkButtonY.Checked = True Then
+                    If currentState.Buttons.Y = ButtonState.Pressed Then
+                        param_obj(0) = "YButton"
+                        param_obj(1) = txtButtonY.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkButtonB.Checked = True Then
-                        If currentState.Buttons.B = ButtonState.Pressed Then
-                            param_obj(0) = "BButton"
-                            param_obj(1) = txtButtonB.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkButtonB.Checked = True Then
+                    If currentState.Buttons.B = ButtonState.Pressed Then
+                        param_obj(0) = "BButton"
+                        param_obj(1) = txtButtonB.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkRB.Checked = True Then
-                        If currentState.Buttons.RightShoulder = ButtonState.Pressed Then
-                            param_obj(0) = "RB"
-                            param_obj(1) = txtRB.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkRB.Checked = True Then
+                    If currentState.Buttons.RightShoulder = ButtonState.Pressed Then
+                        param_obj(0) = "RB"
+                        param_obj(1) = txtRb.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkLB.Checked = True Then
-                        If currentState.Buttons.LeftShoulder = ButtonState.Pressed Then
-                            param_obj(0) = "LB"
-                            param_obj(1) = txtLb.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkLB.Checked = True Then
+                    If currentState.Buttons.LeftShoulder = ButtonState.Pressed Then
+                        param_obj(0) = "LB"
+                        param_obj(1) = txtLb.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkDpadDown.Checked = True Then
-                        If currentState.DPad.Down = ButtonState.Pressed Then
-                            param_obj(0) = "DpadDown"
-                            param_obj(1) = txtDpadDown.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkDpadDown.Checked = True Then
+                    If currentState.DPad.Down = ButtonState.Pressed Then
+                        param_obj(0) = "DpadDown"
+                        param_obj(1) = txtDpadDown.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkDpadLeft.Checked = True Then
-                        If currentState.DPad.Left = ButtonState.Pressed Then
-                            param_obj(0) = "DpadLeft"
-                            param_obj(1) = txtDpadLeft.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkDpadLeft.Checked = True Then
+                    If currentState.DPad.Left = ButtonState.Pressed Then
+                        param_obj(0) = "DpadLeft"
+                        param_obj(1) = txtDpadLeft.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkDpadRight.Checked = True Then
-                        If currentState.DPad.Right = ButtonState.Pressed Then
-                            param_obj(0) = "DpadRight"
-                            param_obj(1) = txtDpadRight.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkDpadRight.Checked = True Then
+                    If currentState.DPad.Right = ButtonState.Pressed Then
+                        param_obj(0) = "DpadRight"
+                        param_obj(1) = txtDpadRight.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkDpadUp.Checked = True Then
-                        If currentState.DPad.Up = ButtonState.Pressed Then
-                            param_obj(0) = "DpadUp"
-                            param_obj(1) = txtDpadUp.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkDpadUp.Checked = True Then
+                    If currentState.DPad.Up = ButtonState.Pressed Then
+                        param_obj(0) = "DpadUp"
+                        param_obj(1) = txtDpadUp.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkRightStick.Checked = True Then
-                        If currentState.Buttons.RightStick = ButtonState.Pressed Then
-                            param_obj(0) = "RS"
-                            param_obj(1) = txtRightStickPress.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkRightStick.Checked = True Then
+                    If currentState.Buttons.RightStick = ButtonState.Pressed Then
+                        param_obj(0) = "RS"
+                        param_obj(1) = txtRightStickPress.Text
+                        trd2.Start(param_obj)
                     End If
-                    If chkLeftStick.Checked = True Then
-                        If currentState.Buttons.LeftStick = ButtonState.Pressed Then
-                            param_obj(0) = "LS"
-                            param_obj(1) = txtLeftStickPress.Text
-                            trd2.Start(param_obj)
-                        End If
+                End If
+                If chkLeftStick.Checked = True Then
+                    If currentState.Buttons.LeftStick = ButtonState.Pressed Then
+                        param_obj(0) = "LS"
+                        param_obj(1) = txtLeftStickPress.Text
+                        trd2.Start(param_obj)
                     End If
                 End If
             End If
+        End If
     End Sub
 #End Region
 
@@ -408,7 +419,7 @@ Public Class Form1
             Me.ShowInTaskbar = False
         End If
     End Sub
-
+    Dim gameControllerList As DeviceList = Manager.GetDevices(DeviceClass.GameControl, EnumDevicesFlags.AttachedOnly)
     'Form1 Shown code
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         WebBrowser1.Navigate("http://changelog.cyanlabs.co.uk/?product=SACNR_Keybinder_Evolution")
@@ -468,6 +479,10 @@ Public Class Form1
             If TypeOf ctrl Is NSTextBox Then ctrl.text = inisettings.GetString("360", ctrl.name.replace("txt", "360"), ctrl.text)
             If TypeOf ctrl Is NSOnOffBox Then ctrl.checked = inisettings.GetString("360", ctrl.name.replace("chk", "360act"), False)
         Next
+        For Each ctrl In Me.NsTabControl1.TabPages(3).Controls
+            If TypeOf ctrl Is NSTextBox Then ctrl.text = inisettings.GetString("Controller", ctrl.name.replace("txt", ""), ctrl.text)
+            If TypeOf ctrl Is NSOnOffBox Then ctrl.checked = inisettings.GetString("Controller", ctrl.name.replace("chk", "act"), ctrl.checked.ToString)
+        Next
         txtLMB.Text = inisettings.GetString("Mouse", "LeftClick", Nothing)
         txtRMB.Text = inisettings.GetString("Mouse", "RightClick", Nothing)
         txtMMB.Text = inisettings.GetString("Mouse", "MiddleClick", Nothing)
@@ -485,6 +500,7 @@ Public Class Form1
         chkAutoUpdates.Checked = inisettings.GetString("Settings", "AutoUpdate", False)
         chkEnableLogs.Checked = inisettings.GetString("Settings", "EnableLogManager", False)
         chkEnable360.Checked = inisettings.GetString("360", "MasterToggle", False)
+        chkEnablePc.Checked = inisettings.GetString("Controller", "MasterToggle", False)
         chkShowChangelog.Checked = inisettings.GetString("Settings", "ShowChangelog", True)
         chkUseMouseUp.Checked = inisettings.GetString("Advanced Settings", "UseKeyUp", False)
         chkUseKeyUp.Checked = inisettings.GetString("Advanced Settings", "UseMouseUp", False)
@@ -495,8 +511,18 @@ Public Class Form1
         chkSendT.Checked = inisettings.GetString("Advanced Settings", "SendT", True)
         chkSendEnter.Checked = inisettings.GetString("Advanced Settings", "SendEnter", True)
         lblVersion.Text = CurrentVersion.ToString
-        If chkEnable360.Checked = True Then Timer2.Start()
-        If chkEnableLogs.Checked = True Then Timer1.Start()
+        If chkEnable360.Checked = True Then timer360.Start()
+        If chkEnableLogs.Checked = True Then timerLogs.Start()
+        If (gameControllerList.Count > 0) Then
+            gameControllerList.MoveNext()
+            Dim deviceInstance As DeviceInstance = gameControllerList.Current
+            joystickDevice = New Device(deviceInstance.InstanceGuid)
+            joystickDevice.SetCooperativeLevel(Me, CooperativeLevelFlags.Background Or CooperativeLevelFlags.NonExclusive)
+            joystickDevice.SetDataFormat(DeviceDataFormat.Joystick)
+            joystickDevice.Acquire()
+            joystickDevice.Poll()
+        End If
+        If chkEnablePc.Checked = True > 0 Then timerPC.Start()
         If My.Computer.Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", True).GetValue(Application.ProductName) Is Nothing Then chkStartup.Checked = False
         finishedload = True
     End Sub
@@ -517,7 +543,7 @@ Public Class Form1
     End Sub
 
     'Code to monitor whether samp is still running or not, if it isn't save log
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles timerLogs.Tick
         If IsProcessRunning("gta_sa") = False AndAlso running = 2 Then Me.running = 0
         If (IsProcessRunning("gta_sa") = True) Then Me.running = 2
         If Me.running = 0 Then
@@ -538,9 +564,9 @@ Public Class Form1
         Catch ex As NullReferenceException
         End Try
         If sender.Checked = True Then
-            Timer1.Start()
+            timerLogs.Start()
         Else
-            Timer1.Stop()
+            timerLogs.Stop()
         End If
     End Sub
 
@@ -557,9 +583,9 @@ Public Class Form1
         Try
             inisettings.WriteString("360", "MasterToggle", chkEnable360.Checked.ToString)
             If sender.Checked = True Then
-                Timer2.Start()
+                timer360.Start()
             Else
-                Timer2.Stop()
+                timer360.Stop()
             End If
         Catch ex As NullReferenceException
         End Try
@@ -689,7 +715,112 @@ Public Class Form1
         Me.WindowState = FormWindowState.Normal
     End Sub
 
-    Private Sub NotifyIcon1_MouseClick(sender As Object, e As Windows.Forms.MouseEventArgs)
+    Private Sub timerPC_Tick(sender As Object, e As EventArgs) Handles timerPC.Tick
+        If (gameControllerList.Count > 0) Then
+            Try
+                If DebugCheck() = "GTA:SA:MP" Then
+                    trd2 = New Thread(AddressOf macro)
+                    trd2.IsBackground = True
+                    Dim state As JoystickState = joystickDevice.CurrentJoystickState
+                    If chkPCButton1.Checked = True Then
+                        If state.GetButtons(0) = 128 Then
+                            param_obj(0) = "PC1"
+                            param_obj(1) = txtPCButton1.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton2.Checked = True Then
+                        If state.GetButtons(1) = 128 Then
+                            param_obj(0) = "PC2"
+                            param_obj(1) = txtPCButton2.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton3.Checked = True Then
+                        If state.GetButtons(2) = 128 Then
+                            param_obj(0) = "PC3"
+                            param_obj(1) = txtPCButton3.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton4.Checked = True Then
+                        If state.GetButtons(3) = 128 Then
+                            param_obj(0) = "PC4"
+                            param_obj(1) = txtPCButton4.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton5.Checked = True Then
+                        If state.GetButtons(4) = 128 Then
+                            param_obj(0) = "PC5"
+                            param_obj(1) = txtPCButton5.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton6.Checked = True Then
+                        If state.GetButtons(5) = 128 Then
+                            param_obj(0) = "PC6"
+                            param_obj(1) = txtPCButton6.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton7.Checked = True Then
+                        If state.GetButtons(6) = 128 Then
+                            param_obj(0) = "PC7"
+                            param_obj(1) = txtPCButton7.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton8.Checked = True Then
+                        If state.GetButtons(7) = 128 Then
+                            param_obj(0) = "PC8"
+                            param_obj(1) = txtPCButton8.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton9.Checked = True Then
+                        If state.GetButtons(8) = 128 Then
+                            param_obj(0) = "PC9"
+                            param_obj(1) = txtPCButton9.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton10.Checked = True Then
+                        If state.GetButtons(9) = 128 Then
+                            param_obj(0) = "PC10"
+                            param_obj(1) = txtPCButton10.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton11.Checked = True Then
+                        If state.GetButtons(10) = 128 Then
+                            param_obj(0) = "PC11"
+                            param_obj(1) = txtPCButton11.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                    If chkPCButton12.Checked = True Then
+                        If state.GetButtons(11) = 128 Then
+                            param_obj(0) = "PC12"
+                            param_obj(1) = txtPCButton12.Text
+                            trd2.Start(param_obj)
+                        End If
+                    End If
+                End If
+            Catch ex As Exception
+            End Try
+        End If
+    End Sub
 
+    Private Sub chkEnablePc_CheckedChanged(sender As Object) Handles chkEnablePc.CheckedChanged
+        Try
+            inisettings.WriteString("Controller", "MasterToggle", chkEnablePc.Checked.ToString)
+            If chkEnablePc.Checked = True Then
+                timerPC.Start()
+            Else
+                timerPC.Stop()
+            End If
+        Catch ex As NullReferenceException
+        End Try
     End Sub
 End Class

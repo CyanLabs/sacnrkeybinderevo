@@ -24,8 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.timer360 = New System.Windows.Forms.Timer(Me.components)
+        Me.timerLogs = New System.Windows.Forms.Timer(Me.components)
         Me.NsTheme1 = New SACNR_Keybinder_Evolution.NSTheme()
         Me.btnLaunch = New SACNR_Keybinder_Evolution.NSButton()
         Me.CBtnMin = New SACNR_Keybinder_Evolution.NSControlButton()
@@ -159,6 +159,45 @@ Partial Class Form1
         Me.txtButtonX = New SACNR_Keybinder_Evolution.NSTextBox()
         Me.txtButtonB = New SACNR_Keybinder_Evolution.NSTextBox()
         Me.txtButtonA = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.chkEnablePc = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.NsLabel6 = New SACNR_Keybinder_Evolution.NSLabel()
+        Me.chkPCButton12 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton11 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton10 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton9 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton8 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton7 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton6 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton5 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton4 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton3 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton2 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkPCButton1 = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.txtPCButton12 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton11 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton10 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton9 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton8 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton7 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton6 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton5 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton4 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton3 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton2 = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.txtPCButton1 = New SACNR_Keybinder_Evolution.NSTextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.NsGroupBox4 = New SACNR_Keybinder_Evolution.NSGroupBox()
@@ -215,6 +254,7 @@ Partial Class Form1
         Me.NsContextMenu1 = New SACNR_Keybinder_Evolution.NSContextMenu()
         Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.timerPC = New System.Windows.Forms.Timer(Me.components)
         Me.NsTheme1.SuspendLayout()
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NsTabControl1.SuspendLayout()
@@ -223,6 +263,7 @@ Partial Class Form1
         Me.Panel2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.NsGroupBox4.SuspendLayout()
@@ -238,14 +279,14 @@ Partial Class Form1
         Me.NsContextMenu1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Timer2
+        'timer360
         '
-        Me.Timer2.Enabled = True
+        Me.timer360.Enabled = True
         '
-        'Timer1
+        'timerLogs
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 5000
+        Me.timerLogs.Enabled = True
+        Me.timerLogs.Interval = 5000
         '
         'NsTheme1
         '
@@ -332,6 +373,7 @@ Partial Class Form1
         Me.NsTabControl1.Controls.Add(Me.TabPage1)
         Me.NsTabControl1.Controls.Add(Me.TabPage2)
         Me.NsTabControl1.Controls.Add(Me.TabPage3)
+        Me.NsTabControl1.Controls.Add(Me.TabPage6)
         Me.NsTabControl1.Controls.Add(Me.TabPage4)
         Me.NsTabControl1.Controls.Add(Me.TabPage5)
         Me.NsTabControl1.Controls.Add(Me.TabPage7)
@@ -1991,6 +2033,509 @@ Partial Class Form1
         Me.txtButtonA.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.txtButtonA.UseSystemPasswordChar = False
         '
+        'TabPage6
+        '
+        Me.TabPage6.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage6.Controls.Add(Me.chkEnablePc)
+        Me.TabPage6.Controls.Add(Me.NsLabel6)
+        Me.TabPage6.Controls.Add(Me.chkPCButton12)
+        Me.TabPage6.Controls.Add(Me.chkPCButton11)
+        Me.TabPage6.Controls.Add(Me.chkPCButton10)
+        Me.TabPage6.Controls.Add(Me.chkPCButton9)
+        Me.TabPage6.Controls.Add(Me.chkPCButton8)
+        Me.TabPage6.Controls.Add(Me.chkPCButton7)
+        Me.TabPage6.Controls.Add(Me.chkPCButton6)
+        Me.TabPage6.Controls.Add(Me.chkPCButton5)
+        Me.TabPage6.Controls.Add(Me.chkPCButton4)
+        Me.TabPage6.Controls.Add(Me.chkPCButton3)
+        Me.TabPage6.Controls.Add(Me.chkPCButton2)
+        Me.TabPage6.Controls.Add(Me.chkPCButton1)
+        Me.TabPage6.Controls.Add(Me.Label7)
+        Me.TabPage6.Controls.Add(Me.Label8)
+        Me.TabPage6.Controls.Add(Me.Label9)
+        Me.TabPage6.Controls.Add(Me.Label10)
+        Me.TabPage6.Controls.Add(Me.Label12)
+        Me.TabPage6.Controls.Add(Me.Label13)
+        Me.TabPage6.Controls.Add(Me.Label14)
+        Me.TabPage6.Controls.Add(Me.Label22)
+        Me.TabPage6.Controls.Add(Me.Label23)
+        Me.TabPage6.Controls.Add(Me.Label26)
+        Me.TabPage6.Controls.Add(Me.Label27)
+        Me.TabPage6.Controls.Add(Me.Label30)
+        Me.TabPage6.Controls.Add(Me.txtPCButton12)
+        Me.TabPage6.Controls.Add(Me.txtPCButton11)
+        Me.TabPage6.Controls.Add(Me.txtPCButton10)
+        Me.TabPage6.Controls.Add(Me.txtPCButton9)
+        Me.TabPage6.Controls.Add(Me.txtPCButton8)
+        Me.TabPage6.Controls.Add(Me.txtPCButton7)
+        Me.TabPage6.Controls.Add(Me.txtPCButton6)
+        Me.TabPage6.Controls.Add(Me.txtPCButton5)
+        Me.TabPage6.Controls.Add(Me.txtPCButton4)
+        Me.TabPage6.Controls.Add(Me.txtPCButton3)
+        Me.TabPage6.Controls.Add(Me.txtPCButton2)
+        Me.TabPage6.Controls.Add(Me.txtPCButton1)
+        Me.TabPage6.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(521, 345)
+        Me.TabPage6.TabIndex = 7
+        Me.TabPage6.Text = "Controller Binds"
+        '
+        'chkEnablePc
+        '
+        Me.chkEnablePc.Checked = False
+        Me.chkEnablePc.Location = New System.Drawing.Point(395, 4)
+        Me.chkEnablePc.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkEnablePc.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkEnablePc.Name = "chkEnablePc"
+        Me.chkEnablePc.Size = New System.Drawing.Size(56, 24)
+        Me.chkEnablePc.TabIndex = 149
+        Me.chkEnablePc.Text = "NsOnOffBox28"
+        '
+        'NsLabel6
+        '
+        Me.NsLabel6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel6.Location = New System.Drawing.Point(197, 3)
+        Me.NsLabel6.Name = "NsLabel6"
+        Me.NsLabel6.Size = New System.Drawing.Size(146, 23)
+        Me.NsLabel6.TabIndex = 148
+        Me.NsLabel6.Text = "NsLabel6"
+        Me.NsLabel6.Value1 = "PC Controller"
+        Me.NsLabel6.Value2 = " Binds"
+        '
+        'chkPCButton12
+        '
+        Me.chkPCButton12.Checked = False
+        Me.chkPCButton12.Location = New System.Drawing.Point(459, 318)
+        Me.chkPCButton12.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton12.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton12.Name = "chkPCButton12"
+        Me.chkPCButton12.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton12.TabIndex = 147
+        Me.chkPCButton12.Text = "NsOnOffBox28"
+        '
+        'chkPCButton11
+        '
+        Me.chkPCButton11.Checked = False
+        Me.chkPCButton11.Location = New System.Drawing.Point(459, 291)
+        Me.chkPCButton11.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton11.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton11.Name = "chkPCButton11"
+        Me.chkPCButton11.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton11.TabIndex = 146
+        Me.chkPCButton11.Text = "NsOnOffBox28"
+        '
+        'chkPCButton10
+        '
+        Me.chkPCButton10.Checked = False
+        Me.chkPCButton10.Location = New System.Drawing.Point(459, 266)
+        Me.chkPCButton10.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton10.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton10.Name = "chkPCButton10"
+        Me.chkPCButton10.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton10.TabIndex = 145
+        Me.chkPCButton10.Text = "NsOnOffBox28"
+        '
+        'chkPCButton9
+        '
+        Me.chkPCButton9.Checked = False
+        Me.chkPCButton9.Location = New System.Drawing.Point(459, 240)
+        Me.chkPCButton9.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton9.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton9.Name = "chkPCButton9"
+        Me.chkPCButton9.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton9.TabIndex = 144
+        Me.chkPCButton9.Text = "NsOnOffBox28"
+        '
+        'chkPCButton8
+        '
+        Me.chkPCButton8.Checked = False
+        Me.chkPCButton8.Location = New System.Drawing.Point(459, 214)
+        Me.chkPCButton8.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton8.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton8.Name = "chkPCButton8"
+        Me.chkPCButton8.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton8.TabIndex = 143
+        Me.chkPCButton8.Text = "NsOnOffBox28"
+        '
+        'chkPCButton7
+        '
+        Me.chkPCButton7.Checked = False
+        Me.chkPCButton7.Location = New System.Drawing.Point(459, 188)
+        Me.chkPCButton7.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton7.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton7.Name = "chkPCButton7"
+        Me.chkPCButton7.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton7.TabIndex = 142
+        Me.chkPCButton7.Text = "NsOnOffBox28"
+        '
+        'chkPCButton6
+        '
+        Me.chkPCButton6.Checked = False
+        Me.chkPCButton6.Location = New System.Drawing.Point(459, 162)
+        Me.chkPCButton6.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton6.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton6.Name = "chkPCButton6"
+        Me.chkPCButton6.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton6.TabIndex = 141
+        Me.chkPCButton6.Text = "NsOnOffBox28"
+        '
+        'chkPCButton5
+        '
+        Me.chkPCButton5.Checked = False
+        Me.chkPCButton5.Location = New System.Drawing.Point(459, 136)
+        Me.chkPCButton5.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton5.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton5.Name = "chkPCButton5"
+        Me.chkPCButton5.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton5.TabIndex = 140
+        Me.chkPCButton5.Text = "NsOnOffBox28"
+        '
+        'chkPCButton4
+        '
+        Me.chkPCButton4.Checked = False
+        Me.chkPCButton4.Location = New System.Drawing.Point(459, 110)
+        Me.chkPCButton4.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton4.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton4.Name = "chkPCButton4"
+        Me.chkPCButton4.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton4.TabIndex = 139
+        Me.chkPCButton4.Text = "NsOnOffBox28"
+        '
+        'chkPCButton3
+        '
+        Me.chkPCButton3.Checked = False
+        Me.chkPCButton3.Location = New System.Drawing.Point(459, 84)
+        Me.chkPCButton3.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton3.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton3.Name = "chkPCButton3"
+        Me.chkPCButton3.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton3.TabIndex = 138
+        Me.chkPCButton3.Text = "NsOnOffBox28"
+        '
+        'chkPCButton2
+        '
+        Me.chkPCButton2.Checked = False
+        Me.chkPCButton2.Location = New System.Drawing.Point(459, 58)
+        Me.chkPCButton2.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton2.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton2.Name = "chkPCButton2"
+        Me.chkPCButton2.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton2.TabIndex = 137
+        Me.chkPCButton2.Text = "NsOnOffBox28"
+        '
+        'chkPCButton1
+        '
+        Me.chkPCButton1.Checked = False
+        Me.chkPCButton1.Location = New System.Drawing.Point(459, 32)
+        Me.chkPCButton1.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton1.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkPCButton1.Name = "chkPCButton1"
+        Me.chkPCButton1.Size = New System.Drawing.Size(56, 24)
+        Me.chkPCButton1.TabIndex = 136
+        Me.chkPCButton1.Text = "NsOnOffBox28"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(31, 320)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(61, 17)
+        Me.Label7.TabIndex = 130
+        Me.Label7.Text = "Button 12:"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(37, 217)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(56, 17)
+        Me.Label8.TabIndex = 131
+        Me.Label8.Text = "Button 8:"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(35, 113)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(58, 17)
+        Me.Label9.TabIndex = 132
+        Me.Label9.Text = "Button  4:"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(32, 269)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(61, 17)
+        Me.Label10.TabIndex = 133
+        Me.Label10.Text = "Button 10:"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(37, 165)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(56, 17)
+        Me.Label12.TabIndex = 134
+        Me.Label12.Text = "Button 6:"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(35, 61)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(58, 17)
+        Me.Label13.TabIndex = 135
+        Me.Label13.Text = "Button  2:"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(33, 294)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(59, 17)
+        Me.Label14.TabIndex = 124
+        Me.Label14.Text = "Button 11:"
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.White
+        Me.Label22.Location = New System.Drawing.Point(39, 191)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(54, 17)
+        Me.Label22.TabIndex = 125
+        Me.Label22.Text = "Button 7:"
+        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.White
+        Me.Label23.Location = New System.Drawing.Point(35, 87)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(58, 17)
+        Me.Label23.TabIndex = 126
+        Me.Label23.Text = "Button  3:"
+        Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.Color.White
+        Me.Label26.Location = New System.Drawing.Point(37, 243)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(56, 17)
+        Me.Label26.TabIndex = 127
+        Me.Label26.Text = "Button 9:"
+        Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.White
+        Me.Label27.Location = New System.Drawing.Point(37, 139)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(56, 17)
+        Me.Label27.TabIndex = 128
+        Me.Label27.Text = "Button 5:"
+        Me.Label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Impact", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.White
+        Me.Label30.Location = New System.Drawing.Point(37, 35)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(56, 17)
+        Me.Label30.TabIndex = 129
+        Me.Label30.Text = "Button  1:"
+        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'txtPCButton12
+        '
+        Me.txtPCButton12.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton12.Location = New System.Drawing.Point(95, 318)
+        Me.txtPCButton12.MaxLength = 32767
+        Me.txtPCButton12.Multiline = False
+        Me.txtPCButton12.Name = "txtPCButton12"
+        Me.txtPCButton12.ReadOnly = False
+        Me.txtPCButton12.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton12.TabIndex = 118
+        Me.txtPCButton12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton12.UseSystemPasswordChar = False
+        '
+        'txtPCButton11
+        '
+        Me.txtPCButton11.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton11.Location = New System.Drawing.Point(95, 292)
+        Me.txtPCButton11.MaxLength = 32767
+        Me.txtPCButton11.Multiline = False
+        Me.txtPCButton11.Name = "txtPCButton11"
+        Me.txtPCButton11.ReadOnly = False
+        Me.txtPCButton11.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton11.TabIndex = 114
+        Me.txtPCButton11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton11.UseSystemPasswordChar = False
+        '
+        'txtPCButton10
+        '
+        Me.txtPCButton10.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton10.Location = New System.Drawing.Point(95, 267)
+        Me.txtPCButton10.MaxLength = 32767
+        Me.txtPCButton10.Multiline = False
+        Me.txtPCButton10.Name = "txtPCButton10"
+        Me.txtPCButton10.ReadOnly = False
+        Me.txtPCButton10.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton10.TabIndex = 115
+        Me.txtPCButton10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton10.UseSystemPasswordChar = False
+        '
+        'txtPCButton9
+        '
+        Me.txtPCButton9.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton9.Location = New System.Drawing.Point(95, 241)
+        Me.txtPCButton9.MaxLength = 32767
+        Me.txtPCButton9.Multiline = False
+        Me.txtPCButton9.Name = "txtPCButton9"
+        Me.txtPCButton9.ReadOnly = False
+        Me.txtPCButton9.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton9.TabIndex = 116
+        Me.txtPCButton9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton9.UseSystemPasswordChar = False
+        '
+        'txtPCButton8
+        '
+        Me.txtPCButton8.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton8.Location = New System.Drawing.Point(95, 215)
+        Me.txtPCButton8.MaxLength = 32767
+        Me.txtPCButton8.Multiline = False
+        Me.txtPCButton8.Name = "txtPCButton8"
+        Me.txtPCButton8.ReadOnly = False
+        Me.txtPCButton8.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton8.TabIndex = 117
+        Me.txtPCButton8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton8.UseSystemPasswordChar = False
+        '
+        'txtPCButton7
+        '
+        Me.txtPCButton7.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton7.Location = New System.Drawing.Point(95, 189)
+        Me.txtPCButton7.MaxLength = 32767
+        Me.txtPCButton7.Multiline = False
+        Me.txtPCButton7.Name = "txtPCButton7"
+        Me.txtPCButton7.ReadOnly = False
+        Me.txtPCButton7.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton7.TabIndex = 123
+        Me.txtPCButton7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton7.UseSystemPasswordChar = False
+        '
+        'txtPCButton6
+        '
+        Me.txtPCButton6.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton6.Location = New System.Drawing.Point(95, 163)
+        Me.txtPCButton6.MaxLength = 32767
+        Me.txtPCButton6.Multiline = False
+        Me.txtPCButton6.Name = "txtPCButton6"
+        Me.txtPCButton6.ReadOnly = False
+        Me.txtPCButton6.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton6.TabIndex = 119
+        Me.txtPCButton6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton6.UseSystemPasswordChar = False
+        '
+        'txtPCButton5
+        '
+        Me.txtPCButton5.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton5.Location = New System.Drawing.Point(95, 137)
+        Me.txtPCButton5.MaxLength = 32767
+        Me.txtPCButton5.Multiline = False
+        Me.txtPCButton5.Name = "txtPCButton5"
+        Me.txtPCButton5.ReadOnly = False
+        Me.txtPCButton5.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton5.TabIndex = 120
+        Me.txtPCButton5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton5.UseSystemPasswordChar = False
+        '
+        'txtPCButton4
+        '
+        Me.txtPCButton4.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton4.Location = New System.Drawing.Point(95, 111)
+        Me.txtPCButton4.MaxLength = 32767
+        Me.txtPCButton4.Multiline = False
+        Me.txtPCButton4.Name = "txtPCButton4"
+        Me.txtPCButton4.ReadOnly = False
+        Me.txtPCButton4.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton4.TabIndex = 121
+        Me.txtPCButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton4.UseSystemPasswordChar = False
+        '
+        'txtPCButton3
+        '
+        Me.txtPCButton3.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton3.Location = New System.Drawing.Point(95, 85)
+        Me.txtPCButton3.MaxLength = 32767
+        Me.txtPCButton3.Multiline = False
+        Me.txtPCButton3.Name = "txtPCButton3"
+        Me.txtPCButton3.ReadOnly = False
+        Me.txtPCButton3.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton3.TabIndex = 122
+        Me.txtPCButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton3.UseSystemPasswordChar = False
+        '
+        'txtPCButton2
+        '
+        Me.txtPCButton2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton2.Location = New System.Drawing.Point(95, 59)
+        Me.txtPCButton2.MaxLength = 32767
+        Me.txtPCButton2.Multiline = False
+        Me.txtPCButton2.Name = "txtPCButton2"
+        Me.txtPCButton2.ReadOnly = False
+        Me.txtPCButton2.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton2.TabIndex = 113
+        Me.txtPCButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton2.UseSystemPasswordChar = False
+        '
+        'txtPCButton1
+        '
+        Me.txtPCButton1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtPCButton1.Location = New System.Drawing.Point(95, 33)
+        Me.txtPCButton1.MaxLength = 32767
+        Me.txtPCButton1.Multiline = False
+        Me.txtPCButton1.Name = "txtPCButton1"
+        Me.txtPCButton1.ReadOnly = False
+        Me.txtPCButton1.Size = New System.Drawing.Size(356, 23)
+        Me.txtPCButton1.TabIndex = 112
+        Me.txtPCButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtPCButton1.UseSystemPasswordChar = False
+        '
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
@@ -2626,6 +3171,10 @@ Partial Class Form1
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
+        'timerPC
+        '
+        Me.timerPC.Enabled = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2649,6 +3198,8 @@ Partial Class Form1
         Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.NsGroupBox4.ResumeLayout(False)
@@ -2852,8 +3403,8 @@ Partial Class Form1
     Friend WithEvents NsLabel5 As SACNR_Keybinder_Evolution.NSLabel
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
-    Friend WithEvents Timer2 As System.Windows.Forms.Timer
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents timer360 As System.Windows.Forms.Timer
+    Friend WithEvents timerLogs As System.Windows.Forms.Timer
     Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
     Friend WithEvents chkEnable360 As SACNR_Keybinder_Evolution.NSOnOffBox
     Friend WithEvents chkStartup As SACNR_Keybinder_Evolution.NSOnOffBox
@@ -2862,5 +3413,45 @@ Partial Class Form1
     Friend WithEvents NsContextMenu1 As SACNR_Keybinder_Evolution.NSContextMenu
     Friend WithEvents ShowToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
+    Friend WithEvents chkEnablePc As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents NsLabel6 As SACNR_Keybinder_Evolution.NSLabel
+    Friend WithEvents chkPCButton12 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton11 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton10 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton9 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton8 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton7 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton6 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton5 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton4 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton3 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton2 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents chkPCButton1 As SACNR_Keybinder_Evolution.NSOnOffBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents txtPCButton12 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton11 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton10 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton9 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton8 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton7 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton6 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton5 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton4 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton3 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton2 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents txtPCButton1 As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents timerPC As System.Windows.Forms.Timer
 
 End Class
