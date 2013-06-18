@@ -41,10 +41,10 @@
     End Sub
     Private Sub DownloadUpdater(ByVal latestversion As String)
         Try
+            MsgBox("The autoupdater application is out of date, Downloading new version!", , "Updater Out Of Date")
             If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then IO.File.Delete(Application.StartupPath & "\AutoUpdater.exe")
             wc.DownloadFile(New Uri("http://downloads.cyanlabs.co.uk/AutoUpdater/AutoUpdater.exe"), Application.StartupPath & "\AutoUpdater.exe")
             Process.Start(Application.StartupPath & "\AutoUpdater.exe ", "-product=" & product & " -v=" & latestversion)
-            Debug.Print(4)
             Application.Exit()
         Catch ex As Net.WebException
             MsgBox(ex.Message.ToString)

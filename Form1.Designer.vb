@@ -199,6 +199,24 @@ Partial Class Form1
         Me.txtPCButton2 = New SACNR_Keybinder_Evolution.NSTextBox()
         Me.txtPCButton1 = New SACNR_Keybinder_Evolution.NSTextBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.NsButton5 = New SACNR_Keybinder_Evolution.NSButton()
+        Me.NsLabel7 = New SACNR_Keybinder_Evolution.NSLabel()
+        Me.NsGroupBox3 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.chkEnableLogs = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.btnLogs = New SACNR_Keybinder_Evolution.NSButton()
+        Me.NsSeperator1 = New SACNR_Keybinder_Evolution.NSSeperator()
+        Me.NsGroupBox2 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.chkStartup = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.chkAutoUpdates = New SACNR_Keybinder_Evolution.NSOnOffBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.NsGroupBox1 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtSAMPUsername = New SACNR_Keybinder_Evolution.NSTextBox()
+        Me.btnSaveRestart = New SACNR_Keybinder_Evolution.NSButton()
+        Me.cmbSAMPUsername = New SACNR_Keybinder_Evolution.NSComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.NsGroupBox4 = New SACNR_Keybinder_Evolution.NSGroupBox()
         Me.txtDelayChar = New System.Windows.Forms.TextBox()
@@ -216,26 +234,6 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.NsGroupBox6 = New SACNR_Keybinder_Evolution.NSGroupBox()
         Me.btnReset = New SACNR_Keybinder_Evolution.NSButton()
-        Me.NsButton5 = New SACNR_Keybinder_Evolution.NSButton()
-        Me.NsLabel7 = New SACNR_Keybinder_Evolution.NSLabel()
-        Me.NsGroupBox3 = New SACNR_Keybinder_Evolution.NSGroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.chkEnableLogs = New SACNR_Keybinder_Evolution.NSOnOffBox()
-        Me.btnLogs = New SACNR_Keybinder_Evolution.NSButton()
-        Me.NsSeperator1 = New SACNR_Keybinder_Evolution.NSSeperator()
-        Me.NsGroupBox2 = New SACNR_Keybinder_Evolution.NSGroupBox()
-        Me.chkStartup = New SACNR_Keybinder_Evolution.NSOnOffBox()
-        Me.chkShowChangelog = New SACNR_Keybinder_Evolution.NSOnOffBox()
-        Me.chkAutoUpdates = New SACNR_Keybinder_Evolution.NSOnOffBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.NsGroupBox1 = New SACNR_Keybinder_Evolution.NSGroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnAddUser = New SACNR_Keybinder_Evolution.NSButton()
-        Me.txtSAMPUsername = New SACNR_Keybinder_Evolution.NSTextBox()
-        Me.btnSaveRestart = New SACNR_Keybinder_Evolution.NSButton()
-        Me.cmbSAMPUsername = New SACNR_Keybinder_Evolution.NSComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.NsLabel4 = New SACNR_Keybinder_Evolution.NSLabel()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
@@ -255,6 +253,7 @@ Partial Class Form1
         Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.timerPC = New System.Windows.Forms.Timer(Me.components)
+        Me.btnAddUser = New SACNR_Keybinder_Evolution.NSButton()
         Me.NsTheme1.SuspendLayout()
         CType(Me.imgLogo2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NsTabControl1.SuspendLayout()
@@ -265,13 +264,13 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        Me.NsGroupBox3.SuspendLayout()
+        Me.NsGroupBox2.SuspendLayout()
+        Me.NsGroupBox1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.NsGroupBox4.SuspendLayout()
         Me.NsGroupBox5.SuspendLayout()
         Me.NsGroupBox6.SuspendLayout()
-        Me.NsGroupBox3.SuspendLayout()
-        Me.NsGroupBox2.SuspendLayout()
-        Me.NsGroupBox1.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.TabPage7.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -2539,17 +2538,219 @@ Partial Class Form1
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.TabPage4.Controls.Add(Me.Panel3)
         Me.TabPage4.Controls.Add(Me.NsButton5)
         Me.TabPage4.Controls.Add(Me.NsLabel7)
         Me.TabPage4.Controls.Add(Me.NsGroupBox3)
         Me.TabPage4.Controls.Add(Me.NsGroupBox2)
         Me.TabPage4.Controls.Add(Me.NsGroupBox1)
+        Me.TabPage4.Controls.Add(Me.Panel3)
         Me.TabPage4.Location = New System.Drawing.Point(119, 4)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Size = New System.Drawing.Size(521, 345)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Settings"
+        '
+        'NsButton5
+        '
+        Me.NsButton5.Location = New System.Drawing.Point(349, 3)
+        Me.NsButton5.Name = "NsButton5"
+        Me.NsButton5.Size = New System.Drawing.Size(152, 26)
+        Me.NsButton5.TabIndex = 6
+        Me.NsButton5.Text = "Show advanced settings"
+        '
+        'NsLabel7
+        '
+        Me.NsLabel7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel7.Location = New System.Drawing.Point(230, 2)
+        Me.NsLabel7.Name = "NsLabel7"
+        Me.NsLabel7.Size = New System.Drawing.Size(65, 23)
+        Me.NsLabel7.TabIndex = 3
+        Me.NsLabel7.Text = "NsLabel7"
+        Me.NsLabel7.Value1 = " "
+        Me.NsLabel7.Value2 = "Settings"
+        '
+        'NsGroupBox3
+        '
+        Me.NsGroupBox3.Controls.Add(Me.Label2)
+        Me.NsGroupBox3.Controls.Add(Me.Label28)
+        Me.NsGroupBox3.Controls.Add(Me.chkEnableLogs)
+        Me.NsGroupBox3.Controls.Add(Me.btnLogs)
+        Me.NsGroupBox3.Controls.Add(Me.NsSeperator1)
+        Me.NsGroupBox3.DrawSeperator = True
+        Me.NsGroupBox3.Location = New System.Drawing.Point(16, 172)
+        Me.NsGroupBox3.Name = "NsGroupBox3"
+        Me.NsGroupBox3.Size = New System.Drawing.Size(217, 161)
+        Me.NsGroupBox3.SubTitle = "Manage your SAMP logs with ease."
+        Me.NsGroupBox3.TabIndex = 0
+        Me.NsGroupBox3.Text = "NsGroupBox1"
+        Me.NsGroupBox3.Title = "Log Management"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(79, 93)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.TabIndex = 66
+        Me.Label2.Text = "Copy Logs:"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.ForeColor = System.Drawing.Color.White
+        Me.Label28.Location = New System.Drawing.Point(7, 42)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(200, 39)
+        Me.Label28.TabIndex = 64
+        Me.Label28.Text = "SAMP automatically overwites old" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "log files, This option allows you to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "backup yo" & _
+    "ur log files."
+        '
+        'chkEnableLogs
+        '
+        Me.chkEnableLogs.Checked = False
+        Me.chkEnableLogs.Location = New System.Drawing.Point(152, 88)
+        Me.chkEnableLogs.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkEnableLogs.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkEnableLogs.Name = "chkEnableLogs"
+        Me.chkEnableLogs.Size = New System.Drawing.Size(56, 24)
+        Me.chkEnableLogs.TabIndex = 0
+        Me.chkEnableLogs.Text = "NsOnOffBox40"
+        '
+        'btnLogs
+        '
+        Me.btnLogs.Location = New System.Drawing.Point(3, 118)
+        Me.btnLogs.Name = "btnLogs"
+        Me.btnLogs.Size = New System.Drawing.Size(211, 41)
+        Me.btnLogs.TabIndex = 6
+        Me.btnLogs.Text = "          Open your log folder"
+        '
+        'NsSeperator1
+        '
+        Me.NsSeperator1.Location = New System.Drawing.Point(3, 111)
+        Me.NsSeperator1.Name = "NsSeperator1"
+        Me.NsSeperator1.Size = New System.Drawing.Size(211, 23)
+        Me.NsSeperator1.TabIndex = 1
+        Me.NsSeperator1.Text = "NsSeperator1"
+        '
+        'NsGroupBox2
+        '
+        Me.NsGroupBox2.Controls.Add(Me.chkStartup)
+        Me.NsGroupBox2.Controls.Add(Me.chkAutoUpdates)
+        Me.NsGroupBox2.Controls.Add(Me.Label1)
+        Me.NsGroupBox2.DrawSeperator = True
+        Me.NsGroupBox2.Location = New System.Drawing.Point(239, 172)
+        Me.NsGroupBox2.Name = "NsGroupBox2"
+        Me.NsGroupBox2.Size = New System.Drawing.Size(263, 161)
+        Me.NsGroupBox2.SubTitle = "Various settings that you may find useful."
+        Me.NsGroupBox2.TabIndex = 0
+        Me.NsGroupBox2.Text = "NsGroupBox1"
+        Me.NsGroupBox2.Title = "Additional Settings"
+        '
+        'chkStartup
+        '
+        Me.chkStartup.Checked = False
+        Me.chkStartup.Location = New System.Drawing.Point(193, 90)
+        Me.chkStartup.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkStartup.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkStartup.Name = "chkStartup"
+        Me.chkStartup.Size = New System.Drawing.Size(56, 24)
+        Me.chkStartup.TabIndex = 67
+        Me.chkStartup.Text = "NsOnOffBox41"
+        '
+        'chkAutoUpdates
+        '
+        Me.chkAutoUpdates.Checked = False
+        Me.chkAutoUpdates.Location = New System.Drawing.Point(193, 50)
+        Me.chkAutoUpdates.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.chkAutoUpdates.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.chkAutoUpdates.Name = "chkAutoUpdates"
+        Me.chkAutoUpdates.Size = New System.Drawing.Size(56, 24)
+        Me.chkAutoUpdates.TabIndex = 67
+        Me.chkAutoUpdates.Text = "NsOnOffBox41"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(12, 55)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(181, 52)
+        Me.Label1.TabIndex = 65
+        Me.Label1.Text = "Check for updates at startup:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Start minimized with windows:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'NsGroupBox1
+        '
+        Me.NsGroupBox1.Controls.Add(Me.btnAddUser)
+        Me.NsGroupBox1.Controls.Add(Me.Label4)
+        Me.NsGroupBox1.Controls.Add(Me.txtSAMPUsername)
+        Me.NsGroupBox1.Controls.Add(Me.btnSaveRestart)
+        Me.NsGroupBox1.Controls.Add(Me.cmbSAMPUsername)
+        Me.NsGroupBox1.Controls.Add(Me.Label3)
+        Me.NsGroupBox1.DrawSeperator = True
+        Me.NsGroupBox1.Location = New System.Drawing.Point(16, 35)
+        Me.NsGroupBox1.Name = "NsGroupBox1"
+        Me.NsGroupBox1.Size = New System.Drawing.Size(486, 131)
+        Me.NsGroupBox1.SubTitle = "These options allow you to change the active profile, Designed for people who sha" & _
+    "re a system."
+        Me.NsGroupBox1.TabIndex = 0
+        Me.NsGroupBox1.Text = "NsGroupBox1"
+        Me.NsGroupBox1.Title = "Profile Settings"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(25, 94)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(64, 13)
+        Me.Label4.TabIndex = 68
+        Me.Label4.Text = "Add User:"
+        '
+        'txtSAMPUsername
+        '
+        Me.txtSAMPUsername.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSAMPUsername.Location = New System.Drawing.Point(90, 89)
+        Me.txtSAMPUsername.MaxLength = 32767
+        Me.txtSAMPUsername.Multiline = False
+        Me.txtSAMPUsername.Name = "txtSAMPUsername"
+        Me.txtSAMPUsername.ReadOnly = False
+        Me.txtSAMPUsername.Size = New System.Drawing.Size(211, 23)
+        Me.txtSAMPUsername.TabIndex = 3
+        Me.txtSAMPUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtSAMPUsername.UseSystemPasswordChar = False
+        '
+        'btnSaveRestart
+        '
+        Me.btnSaveRestart.Location = New System.Drawing.Point(356, 83)
+        Me.btnSaveRestart.Name = "btnSaveRestart"
+        Me.btnSaveRestart.Size = New System.Drawing.Size(118, 35)
+        Me.btnSaveRestart.TabIndex = 2
+        Me.btnSaveRestart.Text = "Change Username"
+        '
+        'cmbSAMPUsername
+        '
+        Me.cmbSAMPUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.cmbSAMPUsername.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmbSAMPUsername.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSAMPUsername.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbSAMPUsername.ForeColor = System.Drawing.Color.White
+        Me.cmbSAMPUsername.FormattingEnabled = True
+        Me.cmbSAMPUsername.Location = New System.Drawing.Point(114, 48)
+        Me.cmbSAMPUsername.Name = "cmbSAMPUsername"
+        Me.cmbSAMPUsername.Size = New System.Drawing.Size(360, 28)
+        Me.cmbSAMPUsername.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(9, 55)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(110, 13)
+        Me.Label3.TabIndex = 67
+        Me.Label3.Text = "SAMP Username: "
         '
         'Panel3
         '
@@ -2754,229 +2955,6 @@ Partial Class Form1
         Me.btnReset.TabIndex = 0
         Me.btnReset.Text = "              Reset everything including all keybinds and settings"
         '
-        'NsButton5
-        '
-        Me.NsButton5.Location = New System.Drawing.Point(349, 3)
-        Me.NsButton5.Name = "NsButton5"
-        Me.NsButton5.Size = New System.Drawing.Size(152, 26)
-        Me.NsButton5.TabIndex = 6
-        Me.NsButton5.Text = "Show advanced settings"
-        '
-        'NsLabel7
-        '
-        Me.NsLabel7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.NsLabel7.Location = New System.Drawing.Point(230, 2)
-        Me.NsLabel7.Name = "NsLabel7"
-        Me.NsLabel7.Size = New System.Drawing.Size(65, 23)
-        Me.NsLabel7.TabIndex = 3
-        Me.NsLabel7.Text = "NsLabel7"
-        Me.NsLabel7.Value1 = " "
-        Me.NsLabel7.Value2 = "Settings"
-        '
-        'NsGroupBox3
-        '
-        Me.NsGroupBox3.Controls.Add(Me.Label2)
-        Me.NsGroupBox3.Controls.Add(Me.Label28)
-        Me.NsGroupBox3.Controls.Add(Me.chkEnableLogs)
-        Me.NsGroupBox3.Controls.Add(Me.btnLogs)
-        Me.NsGroupBox3.Controls.Add(Me.NsSeperator1)
-        Me.NsGroupBox3.DrawSeperator = True
-        Me.NsGroupBox3.Location = New System.Drawing.Point(16, 172)
-        Me.NsGroupBox3.Name = "NsGroupBox3"
-        Me.NsGroupBox3.Size = New System.Drawing.Size(217, 161)
-        Me.NsGroupBox3.SubTitle = "Manage your SAMP logs with ease."
-        Me.NsGroupBox3.TabIndex = 0
-        Me.NsGroupBox3.Text = "NsGroupBox1"
-        Me.NsGroupBox3.Title = "Log Management"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(79, 93)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 13)
-        Me.Label2.TabIndex = 66
-        Me.Label2.Text = "Copy Logs:"
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.ForeColor = System.Drawing.Color.White
-        Me.Label28.Location = New System.Drawing.Point(7, 42)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(200, 39)
-        Me.Label28.TabIndex = 64
-        Me.Label28.Text = "SAMP automatically overwites old" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "log files, This option allows you to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "backup yo" & _
-    "ur log files."
-        '
-        'chkEnableLogs
-        '
-        Me.chkEnableLogs.Checked = False
-        Me.chkEnableLogs.Location = New System.Drawing.Point(152, 88)
-        Me.chkEnableLogs.MaximumSize = New System.Drawing.Size(56, 24)
-        Me.chkEnableLogs.MinimumSize = New System.Drawing.Size(56, 24)
-        Me.chkEnableLogs.Name = "chkEnableLogs"
-        Me.chkEnableLogs.Size = New System.Drawing.Size(56, 24)
-        Me.chkEnableLogs.TabIndex = 0
-        Me.chkEnableLogs.Text = "NsOnOffBox40"
-        '
-        'btnLogs
-        '
-        Me.btnLogs.Location = New System.Drawing.Point(3, 118)
-        Me.btnLogs.Name = "btnLogs"
-        Me.btnLogs.Size = New System.Drawing.Size(211, 41)
-        Me.btnLogs.TabIndex = 6
-        Me.btnLogs.Text = "          Open your log folder"
-        '
-        'NsSeperator1
-        '
-        Me.NsSeperator1.Location = New System.Drawing.Point(3, 111)
-        Me.NsSeperator1.Name = "NsSeperator1"
-        Me.NsSeperator1.Size = New System.Drawing.Size(211, 23)
-        Me.NsSeperator1.TabIndex = 1
-        Me.NsSeperator1.Text = "NsSeperator1"
-        '
-        'NsGroupBox2
-        '
-        Me.NsGroupBox2.Controls.Add(Me.chkStartup)
-        Me.NsGroupBox2.Controls.Add(Me.chkShowChangelog)
-        Me.NsGroupBox2.Controls.Add(Me.chkAutoUpdates)
-        Me.NsGroupBox2.Controls.Add(Me.Label1)
-        Me.NsGroupBox2.DrawSeperator = True
-        Me.NsGroupBox2.Location = New System.Drawing.Point(239, 172)
-        Me.NsGroupBox2.Name = "NsGroupBox2"
-        Me.NsGroupBox2.Size = New System.Drawing.Size(263, 161)
-        Me.NsGroupBox2.SubTitle = "Various settings that you may find useful."
-        Me.NsGroupBox2.TabIndex = 0
-        Me.NsGroupBox2.Text = "NsGroupBox1"
-        Me.NsGroupBox2.Title = "Additional Settings"
-        '
-        'chkStartup
-        '
-        Me.chkStartup.Checked = False
-        Me.chkStartup.Location = New System.Drawing.Point(190, 127)
-        Me.chkStartup.MaximumSize = New System.Drawing.Size(56, 24)
-        Me.chkStartup.MinimumSize = New System.Drawing.Size(56, 24)
-        Me.chkStartup.Name = "chkStartup"
-        Me.chkStartup.Size = New System.Drawing.Size(56, 24)
-        Me.chkStartup.TabIndex = 67
-        Me.chkStartup.Text = "NsOnOffBox41"
-        '
-        'chkShowChangelog
-        '
-        Me.chkShowChangelog.Checked = True
-        Me.chkShowChangelog.Location = New System.Drawing.Point(190, 88)
-        Me.chkShowChangelog.MaximumSize = New System.Drawing.Size(56, 24)
-        Me.chkShowChangelog.MinimumSize = New System.Drawing.Size(56, 24)
-        Me.chkShowChangelog.Name = "chkShowChangelog"
-        Me.chkShowChangelog.Size = New System.Drawing.Size(56, 24)
-        Me.chkShowChangelog.TabIndex = 67
-        Me.chkShowChangelog.Text = "NsOnOffBox41"
-        '
-        'chkAutoUpdates
-        '
-        Me.chkAutoUpdates.Checked = False
-        Me.chkAutoUpdates.Location = New System.Drawing.Point(190, 50)
-        Me.chkAutoUpdates.MaximumSize = New System.Drawing.Size(56, 24)
-        Me.chkAutoUpdates.MinimumSize = New System.Drawing.Size(56, 24)
-        Me.chkAutoUpdates.Name = "chkAutoUpdates"
-        Me.chkAutoUpdates.Size = New System.Drawing.Size(56, 24)
-        Me.chkAutoUpdates.TabIndex = 67
-        Me.chkAutoUpdates.Text = "NsOnOffBox41"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 54)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(181, 91)
-        Me.Label1.TabIndex = 65
-        Me.Label1.Text = "Check for updates at startup:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Show changelog after update:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Start minimi" & _
-    "zed with windows:"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'NsGroupBox1
-        '
-        Me.NsGroupBox1.Controls.Add(Me.Label4)
-        Me.NsGroupBox1.Controls.Add(Me.btnAddUser)
-        Me.NsGroupBox1.Controls.Add(Me.txtSAMPUsername)
-        Me.NsGroupBox1.Controls.Add(Me.btnSaveRestart)
-        Me.NsGroupBox1.Controls.Add(Me.cmbSAMPUsername)
-        Me.NsGroupBox1.Controls.Add(Me.Label3)
-        Me.NsGroupBox1.DrawSeperator = True
-        Me.NsGroupBox1.Location = New System.Drawing.Point(16, 35)
-        Me.NsGroupBox1.Name = "NsGroupBox1"
-        Me.NsGroupBox1.Size = New System.Drawing.Size(486, 131)
-        Me.NsGroupBox1.SubTitle = "These options allow you to change the active profile, Designed for people who sha" & _
-    "re a system."
-        Me.NsGroupBox1.TabIndex = 0
-        Me.NsGroupBox1.Text = "NsGroupBox1"
-        Me.NsGroupBox1.Title = "Profile Settings"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(25, 94)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(64, 13)
-        Me.Label4.TabIndex = 68
-        Me.Label4.Text = "Add User:"
-        '
-        'btnAddUser
-        '
-        Me.btnAddUser.Location = New System.Drawing.Point(266, 89)
-        Me.btnAddUser.Name = "btnAddUser"
-        Me.btnAddUser.Size = New System.Drawing.Size(23, 23)
-        Me.btnAddUser.TabIndex = 4
-        Me.btnAddUser.Text = "+"
-        '
-        'txtSAMPUsername
-        '
-        Me.txtSAMPUsername.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSAMPUsername.Location = New System.Drawing.Point(90, 89)
-        Me.txtSAMPUsername.MaxLength = 32767
-        Me.txtSAMPUsername.Multiline = False
-        Me.txtSAMPUsername.Name = "txtSAMPUsername"
-        Me.txtSAMPUsername.ReadOnly = False
-        Me.txtSAMPUsername.Size = New System.Drawing.Size(172, 23)
-        Me.txtSAMPUsername.TabIndex = 3
-        Me.txtSAMPUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.txtSAMPUsername.UseSystemPasswordChar = False
-        '
-        'btnSaveRestart
-        '
-        Me.btnSaveRestart.Location = New System.Drawing.Point(356, 83)
-        Me.btnSaveRestart.Name = "btnSaveRestart"
-        Me.btnSaveRestart.Size = New System.Drawing.Size(118, 35)
-        Me.btnSaveRestart.TabIndex = 2
-        Me.btnSaveRestart.Text = "Change Username"
-        '
-        'cmbSAMPUsername
-        '
-        Me.cmbSAMPUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.cmbSAMPUsername.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmbSAMPUsername.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbSAMPUsername.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbSAMPUsername.ForeColor = System.Drawing.Color.White
-        Me.cmbSAMPUsername.FormattingEnabled = True
-        Me.cmbSAMPUsername.Location = New System.Drawing.Point(114, 48)
-        Me.cmbSAMPUsername.Name = "cmbSAMPUsername"
-        Me.cmbSAMPUsername.Size = New System.Drawing.Size(360, 28)
-        Me.cmbSAMPUsername.TabIndex = 0
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(9, 55)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 13)
-        Me.Label3.TabIndex = 67
-        Me.Label3.Text = "SAMP Username: "
-        '
         'TabPage5
         '
         Me.TabPage5.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
@@ -3151,6 +3129,7 @@ Partial Class Form1
         Me.NotifyIcon1.ContextMenuStrip = Me.NsContextMenu1
         Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
         Me.NotifyIcon1.Text = "SACNR KeyBinder Evolution"
+        Me.NotifyIcon1.Visible = True
         '
         'NsContextMenu1
         '
@@ -3174,6 +3153,14 @@ Partial Class Form1
         'timerPC
         '
         Me.timerPC.Enabled = True
+        '
+        'btnAddUser
+        '
+        Me.btnAddUser.Location = New System.Drawing.Point(305, 89)
+        Me.btnAddUser.Name = "btnAddUser"
+        Me.btnAddUser.Size = New System.Drawing.Size(22, 23)
+        Me.btnAddUser.TabIndex = 69
+        Me.btnAddUser.Text = "+"
         '
         'Form1
         '
@@ -3201,18 +3188,18 @@ Partial Class Form1
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.NsGroupBox4.ResumeLayout(False)
-        Me.NsGroupBox4.PerformLayout()
-        Me.NsGroupBox5.ResumeLayout(False)
-        Me.NsGroupBox5.PerformLayout()
-        Me.NsGroupBox6.ResumeLayout(False)
         Me.NsGroupBox3.ResumeLayout(False)
         Me.NsGroupBox3.PerformLayout()
         Me.NsGroupBox2.ResumeLayout(False)
         Me.NsGroupBox2.PerformLayout()
         Me.NsGroupBox1.ResumeLayout(False)
         Me.NsGroupBox1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.NsGroupBox4.ResumeLayout(False)
+        Me.NsGroupBox4.PerformLayout()
+        Me.NsGroupBox5.ResumeLayout(False)
+        Me.NsGroupBox5.PerformLayout()
+        Me.NsGroupBox6.ResumeLayout(False)
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
@@ -3363,16 +3350,13 @@ Partial Class Form1
     Friend WithEvents btnSaveRestart As SACNR_Keybinder_Evolution.NSButton
     Friend WithEvents cmbSAMPUsername As SACNR_Keybinder_Evolution.NSComboBox
     Friend WithEvents txtSAMPUsername As SACNR_Keybinder_Evolution.NSTextBox
-    Friend WithEvents btnAddUser As SACNR_Keybinder_Evolution.NSButton
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents chkEnableLogs As SACNR_Keybinder_Evolution.NSOnOffBox
     Friend WithEvents btnLogs As SACNR_Keybinder_Evolution.NSButton
     Friend WithEvents NsSeperator1 As SACNR_Keybinder_Evolution.NSSeperator
     Friend WithEvents NsLabel7 As SACNR_Keybinder_Evolution.NSLabel
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents chkShowChangelog As SACNR_Keybinder_Evolution.NSOnOffBox
     Friend WithEvents chkAutoUpdates As SACNR_Keybinder_Evolution.NSOnOffBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents NsButton5 As SACNR_Keybinder_Evolution.NSButton
     Friend WithEvents NsGroupBox4 As SACNR_Keybinder_Evolution.NSGroupBox
@@ -3453,5 +3437,7 @@ Partial Class Form1
     Friend WithEvents txtPCButton2 As SACNR_Keybinder_Evolution.NSTextBox
     Friend WithEvents txtPCButton1 As SACNR_Keybinder_Evolution.NSTextBox
     Friend WithEvents timerPC As System.Windows.Forms.Timer
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnAddUser As SACNR_Keybinder_Evolution.NSButton
 
 End Class

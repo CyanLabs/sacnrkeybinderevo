@@ -148,8 +148,7 @@ Public Class Form1
             inisettings.WriteString("Mouse", "WheelDownActivated", chkWheelDown.Checked.ToString)
             inisettings.WriteString("Mouse", "SB1ClickActivated", chkSB1.Checked.ToString)
             inisettings.WriteString("Mouse", "SB2ClickActivated", chkSB2.Checked.ToString)
-            inisettings.WriteString("Settings", "ShowChangelog", chkShowChangelog.Checked.ToString)
-        End If
+         End If
     End Sub
     'Function to check whethera process is running or not
     Public Function IsProcessRunning(name As String) As Boolean
@@ -370,7 +369,7 @@ Public Class Form1
 
     'Loads sacnr.com when banner click
     Private Sub imgLogo2_Click(sender As Object, e As EventArgs) Handles imgLogo2.Click
-        Process.Start("http://www.sacnr.com/?referer=keybinder")
+        Process.Start("http://www.sacnr.com/")
     End Sub
 
     'Button that resets everything and restarts application
@@ -463,6 +462,7 @@ Public Class Form1
             If updated Then
                 MsgBox("You have successfully updated to V" & newversion, MsgBoxStyle.Information, "Update Successful")
             Else
+                NotifyIcon1.ShowBalloonTip(5000, "SACNR Keybinder Evolution", "Checking for updates!", ToolTipIcon.Info)
                 UpdateChecker.IsBackground = True
                 UpdateChecker.Start()
             End If
@@ -501,9 +501,8 @@ Public Class Form1
         chkSB2.Checked = inisettings.GetString("Mouse", "SB2ClickActivated", False)
         chkAutoUpdates.Checked = inisettings.GetString("Settings", "AutoUpdate", False)
         chkEnableLogs.Checked = inisettings.GetString("Settings", "EnableLogManager", False)
-        chkEnable360.Checked = inisettings.GetString("360", "MasterToggle", False)
         chkEnablePc.Checked = inisettings.GetString("Controller", "MasterToggle", False)
-        chkShowChangelog.Checked = inisettings.GetString("Settings", "ShowChangelog", True)
+        chkEnable360.Checked = inisettings.GetString("360", "MasterToggle", False)
         chkUseMouseUp.Checked = inisettings.GetString("Advanced Settings", "UseKeyUp", False)
         chkUseKeyUp.Checked = inisettings.GetString("Advanced Settings", "UseMouseUp", False)
         chkDebug.Checked = inisettings.GetString("Advanced Settings", "Debug", False)
@@ -515,16 +514,18 @@ Public Class Form1
         lblVersion.Text = CurrentVersion.ToString
         If chkEnable360.Checked = True Then timer360.Start()
         If chkEnableLogs.Checked = True Then timerLogs.Start()
-        If (gameControllerList.Count > 0) Then
-            gameControllerList.MoveNext()
-            Dim deviceInstance As DeviceInstance = gameControllerList.Current
-            joystickDevice = New Device(deviceInstance.InstanceGuid)
-            joystickDevice.SetCooperativeLevel(Me, CooperativeLevelFlags.Background Or CooperativeLevelFlags.NonExclusive)
-            joystickDevice.SetDataFormat(DeviceDataFormat.Joystick)
-            joystickDevice.Acquire()
-            joystickDevice.Poll()
+        If chkEnablePc.Checked = True > 0 Then
+            If (gameControllerList.Count > 0) Then
+                gameControllerList.MoveNext()
+                Dim deviceInstance As DeviceInstance = gameControllerList.Current
+                joystickDevice = New Device(deviceInstance.InstanceGuid)
+                joystickDevice.SetCooperativeLevel(Me, CooperativeLevelFlags.Background Or CooperativeLevelFlags.NonExclusive)
+                joystickDevice.SetDataFormat(DeviceDataFormat.Joystick)
+                joystickDevice.Acquire()
+                joystickDevice.Poll()
+            End If
         End If
-        If chkEnablePc.Checked = True > 0 Then timerPC.Start()
+        timerPC.Start()
         If My.Computer.Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", True).GetValue(Application.ProductName) Is Nothing Then chkStartup.Checked = False
         finishedload = True
     End Sub
@@ -537,7 +538,7 @@ Public Class Form1
     End Sub
 
     'Autoupdate check change
-    Private Sub chkAutoupdates_CheckedChanged(sender As Object)
+    Private Sub chkAutoupdates_CheckedChanged(sender As Object) Handles chkAutoUpdates.CheckedChanged
         Try
             inisettings.WriteString("Settings", "AutoUpdate", sender.checked.ToString)
         Catch ex As NullReferenceException
@@ -574,6 +575,10 @@ Public Class Form1
 
     'Change active profile and restart application
     Private Sub btnSaveRestart_Click(sender As Object, e As EventArgs) Handles btnSaveRestart.Click
+        If cmbSAMPUsername.SelectedItem = "" Then
+            MsgBox("Please select a name from the dropdown or add a user below", MsgBoxStyle.Information, "Error")
+            Exit Sub
+        End If
         Dim result = MsgBox("This will change the SAMP username." & vbNewLine & "All settings and keybinds will be saved as 'OLDNAME_Keybinds.sav' and a new file called '" & cmbSAMPUsername.Text & "_keybinds.sav' will be used. You can switch back to your old username at any time by changing this textbox back." & vbNewLine & vbNewLine & "Are you sure you want to change SAMP Username?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
         If result = vbYes Then
             My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\SAMP", "PlayerName", cmbSAMPUsername.SelectedItem.ToString)
@@ -586,11 +591,9 @@ Public Class Form1
             inisettings.WriteString("360", "MasterToggle", chkEnable360.Checked.ToString)
             If sender.Checked = True Then
                 timer360.Start()
+                chkEnablePc.Checked = False
             Else
                 timer360.Stop()
-            End If
-            If chkEnablePc.Checked Then
-                chkEnablePc.Checked = False
             End If
         Catch ex As NullReferenceException
         End Try
@@ -697,7 +700,7 @@ Public Class Form1
             Panel4.Visible = True
         End If
     End Sub
-    Private Sub btnAddUser_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
+    Private Sub btnAddUser_Click(sender As Object, e As EventArgs)
         cmbSAMPUsername.Items.Add(txtSAMPUsername.Text)
     End Sub
 
@@ -823,13 +826,14 @@ Public Class Form1
             inisettings.WriteString("Controller", "MasterToggle", chkEnablePc.Checked.ToString)
             If chkEnablePc.Checked = True Then
                 timerPC.Start()
-            Else
-                timerPC.Stop()
-            End If
-            If chkEnable360.Checked Then
                 chkEnable360.Checked = False
+            Else
+            timerPC.Stop()
             End If
         Catch ex As NullReferenceException
         End Try
+    End Sub
+    Private Sub btnAddUser_Click_1(sender As Object, e As EventArgs) Handles btnAddUser.Click
+        If Not cmbSAMPUsername.Items.Contains(txtSAMPUsername.Text) Then cmbSAMPUsername.Items.Add(txtSAMPUsername.Text)
     End Sub
 End Class
