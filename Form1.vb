@@ -123,7 +123,7 @@ Public Class Form1
             Next
             For Each ctrl In Me.Panel2.Controls
                 If TypeOf ctrl Is NSTextBox Then inisettings.WriteString("SendKey", ctrl.name.replace("NsTextBox", "Send"), ctrl.Text)
-                If TypeOf ctrl Is TextBox Then If ctrl.text = Nothing Then inisettings.WriteString("HotKey", ctrl.name.replace("TextBox", "Key"), ctrl.text.ToString)
+                If TypeOf ctrl Is TextBox Then If Not ctrl.text = Nothing Then inisettings.WriteString("HotKey", ctrl.name.replace("TextBox", "Key"), ctrl.text.ToString)
                 If TypeOf ctrl Is NSOnOffBox Then inisettings.WriteString("Activate", ctrl.name.replace("NsOnOffBox", "act"), ctrl.checked.ToString)
             Next
             For Each ctrl In Me.NsTabControl1.TabPages(2).Controls
@@ -615,7 +615,7 @@ Public Class Form1
         Dim result = MsgBox("This will send the feedback below to CyanLabs (Fma965)." & vbNewLine & vbNewLine & """" & emailcontents & """" & vbNewLine & vbNewLine & "Are you sure?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
         If result = vbYes Then
             result = MsgBox("Do you want to include your SA-MP username with the email?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
-            If result = vbYes Then emailcontents &= vbNewLine & vbNewLine & "Feedback/Suggestion was posted by """ & cmbSAMPUsername.Text & """"
+            If result = vbYes Then emailcontents &= vbNewLine & vbNewLine & "Feedback/Suggestion was posted by """ & txtSAMPUsername.Text & """"
             Try
                 Dim SmtpServer As New SmtpClient()
                 Dim mail As New MailMessage()
