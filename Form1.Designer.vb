@@ -240,16 +240,17 @@ Partial Class Form1
         Me.NsLabel4 = New SACNR_Keybinder_Evolution.NSLabel()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.NsButton7 = New SACNR_Keybinder_Evolution.NSButton()
         Me.NsGroupBox7 = New SACNR_Keybinder_Evolution.NSGroupBox()
+        Me.txtEmail = New SACNR_Keybinder_Evolution.NSTextBox()
         Me.btnSendRequest = New SACNR_Keybinder_Evolution.NSButton()
         Me.txtFeedback = New SACNR_Keybinder_Evolution.NSTextBox()
         Me.NsLabel5 = New SACNR_Keybinder_Evolution.NSLabel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.lblVersion = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.NsContextMenu1 = New SACNR_Keybinder_Evolution.NSContextMenu()
         Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -273,8 +274,8 @@ Partial Class Form1
         Me.NsGroupBox1.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.TabPage7.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         Me.NsGroupBox7.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.NsContextMenu1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -3019,28 +3020,6 @@ Partial Class Form1
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "About"
         '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.WebBrowser1)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(0, 31)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(521, 314)
-        Me.Panel4.TabIndex = 13
-        Me.Panel4.Visible = False
-        '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(521, 314)
-        Me.WebBrowser1.TabIndex = 4
-        Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
-        Me.WebBrowser1.WebBrowserShortcutsEnabled = False
-        '
         'NsButton7
         '
         Me.NsButton7.Location = New System.Drawing.Point(390, 3)
@@ -3051,34 +3030,49 @@ Partial Class Form1
         '
         'NsGroupBox7
         '
+        Me.NsGroupBox7.Controls.Add(Me.txtEmail)
         Me.NsGroupBox7.Controls.Add(Me.btnSendRequest)
         Me.NsGroupBox7.Controls.Add(Me.txtFeedback)
         Me.NsGroupBox7.DrawSeperator = True
-        Me.NsGroupBox7.Location = New System.Drawing.Point(12, 227)
+        Me.NsGroupBox7.Location = New System.Drawing.Point(12, 153)
         Me.NsGroupBox7.Name = "NsGroupBox7"
-        Me.NsGroupBox7.Size = New System.Drawing.Size(498, 98)
+        Me.NsGroupBox7.Size = New System.Drawing.Size(498, 172)
         Me.NsGroupBox7.SubTitle = "Please do not send spam or malicious feedback"
         Me.NsGroupBox7.TabIndex = 11
         Me.NsGroupBox7.Text = "NsGroupBox7"
         Me.NsGroupBox7.Title = "Leave Feedback"
         '
+        'txtEmail
+        '
+        Me.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEmail.Location = New System.Drawing.Point(5, 43)
+        Me.txtEmail.MaxLength = 32767
+        Me.txtEmail.Multiline = False
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.ReadOnly = False
+        Me.txtEmail.Size = New System.Drawing.Size(398, 28)
+        Me.txtEmail.TabIndex = 2
+        Me.txtEmail.Text = "Your Email Address"
+        Me.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtEmail.UseSystemPasswordChar = False
+        '
         'btnSendRequest
         '
         Me.btnSendRequest.Location = New System.Drawing.Point(407, 43)
         Me.btnSendRequest.Name = "btnSendRequest"
-        Me.btnSendRequest.Size = New System.Drawing.Size(86, 52)
+        Me.btnSendRequest.Size = New System.Drawing.Size(86, 126)
         Me.btnSendRequest.TabIndex = 1
         Me.btnSendRequest.Text = "    Submit"
         '
         'txtFeedback
         '
         Me.txtFeedback.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtFeedback.Location = New System.Drawing.Point(5, 43)
+        Me.txtFeedback.Location = New System.Drawing.Point(5, 77)
         Me.txtFeedback.MaxLength = 32767
         Me.txtFeedback.Multiline = False
         Me.txtFeedback.Name = "txtFeedback"
         Me.txtFeedback.ReadOnly = False
-        Me.txtFeedback.Size = New System.Drawing.Size(398, 52)
+        Me.txtFeedback.Size = New System.Drawing.Size(398, 90)
         Me.txtFeedback.TabIndex = 0
         Me.txtFeedback.Text = "Leave feedback or suggest a new feature or change here."
         Me.txtFeedback.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -3103,7 +3097,7 @@ Partial Class Form1
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(14, 52)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(490, 154)
+        Me.Label11.Size = New System.Drawing.Size(494, 98)
         Me.Label11.TabIndex = 9
         Me.Label11.Text = resources.GetString("Label11.Text")
         '
@@ -3132,6 +3126,28 @@ Partial Class Form1
         Me.Label6.TabIndex = 7
         Me.Label6.Text = "Application copyright © 2013 CyanLabs && Theme copyright © 2012-2013 Nimoru softw" & _
     "are"
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.WebBrowser1)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(0, 31)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(521, 314)
+        Me.Panel4.TabIndex = 13
+        Me.Panel4.Visible = False
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(521, 314)
+        Me.WebBrowser1.TabIndex = 4
+        Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
+        Me.WebBrowser1.WebBrowserShortcutsEnabled = False
         '
         'NotifyIcon1
         '
@@ -3203,8 +3219,8 @@ Partial Class Form1
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
         Me.NsGroupBox7.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.NsContextMenu1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -3385,8 +3401,6 @@ Partial Class Form1
     Friend WithEvents NsButton7 As SACNR_Keybinder_Evolution.NSButton
     Friend WithEvents NsGroupBox7 As SACNR_Keybinder_Evolution.NSGroupBox
     Friend WithEvents NsLabel5 As SACNR_Keybinder_Evolution.NSLabel
-    Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
     Friend WithEvents timer360 As System.Windows.Forms.Timer
     Friend WithEvents timerLogs As System.Windows.Forms.Timer
     Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
@@ -3439,5 +3453,8 @@ Partial Class Form1
     Friend WithEvents timerPC As System.Windows.Forms.Timer
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnAddUser As SACNR_Keybinder_Evolution.NSButton
+    Friend WithEvents txtEmail As SACNR_Keybinder_Evolution.NSTextBox
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
 
 End Class

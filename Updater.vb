@@ -2,23 +2,21 @@
     Dim product As String = My.Application.Info.AssemblyName.Replace(" ", "_")
     Dim wc As New Net.WebClient
     Dim localversion As String = My.Application.Info.Version.ToString
-    Public Sub IsLatest()
+   Public Sub IsLatest()
         If Environment.GetCommandLineArgs.Length > 1 Then
             For Each x As String In Environment.GetCommandLineArgs
                 If x.Contains("-v=") Then localversion = x.Replace("-v=", "")
             Next
         End If
         Try
-            Dim latestversion As String = wc.DownloadString("http://downloads.cyanlabs.co.uk/version.php?product=" & product).Replace(" ", "")
+            Dim latestversion As String = wc.DownloadString("http://cyanlabs.co.uk/raw/version.php?product=" & product).Replace(" ", "")
             If localversion < latestversion Then
-                Dim changelog As String = wc.DownloadString("http://changelog.cyanlabs.co.uk?product=" & product & "&from=" & localversion & "&to=" & latestversion)
-                Dim start As Integer = changelog.IndexOf("<div class=""entry-content"">") + 28
-                Dim finish As Integer = changelog.IndexOf("<a id='changelog-end'>") - 3
-                changelog = changelog.Substring(start, finish - start).Replace("<br /><br />", "<br />").Replace("<br />", vbNewLine).Replace("<br/>", vbNewLine).Replace("<p><strong>", vbNewLine).Replace("</strong>", "").Replace("<h2>", "").Replace("</h2>", "").Replace("</p>", "").Replace(product.Replace("_", " "), "")
+                Dim changelog As String = wc.DownloadString("http://cyanlabs.co.uk/raw/changelog.php?product=" & product & "&from=" & localversion & "&to=" & latestversion)
+                changelog = changelog.Replace("<br/><br/>", vbNewLine & vbNewLine).Replace("<br/>", vbNewLine)
                 If MsgBox("A new update is available for download" & vbNewLine & vbNewLine & "Would you like to download v" & latestversion & "?" & vbNewLine & vbNewLine & changelog, MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Update Avaliable") = vbYes Then
                     If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then
                         Dim updaterversion As FileVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(Application.StartupPath & "\AutoUpdater.exe")
-                        If updaterversion.FileVersion < wc.DownloadString("http://downloads.cyanlabs.co.uk/version.php?product=AutoUpdater").Replace(" ", "") Then
+                        If updaterversion.FileVersion < wc.DownloadString("http://cyanlabs.co.uk/raw/version.php?product=AutoUpdater").Replace(" ", "") Then
                             DownloadUpdater(latestversion)
                         Else
                             Process.Start(Application.StartupPath & "\AutoUpdater.exe ", "-product=" & product & " -v=" & latestversion)

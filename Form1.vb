@@ -611,6 +611,11 @@ Public Class Form1
     'Sends email with feedback/suggestion/bug report
     Private Sub btnSendRequest_Click(sender As Object, e As EventArgs) Handles btnSendRequest.Click
         If txtFeedback.Text = "Leave feedback or suggest a new feature or change here." Or txtFeedback.Text = "" Then Exit Sub
+        Try
+            Dim testAddress = New MailAddress(txtEmail.Text)
+        Catch ex As FormatException
+            MsgBox("A invalid email address was entered" & vbNewLine & "Please enter a valid email and try again.", MsgBoxStyle.Exclamation, "Email Required")
+        End Try
         Dim emailcontents As String = txtFeedback.Text
         Dim result = MsgBox("This will send the feedback below to CyanLabs (Fma965)." & vbNewLine & vbNewLine & """" & emailcontents & """" & vbNewLine & vbNewLine & "Are you sure?", vbYesNo + MsgBoxStyle.Question, "Confirmation")
         If result = vbYes Then
@@ -625,7 +630,7 @@ Public Class Form1
                 mail.From = New MailAddress("sacnrkeybinder2013@cyanlabs.co.uk")
                 mail.To.Add("fma96580@gmail.com")
                 mail.Subject = "SACNR Keybinder Evolution - Feedback and Suggestions"
-                mail.Body = "New feedback or suggestion for 'SACNR Keybinder Evolution' has been recieved!" & vbNewLine & vbNewLine & emailcontents
+                mail.Body = "New feedback or suggestion for 'SACNR Keybinder Evolution' has been recieved!" & vbNewLine & vbNewLine & emailcontents & vbNewLine & vbNewLine & "Contact Email: " & txtEmail.Text
                 SmtpServer.Send(mail)
                 MsgBox("Your feedback has been sent successfully, Thank you for helping make SACNR Keybinder Evolution better!")
             Catch ex As Exception
@@ -635,8 +640,8 @@ Public Class Form1
     End Sub
 
     'Clears textbox contents when clicked if value is default
-    Private Sub txtFeedback_Enter(sender As Object, e As EventArgs) Handles txtFeedback.Enter
-        If sender.text = "Leave feedback or suggest a new feature or change here." Then sender.text = ""
+    Private Sub txtFeedback_Enter(sender As Object, e As EventArgs) Handles txtFeedback.Enter, txtEmail.Enter
+        If sender.text = "Leave feedback or suggest a new feature or change here." Or sender.text = "Your Email Address" Then sender.text = ""
     End Sub
 
     'Add/Remove registry entry to start at windows startup
