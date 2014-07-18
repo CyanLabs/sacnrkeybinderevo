@@ -18,10 +18,9 @@ Imports Microsoft.Xna.Framework.Input
 Imports System.Net.Mail
 Imports WindowsHookLib
 Imports Microsoft.DirectX.DirectInput
-Imports Cyanlabs_Updater
 
 Public Class Form1
-    Dim Updater As New Cyanlabs_Updater.Class1
+    Dim Updater As New Cyanlabs_Updater.Updater
     Dim joystickDevice As Device
     Dim updated As Boolean = False, newversion As String = ""
     Dim running As Integer = 1, finishedload As Boolean = False, inisettings As ini, skipsavesettings As Boolean = False
