@@ -16,7 +16,7 @@
                 If MsgBox("A new update is available for download" & vbNewLine & vbNewLine & "Would you like to download v" & latestversion & "?" & vbNewLine & vbNewLine & changelog, MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Update Avaliable") = vbYes Then
                     If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then
                         Dim updaterversion As FileVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo(Application.StartupPath & "\AutoUpdater.exe")
-                        If updaterversion.FileVersion < wc.DownloadString("http://cyanlabs.co.uk/raw/version.php?product=AutoUpdater").Replace(" ", "") Then
+                        If updaterversion.FileVersion < wc.DownloadString("http://cyanlabs.co.uk/raw/AutoUpdater/version.txt").Replace(" ", "") Then
                             DownloadUpdater(latestversion)
                         Else
                             Process.Start(Application.StartupPath & "\AutoUpdater.exe ", "-product=" & product & " -v=" & latestversion)
@@ -39,7 +39,7 @@
         Try
             MsgBox("The autoupdater application is out of date, Downloading new version!", , "Updater Out Of Date")
             If IO.File.Exists(Application.StartupPath & "\AutoUpdater.exe") Then IO.File.Delete(Application.StartupPath & "\AutoUpdater.exe")
-            wc.DownloadFile(New Uri("http://downloads.cyanlabs.co.uk/AutoUpdater/AutoUpdater.exe"), Application.StartupPath & "\AutoUpdater.exe")
+            wc.DownloadFile(New Uri("http://cyanlabs.net/raw/AutoUpdater/AutoUpdater.exe"), Application.StartupPath & "\AutoUpdater.exe")
             Process.Start(Application.StartupPath & "\AutoUpdater.exe ", "-product=" & product & " -v=" & latestversion)
             Application.Exit()
         Catch ex As Net.WebException

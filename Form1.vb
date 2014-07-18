@@ -440,8 +440,8 @@ Public Class Form1
         End If
         If Not IO.Directory.Exists(loglocation & "\Logs") Then IO.Directory.CreateDirectory(loglocation & "\Logs")
         Try
-            kHook.InstallHook()
-            mHook.InstallHook()
+            ' kHook.InstallHook()
+            'mHook.InstallHook()
         Catch ex As Exception
             MessageBox.Show("Failed to install the hooks!")
         End Try
