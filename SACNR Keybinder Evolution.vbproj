@@ -71,6 +71,11 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cyanlabs_Updater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Cyanlabs_Updater.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\Microsoft.DirectX.DirectInput.dll</HintPath>
@@ -127,7 +132,6 @@
     <Compile Include="NSTheme.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Updater.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -178,7 +182,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Release (
-"$(ProjectDir)Tools/ilmerge.exe" /target:winexe /out:"$(TargetDir)$(ProjectName).exe" "$(TargetPath)" "$(TargetDir)WindowsHookLib.dll"
+"$(ProjectDir)Tools/ilmerge.exe" /target:winexe /out:"$(TargetDir)$(ProjectName).exe" "$(TargetPath)" "$(TargetDir)WindowsHookLib.dll" "$(TargetDir)Cyanlabs_Updater.dll"
 del SACNR_Keybinder_Evolution* *.pdb *.xml
 del WindowsHookLib.dll
 move "$(TargetDir)$(ProjectName).exe" "$(TargetPath)"

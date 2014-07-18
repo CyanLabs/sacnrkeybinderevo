@@ -18,8 +18,10 @@ Imports Microsoft.Xna.Framework.Input
 Imports System.Net.Mail
 Imports WindowsHookLib
 Imports Microsoft.DirectX.DirectInput
+Imports Cyanlabs_Updater
 
 Public Class Form1
+    Dim Updater As New Cyanlabs_Updater.Class1
     Dim joystickDevice As Device
     Dim updated As Boolean = False, newversion As String = ""
     Dim running As Integer = 1, finishedload As Boolean = False, inisettings As ini, skipsavesettings As Boolean = False
@@ -148,7 +150,7 @@ Public Class Form1
             inisettings.WriteString("Mouse", "WheelDownActivated", chkWheelDown.Checked.ToString)
             inisettings.WriteString("Mouse", "SB1ClickActivated", chkSB1.Checked.ToString)
             inisettings.WriteString("Mouse", "SB2ClickActivated", chkSB2.Checked.ToString)
-         End If
+        End If
     End Sub
     'Function to check whethera process is running or not
     Public Function IsProcessRunning(name As String) As Boolean
@@ -833,7 +835,7 @@ Public Class Form1
                 timerPC.Start()
                 chkEnable360.Checked = False
             Else
-            timerPC.Stop()
+                timerPC.Stop()
             End If
         Catch ex As NullReferenceException
         End Try
